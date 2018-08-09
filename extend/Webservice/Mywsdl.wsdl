@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<definitions name="www.zhuoqu.com" targetNamespace="urn:www.zhuoqu.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="urn:www.zhuoqu.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+<types xmlns="http://schemas.xmlsoap.org/wsdl/" />
+<portType name="www.zhuoqu.comPort"><operation name="greet">
+<input message="tns:greetRequest" />
+<output message="tns:greetResponse" />
+</operation>
+<operation name="serverTimestamp">
+<input message="tns:serverTimestampRequest" />
+<output message="tns:serverTimestampResponse" />
+</operation>
+<operation name="myfunc">
+<input message="tns:myfuncRequest" />
+<output message="tns:myfuncResponse" />
+</operation>
+</portType>
+<binding name="www.zhuoqu.comBinding" type="tns:www.zhuoqu.comPort">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+<operation name="greet">
+<soap:operation soapAction="urn:www.zhuoqu.com#Mywsdl#greet" />
+<input><soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="serverTimestamp">
+<soap:operation soapAction="urn:www.zhuoqu.com#Mywsdl#serverTimestamp" />
+<input><soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+<operation name="myfunc">
+<soap:operation soapAction="urn:www.zhuoqu.com#Mywsdl#myfunc" />
+<input><soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:www.zhuoqu.com" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+</output>
+</operation>
+</binding>
+<service name="www.zhuoqu.com">
+<documentation />
+<port name="www.zhuoqu.comPort" binding="tns:www.zhuoqu.comBinding"><soap:address location="http://192.168.1.103:80/a/server.php" />
+</port>
+</service>
+<message name="greetRequest">
+<part name="name" type="xsd:string" />
+</message>
+<message name="greetResponse">
+<part name="greet" type="xsd:string" />
+</message>
+<message name="serverTimestampRequest">
+</message>
+<message name="serverTimestampResponse">
+<part name="serverTimestamp" type="xsd:string" />
+</message>
+<message name="myfuncRequest">
+<part name="a" type="xsd:string" />
+</message>
+<message name="myfuncResponse">
+<part name="myfunc" type="xsd:string" />
+</message>
+</definitions>
