@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<attr>
+  <common>
+    <tag invalid="base, head, html, meta, param, script, style, title" >class</tag>
+    <tag invalid="base, head, html, meta, param, script, style, title" >id</tag>
+    <tag invalid="base, head, html, meta, param, script, style, title" >style</tag>
+    <tag invalid="base, head, html, meta, param, script, style, title">title</tag>
+    <tag invalid="base, br, frame, frameset, hr, iframe, param, script" value="ltr | rtl" >dir</tag>
+    <tag invalid="base, br, frame, frameset, hr, iframe, param, script">lang</tag>
+    <tag >accesskey</tag>
+    <tag type="event" valid="body, frameset" >onload</tag>
+    <tag type="event" valid="body, frameset">onunload</tag>
+    <tag type="event" valid="form, select, input">onchange</tag>
+    <tag type="event" valid="form, select, input">onsubmit</tag>
+    <tag type="event" valid="form, select, input">onreset</tag>
+    <tag type="event" valid="form, select, input">onselect</tag>
+    <tag type="event" valid="form, select, input">onblur</tag>
+    <tag type="event" valid="form, select, input">onfocus</tag>
+    <tag type="event5" valid="form, select, input" bz="当上下文菜单被触发时运行的脚本">oncontextmenu</tag>
+    <tag type="event5" valid="form, select, input" bz="在表单改变时运行的脚本">onformchange</tag>
+    <tag type="event5" valid="form, select, input" bz="当表单获得用户输入时运行的脚本">onforminput</tag>
+    <tag type="event5" valid="form, select, input" bz="当元素获得用户输入时运行的脚本">oninput</tag>
+    <tag type="event5" valid="form, select, input" bz="当元素无效时运行的脚本">oninvalid</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onkeydown</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onkeypress</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onkeyup</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onclick</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">ondblclick</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onmousedown</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onmousemove</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onmouseout</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onmouseover</tag>
+    <tag type="event" invalid="base, bdo, br, frame, frameset, head, html, iframe, meta, param, script, style, title">onmouseup</tag>
+    <tag type="5" >contenteditable</tag>
+    <tag type="5" >contextmenu</tag>
+    <tag type="5" >draggable</tag>
+    <tag type="5" >dropzone</tag>
+    <tag type="5" >hidden</tag>
+    <tag type="5" >spellcheck</tag>
+    <tag type="5" >translate</tag>
+    <tag type="event5" bz="文档打印之后运行的脚本">onafterprint</tag>
+    <tag type="event5" bz="文档打印之前运行的脚本" >onbeforeprint</tag>
+    <tag type="event5" bz="文档卸载之前运行的脚本" >onbeforeunload</tag>
+    <tag type="event5" bz="在错误发生时运行的脚本" >onerror</tag>
+    <tag type="event5" bz="当文档已改变时运行的脚本" >onhaschange</tag>
+    <tag type="event5" bz="在消息被触发时运行的脚本" >onmessage</tag>
+    <tag type="event5" bz="当文档离线时运行的脚本" >onoffline</tag>
+    <tag type="event5" bz="当文档上线时运行的脚本" >ononline</tag>
+    <tag type="event5" bz="当窗口隐藏时运行的脚本" >onpagehide</tag>
+    <tag type="event5" bz="当窗口成为可见时运行的脚本" >onpageshow</tag>
+    <tag type="event5" bz="当窗口历史记录改变时运行的脚本" >onpopstate</tag>
+    <tag type="event5" bz="当文档执行撤销（redo）时运行的脚本" >onredo</tag>
+    <tag type="event5" bz="当浏览器窗口被调整大小时触发" >onresize</tag>
+    <tag type="event5" bz="在 Web Storage 区域更新后运行的脚本" >onstorage</tag>
+    <tag type="event5" bz="在文档执行 undo 时运行的脚本" >onundo</tag>
+  </common>
+  <a>
+    <tag>charset</tag>
+    <tag>coords</tag>
+    <tag>download</tag>
+    <tag>href</tag>
+    <tag>hreflang</tag>
+    <tag>media</tag>
+    <tag>name</tag>
+    <tag>rel</tag>
+    <tag>rev</tag>
+    <tag>shape</tag>
+    <tag>target</tag>
+    <tag>type</tag>
+  </a>
+  <abbr></abbr>
+  <acronym></acronym>
+  <address></address>
+  <applet>
+    <tag>code</tag>
+    <tag>object</tag>
+    <tag>align</tag>
+    <tag>alt</tag>
+    <tag>archive</tag>
+    <tag>codebase</tag>
+    <tag>height</tag>
+    <tag>hspace</tag>
+    <tag>name</tag>
+    <tag>vspace</tag>
+    <tag>width</tag>
+  </applet>
+  <area>
+    <tag>alt</tag>
+    <tag>coords</tag>
+    <tag>href</tag>
+    <tag>nohref</tag>
+    <tag>shape</tag>
+    <tag>target</tag>
+  </area>
+  <article></article>
+  <aside></aside>
+  <audio>
+    <tag>autoplay</tag>
+    <tag>controls</tag>
+    <tag>loop</tag>
+    <tag>muted</tag>
+    <tag>preload</tag>
+    <tag>src</tag>
+  </audio>
+  <b></b>
+  <base>
+    <tag>target</tag>
+    <tag>href</tag>
+  </base>
+  <basefont></basefont>
+  <bdi></bdi>
+  <bdo></bdo>
+  <big></big>
+  <blockquote>
+    <tag>cite</tag>
+  </blockquote>
+  <body>
+    <tag>alink</tag>
+    <tag>background</tag>
+    <tag>bgcolor</tag>
+    <tag>link</tag>
+    <tag>text</tag>
+    <tag>vlink</tag>
+  </body>
+  <br></br>
+  <button>
+    <tag>autofocus</tag>
+    <tag>disabled</tag>
+    <tag>form</tag>
+    <tag>formaction</tag>
+    <tag>formenctype</tag>
+    <tag>formmethod</tag>
+    <tag>formnovalidate</tag>
+    <tag>formtarget</tag>
+    <tag>name</tag>
+    <tag>type</tag>
+    <tag>value</tag>
+  </button>
+  <canvas>
+    <tag>width</tag>
+    <tag>height</tag>
+  </canvas>
+  <caption>
+    <tag>align</tag>
+  </caption>
+  <center></center>
+  <cite></cite>
+  <code></code>
+  <col>
+    <tag>align</tag>
+    <tag>char</tag>
+    <tag>charoff</tag>
+    <tag>span</tag>
+    <tag>valign</tag>
+    <tag>width</tag>
+  </col>
+  <colgroup>
+    <tag>align</tag>
+    <tag>char</tag>
+    <tag>charoff</tag>
+    <tag>span</tag>
+    <tag>valign</tag>
+    <tag>width</tag>
+  </colgroup>
+  <command>
+    <tag>checked</tag>
+    <tag>disabled</tag>
+    <tag>icon</tag>
+    <tag>label</tag>
+    <tag>radiogroup</tag>
+    <tag>type</tag>
+  </command>
+  <datalist></datalist>
+  <dd></dd>
+  <del>
+    <tag>cite</tag>
+    <tag>datetime</tag>
+  </del>
+  <details>
+    <tag>open</tag>
+  </details>
+  <dir>
+    <tag>compact</tag>
+  </dir>
+  <div>
+    <tag>align</tag>
+  </div>
+  <dfn></dfn>
+  <dialog>
+    <tag>open</tag>
+  </dialog>
+  <dl></dl>
+  <dt></dt>
+  <em></em>
+  <embed>
+    <tag>height</tag>
+    <tag>src</tag>
+    <tag>type</tag>
+    <tag>width</tag>
+  </embed>
+  <fieldset>
+    <tag>disabled</tag>
+    <tag>form</tag>
+    <tag>name</tag>
+  </fieldset>
+  <figcaption></figcaption>
+  <figure></figure>
+  <font>
+    <tag>color</tag>
+    <tag>face</tag>
+    <tag>size</tag>
+  </font>
+  <footer></footer>
+  <form>
+    <tag>accept</tag>
+    <tag>accept-charset</tag>
+    <tag>action</tag>
+    <tag>autocomplete</tag>
+    <tag>enctype</tag>
+    <tag>method</tag>
+    <tag>name</tag>
+    <tag>novalidate</tag>
+    <tag>target</tag>
+  </form>
+  <frame>
+    <tag>frameborder</tag>
+    <tag>longdesc</tag>
+    <tag>marginheight</tag>
+    <tag>marginwidth</tag>
+    <tag>name</tag>
+    <tag>noresize</tag>
+    <tag>scrolling</tag>
+    <tag>src</tag>
+  </frame>
+  <frameset>
+    <tag>rows</tag>
+    <tag>cols</tag>
+  </frameset>
+  <h>
+    <tag>align</tag>
+  </h>
+  <head>
+    <tag>profile</tag>
+  </head>
+  <header></header>
+  <hr>
+    <tag>align</tag>
+    <tag>noshade</tag>
+    <tag>size</tag>
+    <tag>width</tag>
+  </hr>
+  <html>
+    <tag>manifest</tag>
+    <tag>xmlns</tag>
+  </html>
+  <i></i>
+  <iframe>
+    <tag>align</tag>
+    <tag>frameborder</tag>
+    <tag>height</tag>
+    <tag>longdesc</tag>
+    <tag>marginheight</tag>
+    <tag>marginwidth</tag>
+    <tag>name</tag>
+    <tag>sandbox</tag>
+    <tag>scrolling</tag>
+    <tag>seamless</tag>
+    <tag>src</tag>
+    <tag>srcdoc</tag>
+    <tag>width</tag>
+  </iframe>
+  <img>
+    <tag>alt</tag>
+    <tag>src</tag>
+    <tag>align</tag>
+    <tag>border</tag>
+    <tag>height</tag>
+    <tag>hspace</tag>
+    <tag>ismap</tag>
+    <tag>longdesc</tag>
+    <tag>usemap</tag>
+    <tag>vspace</tag>
+    <tag>width</tag>
+  </img>
+  <input>
+    <tag>accept</tag>
+    <tag>align</tag>
+    <tag>alt</tag>
+    <tag>autocomplete</tag>
+    <tag>autofocus</tag>
+    <tag>checked</tag>
+    <tag>disabled</tag>
+    <tag>form</tag>
+    <tag>formaction</tag>
+    <tag>formenctype</tag>
+    <tag>formmethod</tag>
+    <tag>formnovalidate</tag>
+    <tag>formtarget</tag>
+    <tag>height</tag>
+    <tag>list</tag>
+    <tag>max</tag>
+    <tag>maxlength</tag>
+    <tag>min</tag>
+    <tag>multiple</tag>
+    <tag>name</tag>
+    <tag>pattern</tag>
+    <tag>placeholder</tag>
+    <tag>readonly</tag>
+    <tag>required</tag>
+    <tag>size</tag>
+    <tag>src</tag>
+    <tag>step</tag>
+    <tag>type</tag>
+    <tag>value</tag>
+    <tag>width</tag>
+  </input>
+  <ins>
+    <tag>datetime</tag>
+    <tag>cite</tag>
+  </ins>
+  <isindex></isindex>
+  <kbd></kbd>
+  <keygen>
+    <tag>autofocus</tag>
+    <tag>challenge</tag>
+    <tag>disabled</tag>
+    <tag>form</tag>
+    <tag>keytype</tag>
+    <tag>name</tag>
+  </keygen>
+  <label>
+    <tag>for</tag>
+    <tag>form</tag>
+  </label>
+  <legend>
+    <tag>align</tag>
+  </legend>
+  <li>
+    <tag>type</tag>
+    <tag>value</tag>
+  </li>
+  <link>
+    <tag>charset</tag>
+    <tag>href</tag>
+    <tag>hreflang</tag>
+    <tag>media</tag>
+    <tag>rel</tag>
+    <tag>rev</tag>
+    <tag>sizes</tag>
+    <tag>target</tag>
+    <tag>type</tag>
+  </link>
+  <map>
+    <tag>name</tag>
+  </map>
+  <mark></mark>
+  <menu>
+    <tag>label</tag>
+    <tag>type</tag>
+  </menu>
+  <menuitem>
+    <tag>checked</tag>
+    <tag>default</tag>
+    <tag>disabled</tag>
+    <tag>icon</tag>
+    <tag>open</tag>
+    <tag>label</tag>
+    <tag>radiogroup</tag>
+    <tag>type</tag>
+  </menuitem>
+  <meta>
+    <tag>content</tag>
+    <tag>http-equiv</tag>
+    <tag>name</tag>
+    <tag>scheme</tag>
+  </meta>
+  <meter>
+    <tag>form</tag>
+    <tag>high</tag>
+    <tag>low</tag>
+    <tag>max</tag>
+    <tag>min</tag>
+    <tag>optimum</tag>
+    <tag>value</tag>
+  </meter>
+  <nav></nav>
+  <noframes></noframes>
+  <noscript></noscript>
+  <object></object>
+  <ol></ol>
+  <optgroup></optgroup>
+  <option></option>
+  <output></output>
+  <p></p>
+  <param></param>
+  <pre></pre>
+  <progress></progress>
+  <q></q>
+  <rp></rp>
+  <rt></rt>
+  <ruby></ruby>
+  <s></s>
+  <samp></samp>
+  <script></script>
+  <section></section>
+  <select></select>
+  <small></small>
+  <source></source>
+  <span></span>
+  <strike></strike>
+  <strong></strong>
+  <style></style>
+  <sub></sub>
+  <summary></summary>
+  <sup></sup>
+  <table></table>
+  <tbody></tbody>
+  <td></td>
+  <textarea></textarea>
+  <tfoot></tfoot>
+  <th></th>
+  <thead></thead>
+  <time></time>
+  <title></title>
+  <tr></tr>
+  <track></track>
+  <tt></tt>
+  <u></u>
+  <ul></ul>
+  <var></var>
+  <video></video>
+  <wbr></wbr>
+  <xmp></xmp>
+</attr>

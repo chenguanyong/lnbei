@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<code>
+	<controller>
+		<attr name="FullNameSpace" value="app\{modular}\controller" >FullNameSpace</attr>
+		<!-- 基类 名称-->
+		<attr name="BaseName" value="Base">BaseName</attr>
+		<!-- 基类 -->
+		<attr name="Use" value="app\common\controller\Bases" >Use</attr>
+		<attr name="BaseNameSpace" value="app\common\controller\Base" >BaseNameSpace</attr>
+		<attr name="add" accesstype="public" isstatic="true" type="fun" param="param,param1" value="controller\\template\\add.php">add</attr>
+		<attr name="ajaxGetArea" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\ajaxGetArea.php">ajaxGetArea</attr>
+		<attr name="getListJson" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\getListJson.php">getListJson</attr>
+		<attr name="iDisplayStart" accesstype="public" isstatic="false" type="variable" dataType="string" value="iDisplayStart">getListJson</attr>
+		<attr name="iDisplayLength" accesstype="public" isstatic="false" type="variable" dataType="string"  value="iDisplayLength">iDisplayLength</attr>
+		<attr name="pk" accesstype="public" isstatic="false" type="variable" dataType="string"  value="ID">pk</attr>
+		<attr name="model" accesstype="protected" isstatic="false" type="variable" dataType="object"  value="ID">model</attr>
+		<attr name="addJson" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\addJson.php">addJson</attr>
+		<attr name="deleJson" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\deleJson.php">deleJson</attr>
+		<attr name="updateJson" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\updateJson.php">updateJson</attr>
+		<attr name="index" accesstype="public" isstatic="false" type="fun"  value="controller\\template\\index.php">index</attr>
+		<attr name="_initialize" accesstype="protected" isstatic="false" type="fun"  value="controller\\template\\_initialize.php">_initialize</attr>
+	</controller>
+	<model>		<!-- 基类 名称-->
+		<attr name="FullNameSpace" value="app\{modular}\model" >FullNameSpace</attr>
+		<attr name="BaseName" value="Model" >BaseName</attr>
+		<!-- 基类名称空间 -->
+		<attr name="BaseNameSpace" value="think\Model" >BaseNameSpace</attr>
+		<attr name="getList" accesstype="public" isstatic="false" type="fun" param="where,page,rownum" value="model\\template\\getList.php">getList</attr>
+		<attr name="add" accesstype="public" isstatic="false" type="fun" param="data" value="model\\template\\add.php">add</attr>
+		<attr name="dele" accesstype="public" isstatic="false" type="fun" param="ID" value="model\\template\\dele.php">dele</attr>
+		<attr name="updates" accesstype="public" isstatic="false" type="fun" param="data" value="model\\template\\update.php">updates</attr>
+		<attr name="pk" accesstype="public" isstatic="false" type="variable" value="ID">pk</attr>
+	</model>
+	<view>	
+		<attr name="layoutXmlPath" type="path" value="\extend\lnbeis\template\layout">layoutXmlPath</attr>
+		<attr name="ADDVIEW" type="fun" layoutwidget="com" title="添加" savebutton="确定" cancelbutton="取消" >ADDVIEW</attr>
+		<attr name="EDITVIEW" type="fun" layoutwidget="com" title="编辑" savebutton="确定" cancelbutton="取消" >EDITVIEW</attr>
+		<attr name="LOOKVIEW" type="fun" layoutwidget="com" title="查看" savebutton="确定" cancelbutton="取消" >LOOKVIEW</attr>
+		<attr name="DELEVIEW" type="fun" layoutwidget="com" title="删除" savebutton="确定" cancelbutton="取消" >DELEVIEW</attr>
+	</view>
+</code>

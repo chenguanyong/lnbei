@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<css>
+	<!-- new start -->
+	<attr level="3" name="@keyframes"> </attr>
+	<attr level="3" name="animation"> </attr>
+	<attr level="3" name="animation-name"> </attr>
+	<attr level="3" name="animation-duration"> </attr>
+	<attr level="3" name="animation-timing-function"> </attr>
+	<attr level="3" name="animation-delay"> </attr>
+	<attr level="3" name="animation-iteration-count"> </attr>
+	<attr level="3" name="animation-direction"> </attr>
+	<attr level="3" name="animation-play-state"> </attr>
+	<attr level="3" name="animation-fill-mode"> </attr>
+	<!-- 
+	 属性：attrname 
+	 针对：可取的值同样也是css属性的情况
+	 辅助属性：attrnamevalue:可能存在的值，flag:1这个值可以是多个，0表示只能是单个,默认0;
+	 属性：inherit 
+	 描述：可继承
+	 -->
+	<attr level="1" name="background"> 
+		<value attrnamevalue="background-color,background-position,background-size,background-repeat,background-origin,background-clip,background-attachment,background-image" flag="1" >ATTNAME</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background-attachment">
+		<value attrnamevalue="scroll|fixed" flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	</attr>
+	 <!-- 
+	 属性：hex
+	 描述：规定颜色值为十六进制值的背景颜色（比如 #ff0000）。
+	 属性：rgb
+	 描述：规定颜色值为 rgb 代码的背景颜色（比如 rgb(255,0,0)）
+	 辅助属性：type：表示这个属性的类型
+	 属性：transparent
+	 描述：默认。背景颜色为透明。
+	  -->
+	<attr level="1" name="background-color"> 
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background-image"> 
+		<value type="fun">url</value>
+		<value attrnamevalue="none"  flag="1" >ATTNAME</value>
+		<value >inherit</value>
+	</attr>
+	<!-- 
+	属性：param_1
+	描述：参数的个数
+	辅助属性：unit:单位，
+	 -->
+	<attr level="1" name="background-position">
+		<value attrnamevalue="top left|top center|top right|center center|center right|bottom left|bottom center|bottom right"  flag="1" >ATTNAME</value>
+		<value unit='%' >param_2</value>
+	</attr>
+	<attr level="1" name="background-repeat">
+		<value attrnamevalue="repeat-y|repeat|repeat-x|no-repeat"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+    </attr>
+	<attr level="3" name="background-clip">
+   		<value attrnamevalue="border-box|padding-box|content-box"  flag="0" >ATTNAME</value>
+    </attr>
+	<attr level="3" name="background-origin">
+		<value attrnamevalue="border-box|padding-box|content-box"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="background-size"> 
+		<value attrnamevalue="contain|cover"  flag="0" >ATTNAME</value>
+		<value unit='px,cm,%' >param_2|param_1</value>
+	</attr>
+	<attr level="1" name="border">
+		<value attrnamevalue="border-width|border-style|border-color"  flag="1" >ATTNAME</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="border-bottom"> 
+		<value attrnamevalue="border-bottom-width|border-bottom-style|border-bottom-color"  flag="1" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="1" name="border-bottom-color"> 
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="1" name="border-bottom-style"> 
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="border-bottom-width">
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>
+	</attr>
+	<attr level="1" name="border-color">
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>	
+		<value type="fun">rgb</value>
+		<value >inherit</value>	
+		<value >transparent</value>
+	</attr>
+	<attr level="1" name="border-left">
+		<value attrnamevalue="border-left-width|border-left-style|border-left-color"  flag="1" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="border-left-color">
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>		
+	</attr>
+	<attr level="2" name="border-left-style">
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+	</attr>
+	<attr level="1" name="border-left-width"> 
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>		
+	</attr>
+	<attr level="1" name="border-right"> 
+		<value attrnamevalue="border-right-width|border-right-style|border-right-color"  flag="1" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="border-right-color"> 
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="border-right-style">
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="border-right-width">
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>	
+	</attr>
+	<attr level="1" name="border-style">
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+	</attr>
+	<attr level="1" name="border-top">
+		<value attrnamevalue="border-top-width|border-top-style|border-top-color"  flag="1" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="border-top-color">
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="border-top-style"> 
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+	</attr>
+	<attr level="1" name="border-top-width"> 
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>		
+	</attr>
+	<attr level="1" name="border-width">
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>	
+	</attr>
+	<attr level="2" name="outline">
+		<value attrnamevalue="outline-color|outline-style|outline-width"  flag="1" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="outline-color"> 
+		<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>		
+	</attr>
+	<attr level="2" name="outline-style"> 
+		<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>		
+	</attr>
+	<attr level="2" name="outline-width">
+		<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>	
+		<value unit='%|px|cm|pt' >param_1</value>	
+	</attr>
+	<attr level="3" name="border-bottom-left-radius">
+		<value unit='%|px|cm|pt' >param_1|param_2</value>
+	</attr>
+	<attr level="3" name="border-bottom-right-radius">
+		<value unit='%|px|cm|pt' >param_1|param_2</value>
+	</attr>
+	<attr level="3" name="border-image">
+		<value attrnamevalue="border-image-outset|border-image-repeat|border-image-slice|border-image-source|border-image-width"  flag="1" >ATTNAME</value>	
+	</attr>
+	<attr level="3" name="border-image-outset">
+		<value unit='%|px|cm|pt' >param_1|param_2</value>
+	</attr>
+	<attr level="3" name="border-image-repeat">
+		<value attrnamevalue="stretch|repeat|round"  flag="0" >ATTNAME</value>	
+	</attr>
+	<attr level="3" name="border-image-slice">
+		<value unit='%|px|cm|pt' >param_1|param_2</value>
+		<value attrnamevalue="fill"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="border-image-source">
+		<value type="fun">rgb</value>
+		<value attrnamevalue="none"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="border-image-width">
+		<value unit='%' >param_1|param_2</value>
+		<value attrnamevalue="auto"  flag="0" >ATTNAME</value>
+    </attr>
+	<attr level="3" name="border-radius">
+		<value attrnamevalue="border-top-left-radius|border-top-right-radius|border-bottom-right-radius|border-bottom-left-radius"  flag="1" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="border-top-left-radius">
+		<value unit='%' >param_1|param_2</value>
+	</attr>
+	<attr level="3" name="border-top-right-radius">
+		<value unit='%' >param_1|param_2</value>
+	</attr>
+	<attr level="3" name="box-decoration-break	"> </attr>
+	<!-- 属性：option
+		  描述：可选的	
+	 -->
+	<attr level="3" name="box-shadow">
+		<value unit='px|cm|pt' option="inset" >param_2|param_3|param_4|param_5|param_6</value>
+	</attr>
+	<attr level="3" name="overflow-x">
+		<value attrnamevalue="visible|hidden|scroll|auto|no-display|no-content"  flag="1" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="overflow-y">
+		<value attrnamevalue="visible|hidden|scroll|auto|no-display|no-content"  flag="1" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="overflow-style">
+    	<value attrnamevalue="auto|scrollbar|panner|move|marquee"  flag="1" >ATTNAME</value>
+    </attr>
+	<attr level="3" name="rotation">
+		<value unit='%' from="0" to="360" >param_1</value>
+	</attr>
+	<attr level="3" name="rotation-point">
+		<value attrnamevalue="left top|left center|left bottom|right top|right center|right bottom|center top|center center|center bottom"  flag="1" >ATTNAME</value>
+		<value unit='%' option="inset" >param_2|param_1</value>
+	</attr>
+	<attr level="3" name="color-profile	"> </attr>
+	<attr level="3" name="opacity">
+		<value unit='%' from="0.0" to="1" >param_1</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="3" name="rendering-intent	"> </attr>
+	<attr level="3" name="bookmark-labe"> </attr>
+	<attr level="3" name="bookmark-level"> </attr>	
+	<attr level="3" name="bookmark-target"> </attr>	
+	<attr level="3" name="float-offset"> </attr>	
+	<attr level="3" name="hyphenate-after"> </attr>	
+	<attr level="3" name="hyphenate-before"> </attr>	
+	<attr level="3" name="hyphenate-character"> </attr>	
+	<attr level="3" name="hyphenate-lines"> </attr>	
+	<attr level="3" name="hyphenate-resource"> </attr>	
+	<attr level="3" name="hyphens"> </attr>	
+	<attr level="3" name="image-resolution"> </attr>	
+	<attr level="3" name="marks"> </attr>	
+	<attr level="3" name="string-set"> </attr>	
+	<!--  -->
+	<attr level="1" name="height">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="max-height">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>	
+		<value >none</value>
+	</attr>
+	<attr level="2" name="max-width">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value >none</value>	
+	</attr>
+	<attr level="2" name="min-height">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<!-- 属性：default
+			描述：默认值
+		 -->
+		<value value="0">default</value>
+    </attr>
+	<attr level="2" name="min-width">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="0">default</value>
+	</attr>
+	<attr level="1" name="width">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="3" name="box-align">
+		<value attrnamevalue="start|end|center|baseline|stretch"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="box-direction">
+		<value attrnamevalue="normal|reverse|inherit"  flag="0" >ATTNAME</value>	
+	</attr>
+	<attr level="3" name="box-flex">
+		<value >param_1</value>
+	</attr>
+	<attr level="3" name="box-flex-group">
+		<value type="int">param_1</value>
+	</attr>
+	<attr level="3" name="box-lines">
+		<value attrnamevalue="single|multiple"  flag="0" >ATTNAME</value>	
+	</attr>
+	<attr level="3" name="box-ordinal-group">
+		<value type="int">param_1</value>
+	</attr>
+	<attr level="3" name="box-orient">
+		<value attrnamevalue="horizontal|vertical|inline-axis|block-axis|inherit"  flag="0" >ATTNAME</value>	
+	</attr>
+	<attr level="3" name="box-pack">
+		<value attrnamevalue="start|end|center|justify"  flag="0" >ATTNAME</value>	
+	</attr>
+	<attr level="1" name="font">
+		<value attrnamevalue="font-style|font-variant|font-weight|line-height|font-family|caption|icon|menu|message-box|small-caption|status-bar"  flag="1" >ATTNAME</value>	
+	</attr>
+	<attr level="1" name="font-family">
+		<value >inherit</value>
+		<value >param_1</value>
+	</attr>
+	<attr level="1" name="font-size">
+		<value attrnamevalue="xx-small|x-small|small|medium|large|x-large|xx-large|smaller|larger"  flag="0" >ATTNAME</value>
+		<value unit="px,cm,%">length</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="2" name="font-size-adjust">
+		<value unit='px|cm|pt|%' >param_1</value>
+		<!-- 属性：default
+			描述：默认值
+		 -->
+		<value value="none">default</value>
+	
+	</attr>
+	<attr level="2" name="font-stretch">
+		<value attrnamevalue="normal|wider|narrower|ultra-condensed|extra-condensed|condensed|semi-condensed|semi-expanded|expanded|extra-expanded|ultra-expanded"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="1" name="font-style">
+		<value attrnamevalue="normal|italic|oblique|inherit"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="1" name="font-variant"><value attrnamevalue="normal|small-caps|inherit"  flag="0" >ATTNAME</value> </attr>
+	<attr level="1" name="font-weight"><value attrnamevalue="normal|bold|bolder|lighter|inherit"  flag="0" >ATTNAME</value><value from="100" interval="100" to="900">param_1</value> </attr>
+	<attr level="2" name="content">
+		<value attrnamevalue="normal|none"  flag="0" >ATTNAME</value>
+	 </attr>
+	<attr level="2" name="counter-increment">
+		<value >length</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	</attr>
+	<attr level="2" name="counter-reset">
+
+		<value >length</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	</attr>
+	<attr level="2" name="quotes">
+		<value >length</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+</attr>
+	<attr level="3" name="crop"> 
+	
+	</attr>	
+	<attr level="3" name="move-to"> </attr>	
+	<attr level="3" name="page-policy"> </attr>	
+	<attr level="3" name="grid-columns">
+
+	<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+</attr>
+	<attr level="3" name="grid-rows">
+
+
+	<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+</attr>
+	<attr level="3" name="target"><value attrnamevalue="target-name|none"  flag="0" >ATTNAME</value> </attr>
+	<attr level="3" name="target-name"><value attrnamevalue="current|root|parent|new|modal|name"  flag="0" >ATTNAME</value> </attr>
+	<attr level="3" name="target-new"> <value attrnamevalue="window|tab|none"  flag="0" >ATTNAME</value></attr>
+	<attr level="3" name="target-position"><value attrnamevalue="above|behind|front|back"  flag="0" >ATTNAME</value> </attr>
+	<attr level="1" name="list-style"><value attrnamevalue="list-style-type|list-style-position|list-style-image"  flag="0" >ATTNAME</value><value >inherit</value> </attr>
+	<attr level="1" name="list-style-image"> 
+	<value >inherit</value>
+	<value type="fun">url</value>
+		<value value="none">default</value>
+		</attr>
+	<attr level="1" name="list-style-position"><value attrnamevalue="inside|outside"  flag="0" >ATTNAME</value> <value >inherit</value></attr>
+	<attr level="1" name="list-style-type"> <value attrnamevalue="none|disc|circle|square|decimal|decimal-leading-zero|lower-roman|upper-roman|lower-alpha|upper-alphalower-greek|lower-latin|upper-latin|hebrew|armenian|georgian|cjk-ideographic|hiragana|katakana|hiragana-iroha|katakana-iroha"  flag="0" >ATTNAME</value> </attr>
+	<attr level="2" name="marker-offset">
+	
+	 </attr>
+	<attr level="1" name="margin">
+	<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	<attr level="1" name="margin-bottom"> 
+		<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	
+	</attr>
+	<attr level="1" name="margin-left"> 
+	
+		<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	
+	</attr>
+	<attr level="1" name="margin-right">
+	
+		<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	 </attr>
+	<attr level="1" name="margin-top"> 
+	
+		<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	</attr>
+	<attr level="3" name="column-count">
+		<value  >param_1</value>
+		<value >auto</value>
+	
+	 </attr>
+	<attr level="3" name="column-fill"><value >auto</value><value attrnamevalue="balance"  flag="0" >ATTNAME</value> </attr>
+	<attr level="3" name="column-gap">	<value attrnamevalue="normal"  flag="0" >ATTNAME</value> 
+		<value >auto</value> </attr>
+	<attr level="3" name="column-rule">
+	
+		<value attrnamevalue="column-rule-width|column-rule-color|column-rule-style"  flag="0" >ATTNAME</value> 
+	
+	 </attr>
+	<attr level="3" name="column-rule-color">
+	
+			<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>	
+	
+	 </attr>
+	<attr level="3" name="column-rule-style">
+	
+	<value attrnamevalue="none|hidden|dotted|dashed|solid|double|groove|ridge|inset|outset"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>
+	
+	 </attr>
+	<attr level="3" name="column-rule-width">
+	<value attrnamevalue="thin|medium|thick"  flag="0" >ATTNAME</value>	
+	<value  >param_1</value>
+	 </attr>
+	<attr level="3" name="column-span"><value attrnamevalue="1|all"  flag="0" >ATTNAME</value>	 </attr>
+	<attr level="3" name="column-width">
+			<value  >param_1</value>
+		<value >auto</value>
+	
+	 </attr>
+	<attr level="3" name="columns">
+	
+	<value attrnamevalue="column-width|column-count"  flag="1" >ATTNAME</value>	
+	 </attr>
+	<attr level="1" name="padding">
+			<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	
+	 </attr>
+	<attr level="1" name="padding-bottom">
+	
+			<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	 </attr>
+	<attr level="1" name="padding-left"> 
+			<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	</attr>
+	<attr level="1" name="padding-right">
+			<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	 </attr>
+	<attr level="1" name="padding-top">
+	
+			<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value value="none">default</value>
+	
+	 </attr>
+	<attr level="2" name="bottom"> 
+	
+				<value unit='px|cm|pt|%' >param_1|param_2|param_3|param_4</value>
+		<value >inherit</value>
+		<value >auto</value>
+		<value value="none">default</value>
+	
+	
+	</attr>
+	<attr level="1" name="clear">
+	
+	<value attrnamevalue="left|right|both|none"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	 </attr>
+	<attr level="2" name="clip"> 
+	
+	<value >inherit</value>
+		<value >auto</value>
+	</attr>
+	<attr level="2" name="cursor">
+	<value type="fun" >url</value>
+	<value attrnamevalue="default|crosshair|pointer|move|e-resize|ne-resize|nw-resize|n-resize|se-resize|sw-resize|s-resize|w-resize|text|wait|help"  flag="0" >ATTNAME</value>	
+	<value >auto</value>
+	
+	 </attr>
+	<attr level="1" name="display"> 
+		<value attrnamevalue="none|block|inline|inline-block|list-item|run-in|compact|marker|table|inline-table|table-row-group|table-header-group|table-footer-group|table-row|table-column-group|table-column|table-cell|table-caption"  flag="0" >ATTNAME</value>	
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="float">
+	
+	<value attrnamevalue="left|right|none"  flag="0" >ATTNAME</value>	
+	
+		<value >inherit</value>
+	 </attr>
+	<attr level="2" name="left">
+	
+			<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value >auto</value>
+	 </attr>
+	<attr level="2" name="overflow">
+	
+		<value attrnamevalue="visible|hidden|scroll|auto"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	 </attr>
+	<attr level="2" name="position">
+	
+		<value attrnamevalue="absolute|fixed|relative|static"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	 </attr>
+	<attr level="2" name="right">
+	
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value >auto</value>
+	
+	 </attr>
+	<attr level="2" name="top"> 
+		<value unit='px|cm|pt|%' >param_1</value>
+		<value >inherit</value>
+		<value >auto</value>
+	
+	</attr>
+	<attr level="1" name="vertical-align">
+	<value >inherit</value>
+	<value unit='px|cm|pt|%' >param_1</value>
+	<value attrnamevalue="baseline|sub|super|top|text-top|middle|bottom|text-bottom"  flag="0" >ATTNAME</value>	
+	 </attr>
+	<attr level="2" name="visibility">
+	
+		<value attrnamevalue="visible|hidden|collapse"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	
+	 </attr>
+	<attr level="2" name="z-index"> 
+		<value  >param_1</value>
+		<value >inherit</value>
+		<value >auto</value>
+	</attr>
+	<attr level="2" name="orphans"> 
+	
+	
+	
+	</attr>
+	<attr level="2" name="page-break-after"> 
+	
+			<value attrnamevalue="always|avoid|left|right"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	
+		<value >auto</value>
+	</attr>
+	<attr level="2" name="page-break-before">
+		<value attrnamevalue="always|avoid|left|right"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	
+		<value >auto</value>
+	
+	 </attr>
+	<attr level="2" name="page-break-inside">
+	
+		<value attrnamevalue="avoid"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	
+		<value >auto</value>
+	
+	
+	 </attr>
+	<attr level="2" name="widows"> </attr>	
+	<attr level="2" name="border-collapse"> 
+	
+		<value attrnamevalue="separate|collapse"  flag="0" >ATTNAME</value>	
+	<value >inherit</value>
+	
+	
+	</attr>
+	<attr level="2" name="border-spacing">
+	<value unit='px|cm|pt|%' >param_1|param_2</value>
+	<value >inherit</value>
+	 </attr>
+	<attr level="2" name="caption-side">
+		<value attrnamevalue="top|bottom"  flag="0" >ATTNAME</value>
+		<value >inherit</value>	
+	 </attr>
+	<attr level="2" name="empty-cells">
+	
+	<value attrnamevalue="hide|show"  flag="0" >ATTNAME</value>
+		<value >inherit</value>	
+	</attr>
+	<attr level="2" name="table-layout"> 
+	<value attrnamevalue="automatic|fixed"  flag="0" >ATTNAME</value>
+		<value >inherit</value>	
+	
+	</attr>
+	<attr level="1" name="color"> 
+	
+			<value attrnamevalue="red"  flag="0" >ATTNAME</value>	
+		<value >hex</value>	
+		<value type="fun">rgb</value>
+		<value >inherit</value>	
+		<value >transparent</value>
+	
+	
+	</attr>
+	<attr level="2" name="direction">
+		<value attrnamevalue="ltr|rtl"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	
+	 </attr>
+	<attr level="1" name="letter-spacing"> 
+	
+	<value attrnamevalue="normal"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	<value >param_1</value>
+	</attr>
+	<attr level="1" name="line-height">
+	
+	<value attrnamevalue="normal"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	<value  unit='px|cm|pt|%' >param_1</value>
+	
+	 </attr>
+	<attr level="1" name="text-align">
+	
+	<value attrnamevalue="left|right|center|justify"  flag="0" >ATTNAME</value>
+	
+	 </attr>
+	<attr level="1" name="text-decoration">
+		<value attrnamevalue="none|underline|overline|line-through|blink"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	 </attr>
+	<attr level="1" name="text-indent">
+	
+			<value >inherit</value>
+	<value  unit='px|cm|pt|%' >param_1</value>
+	 </attr>
+	<attr level="2" name="text-shadow"> 
+		<value attrnamevalue="none|capitalize|uppercase|lowercase"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="text-transform">
+
+<value attrnamevalue="none|capitalize|uppercase|lowercase"  flag="0" >ATTNAME</value>
+		<value >inherit</value>
+</attr>
+	<attr level="2" name="unicode-bidi">
+	
+	
+	
+	 </attr>
+	<attr level="1" name="white-space"> 
+	
+	<value attrnamevalue="normal|pre|nowrap|pre-wrap|pre-line"  flag="0" >ATTNAME</value>
+	<value >inherit</value>
+	</attr>
+	<attr level="1" name="word-spacing">
+	
+		<value >inherit</value>
+	<value  >param_1</value>
+	<value attrnamevalue="normal"  flag="0" >ATTNAME</value>
+	 </attr>
+	<attr level="3" name="hanging-punctuation"> 
+	
+	<value attrnamevalue="none|first|last|allow-end|force-end"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="punctuation-trim">
+	
+	<value attrnamevalue="none|start|end|allow-end|adjacent"  flag="0" >ATTNAME</value>
+	
+	 </attr>
+	<attr level="3" name="text-align-last"> 
+	
+	
+	</attr>	
+	<attr level="3" name="text-emphasis"> 
+	
+	<value attrnamevalue="text-emphasis-style|text-emphasis-color"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="text-justify">
+	<value attrnamevalue="auto|inter-word|inter-ideograph|inter-cluster|distribute|kashida|trim"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="text-outline"> 
+	
+	<value attrnamevalue="thickness|blur|color"  flag="0" >ATTNAME</value>
+	</attr>
+	<attr level="3" name="text-overflow"> 
+	
+	<value attrnamevalue="clip|ellipsis|string"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="text-shadow"> 
+	
+	<value >param_2|param_3|param_4</value>
+	
+	</attr>
+	<attr level="3" name="text-wrap">
+	
+	<value attrnamevalue="normal|none|unrestricted|suppress"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="word-break"> 
+	<value attrnamevalue="normal|break-all|keep-all"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="word-wrap"> 
+	
+	<value attrnamevalue="normal|break-word"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="transform">
+		
+	
+	 </attr>
+	<attr level="3" name="transform-origin"> </attr>
+	<attr level="3" name="transform-style"> </attr>
+	<attr level="3" name="perspective"> 
+	
+		<value >param_1</value>
+		<value >none</value>
+	
+	</attr>
+	<attr level="3" name="perspective-origin"> 
+	
+	
+	</attr>
+	<attr level="3" name="backface-visibility">
+	
+	<value attrnamevalue="visible|hidden"  flag="0" >ATTNAME</value>
+	
+	 </attr>
+	<attr level="3" name="transition">
+	
+	<value attrnamevalue="transition-property|transition-duration|transition-timing-function|transition-delay"  flag="0" >ATTNAME</value>
+	
+	 </attr>
+	<attr level="3" name="transition-property">
+		<value attrnamevalue="none|all|property"  flag="0" >ATTNAME</value>
+
+	</attr>
+	<attr level="3" name="transition-duration"> 
+	
+	<value >param_1</value>
+	</attr>
+	<attr level="3" name="transition-timing-function">
+	<value attrnamevalue="linear|ease|ease-in|ease-out|ease-in-out"  flag="0" >ATTNAME</value>
+	<value type='fun'>cubic-bezier</value>
+	</attr>
+	<attr level="3" name="transition-delay"> 
+	
+	<value >param_1</value>
+	</attr>
+	<attr level="3" name="appearance"> 
+	<value attrnamevalue="normal|icon|window|button|menu|field"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="box-sizing"> 
+	
+	<value attrnamevalue=" content-box|border-box|inherit"  flag="0" >ATTNAME</value>
+	
+	</attr>
+	<attr level="3" name="icon"> 
+	<value >auto</value>
+	<value type="fun">url</value>
+	<value >inherit</value>
+	
+	</attr>
+	<attr level="3" name="nav-down"> 
+		<value >auto</value>
+	<value >inherit</value>
+	<value >param_1</value>
+	</attr>
+	<attr level="3" name="nav-index">
+			<value >auto</value>
+	<value >inherit</value>
+	<value >param_1</value>
+	 </attr>
+	<attr level="3" name="nav-left"> 
+	
+			<value >auto</value>
+	<value >inherit</value>
+	<value >param_1</value>
+	</attr>
+	<attr level="3" name="nav-right"> 
+	
+				<value >auto</value>
+	<value >inherit</value>
+	<value >param_1</value>
+	</attr>
+	</attr>
+	<attr level="3" name="nav-up">
+	
+				<value >auto</value>
+	<value >inherit</value>
+	<value >param_1</value>
+	</attr>
+	
+	
+	</attr>
+	<attr level="3" name="outline-offset">
+
+	<value >inherit</value>
+	<value >param_1</value>
+
+</attr>
+	<attr level="3" name="resize"> 
+	
+	<value attrnamevalue=" none|both|horizontal|vertical"  flag="0" >ATTNAME</value>
+	
+	</attr>
+</css>

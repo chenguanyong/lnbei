@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget>
+	<div class="dropup dropdown-preview">
+		<ul class="dropdown-menu dropdown-light">
+			<li>
+				<a href="#" tabindex="-1">Action</a>
+			</li>
+	
+			<li>
+				<a href="#" tabindex="-1">Another action</a>
+			</li>
+	
+			<li>
+				<a href="#" tabindex="-1">Something else here</a>
+			</li>
+	
+			<li class="divider"></li>
+	
+			<li class="dropup dropdown-hover">
+				<a href="#" tabindex="-1" class="clearfix">
+					<span class="pull-left">More options</span>
+	
+					<i class="ace-icon fa fa-caret-right pull-right"></i>
+				</a>
+	
+				<ul class="dropdown-menu dropdown-light">
+					<li>
+						<a href="#" tabindex="-1">Second level link</a>
+					</li>
+	
+					<li>
+						<a href="#" tabindex="-1">Second level link</a>
+					</li>
+	
+					<li>
+						<a href="#" tabindex="-1">Second level link</a>
+					</li>
+	
+					<li>
+						<a href="#" tabindex="-1">Second level link</a>
+					</li>
+	
+					<li>
+						<a href="#" tabindex="-1">Second level link</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</widget>

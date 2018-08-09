@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget name="ddd">
+	<div class="col-xs-12 col-sm-6 widget-container-col ui-sortable" id="widget-container-col-4">
+		<div class="widget-box ui-sortable-handle" id="widget-box-4">
+			<!-- #section:custom/widget-box.header.options -->
+			<div class="widget-header widget-header-large">
+				<h4 class="widget-title">Big Header</h4>
+	
+				<div class="widget-toolbar">
+					<a href="#" data-action="settings">
+						<i class="ace-icon fa fa-cog"></i>
+					</a>
+	
+					<a href="#" data-action="reload">
+						<i class="ace-icon fa fa-refresh"></i>
+					</a>
+	
+					<a href="#" data-action="collapse">
+						<i class="ace-icon fa fa-chevron-up"></i>
+					</a>
+	
+					<a href="#" data-action="close">
+						<i class="ace-icon fa fa-times"></i>
+					</a>
+				</div>
+			</div>
+	
+			<!-- /section:custom/widget-box.header.options -->
+			<div class="widget-body">
+				<div class="widget-main">
+					<p class="alert alert-info">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo massa sed ipsum porttitor facilisis.
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</widget>

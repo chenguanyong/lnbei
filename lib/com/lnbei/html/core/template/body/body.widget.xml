@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget name='body'>
+	<body class="no-skin">
+	欢迎使用Lnbei软件<a  target= "_blank" href="http://www.lnbei.xin">详情</a>
+	<div style="width:500px; height:300px;">div</div>
+	<span style="display:block;">span</span>
+	</body>
+</widget>

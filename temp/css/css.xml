@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<css>
+	<attr level="1" name="width">
+		<value >auto</value>
+		<value unit="px,cm,%">length</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background">
+		<value >auto</value>
+		<value >length</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background-color">
+		<value >hex_number</value>
+		<value type="fun">rgb</value>
+		<value >transparent</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background-position">
+		<value >top left</value>
+		<value >top center</value>
+		<value >top right</value>
+		<value >center left</value>
+		<value >center center</value>
+		<value >center right</value>
+		<value >bottom left</value>
+		<value >bottom center</value>
+		<value >bottom right</value>
+		<value >length</value>
+		<value >inherit</value>
+	</attr>
+	<attr level="1" name="background-size">
+		<value >cover</value>
+		<value unit="px,cm,%">length</value>
+		<value >contain</value>
+	</attr>	
+	<attr level="1" name="background-repeat">
+		<value >no-repeat</value>
+		<value >repeat-x</value>
+		<value >repeat</value>
+		<value >repeat-y</value>
+		<value >inherit</value>
+	</attr>	
+	<attr level="1" name="background-origin">
+		<value >padding-box</value>
+		<value >border-box</value>
+		<value >content-box</value>
+	</attr>
+	<attr level="3" name="background-clip">
+		<value >padding-box</value>
+		<value >border-box</value>
+		<value >content-box</value>
+	</attr>	
+	<attr level="1" name="background-attachment">
+		<value >scroll</value>
+		<value >fixed</value>
+		<value >inherit</value>
+	</attr>	
+	<attr level="1" name="background-image">
+		<value type="fun">url</value>
+		<value unit="px,cm,%">length</value>
+		<value >inherit</value>
+	</attr>	
+</css>

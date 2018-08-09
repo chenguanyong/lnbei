@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget name="color">
+	<div class="btn-group">
+		<a data-toggle="dropdown" class="btn btn-success dropdown-toggle col-xs-2 col-sm-2" style="padding:4px;" aria-expanded="false">
+			<span class="ace-icon fa fa-caret-down icon-on-right">vvzvzdvdf</span>
+		</a>
+		<div class="dropdown-menu dropdown-default">
+			<div id="picker" style="opacity: 1;"><div class="farbtastic"><div class="color" style="background-color: rgb(255, 94, 0);">dfafasd</div><div class="wheel"></div><div class="overlay"></div><div class="h-marker marker" style="left: 129px; top: 19px;">sdfa</div><div class="sl-marker marker" style="left: 71px; top: 99px;"></div></div></div>
+		</div>
+	</div>
+</widget>

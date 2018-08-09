@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config name="chen2" path='guanwang'>
+	<dir name="form">
+		<value filename="color.output.xml">color</value>
+		<value filename="text.output.xml">text</value>
+	</dir>
+	<dir name="image">
+		<value filename="image1.widget.xml">image1</value>
+		<value filename="image2.widget.xml">image2</value>
+	</dir>
+	<dir name="widget">
+		<value filename="panl.widget.xml">panl</value>
+		<value filename="panl1.output.xml">panl1</value>
+	</dir>
+</config>

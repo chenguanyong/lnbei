@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
+		<meta charset="utf-8"></meta>
+		<title>lnbei--快速开发平台</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"></meta>
+		<meta name="description" content="林北网 - 一个提供快速开发系统的网站"></meta>
+		<meta name="keyword" content="lnbei.com,lnbei.xin,lnbei,林北,林北网,php,cms,企业建站,官网,建站,php,admin,前端开发,快速开发平台,系统,oa,插件,商城,放心用,电子商务"></meta>
+		<link rel="stylesheet" href="/static/assets/css/bootstrap.css"></link>
+		<script type="text/javascript" src="/jquery.js"></script>
+		<script type="text/javascript" src="/js/LBParent/LB.Childen.js"></script>
+		<script type="text/javascript" src="/js/LBParent/f.js"></script>
+		<!--[if lte IE 9]>
+			<link rel="stylesheet"  class="ace-main-stylesheet" />
+			<link rel="stylesheet"  />
+		<![endif]-->
+	</head>
+</widget>

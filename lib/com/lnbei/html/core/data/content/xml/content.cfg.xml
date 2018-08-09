@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+	<db>
+		<field>table</field>
+		<field>url</field>
+		<field>title</field>
+		<field>date</field>
+		<field>id</field>
+		<field>where</field>
+		<field>10</field>
+	</db>
+	<manual>
+		<field>url</field>
+		<field>title</field>
+		<field>date</field>
+	</manual>
+	<auto>
+		<field>url</field>
+		<field>title</field>
+		<field>date</field>
+	</auto>					
+</content>

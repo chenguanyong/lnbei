@@ -1,0 +1,1 @@
+<?php namespace wechat\base; exit();?>{"jsapi_ticket":"kgt8ON7yVITDhtdwci0qeVbkSpKcJuVekyxvOm4iIL-FlvqvdvDe7b-kmU8UEfQAYYN-aAHNtOmjjSGf8VmJTg","expire_time":1494344065}

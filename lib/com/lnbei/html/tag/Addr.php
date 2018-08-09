@@ -1,0 +1,19 @@
+<?php
+use com\lnbei\html\tag\Tag;
+use com\lnbei\html\core\data\attribute\TagAttribute;
+use com\lnbei\html\core\data\css\TagCss;
+class Addr extends Tag
+{
+    //The <abbr title="People's Republic of China">PRC</abbr> was founded in 1949.
+    protected  $tag = 'addr';
+    public function __construct(TagAttribute $tagAttribute,TagCss $tagCss,$dataArray){
+        parent::__construct($tagAttribute, $tagCss, $dataArray);
+    }
+    //重画
+    public function reDraw(){
+        $html = parent::draw();
+        return $html;
+    }
+}
+
+?>

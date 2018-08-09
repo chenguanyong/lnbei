@@ -1,0 +1,2158 @@
+ <!DOCTYPE html>
+<!-- saved from url=(0033)file:///G:/t/r/htdocsj/jj/13.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>林北网-导航</title>
+
+<script type="text/javascript" src="../js/index_show.js"></script>
+<script type="text/javascript" src="../js/p.js"></script>
+<script type="text/javascript" src="../js/jstool.js">
+</script>
+
+
+<style type="text/css">
+font.user_conter_font{
+	font-size:14px;
+	font-family:Verdana, Geneva, sans-serif;
+	font-weight:200;
+	
+	
+	
+	}
+	.f{ 
+margin:0 auto;
+padding:0px;
+width:90%;
+
+	 
+	
+	list-style:none;}
+	.li{ float:left; 
+	margin:0 auto;
+	width:20%;
+		
+		
+		
+		
+		
+		
+		
+		}
+		.lii{ text-align:center;
+		border-bottom:solid 1px #000;
+		width:80px; 
+		 
+		
+		
+		
+		
+		
+		
+		
+		}
+	font.difang{ font-family:"microsoft yahei";
+	font-size:14px;
+	
+		}
+	input{
+		
+		border:1px solid #00F}
+		
+	.d{
+		list-style:none;
+		
+		line-height:20px;}	
+		.dibu_a{
+			font-family:"Arial Black", Gadget, sans-serif;
+			font-size:12px;
+			}
+.daohang_a{
+	
+	
+	font-family: SimSun,Arial;
+	font-size:16px;
+	font-weight: 900;
+	}
+	.child_daohang_table_tr_1{
+		
+		
+		
+		font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+		font-size:14px;
+		}
+
+.kuang {
+	box-sizing:border-box;
+-moz-box-sizing:border-box; /* Firefox */
+-webkit-box-sizing:border-box ; /* Safari */
+  
+ 
+	}
+
+
+</style>
+
+
+
+
+<script type="text/javascript">
+
+function daohang_init(){
+	
+var kl="";
+k1=	getCookie('username');
+
+//alert(k1);
+if(k1!=""){
+	if(k1!="you"){
+
+dologin( k1,true);
+
+}else{
+	dologin( "登陆",false);
+	
+	}
+
+	}
+	
+else {
+	ajax('sesi.php',"d","data",in_data_do,"json");
+	
+	}	
+	
+	
+	}
+
+window.onscroll = function(e){
+var e =e || window.event;
+var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+// alert(scrolltop);
+var login = document.getElementById('userlogin');
+login.style.top = scrolltop+'px';
+var nav = document.getElementById('leftnav');
+var int_nav = parseInt(scrolltop)+100;
+nav.style.top = int_nav + 'px';
+//console.log(scrolltop);
+
+}
+
+
+function mousein(sd){
+	var d=document.getElementById(sd);
+	d.style.visibility="visible";
+	document.getElementById('ddd').innerHTML="ds1236123d";
+	}
+	function mouseout(dsa){
+		var d=document.getElementById(dsa);
+	d.style.visibility="hidden";
+	document.getElementById('ddd').innerHTML="dsd123"+fr;
+		//document.getElementById(dsa).style.visibility="hidden";
+		//alert("ds");
+		}
+function dd(d){
+	//alert("123");
+	//if()
+var ds=	document.getElementById(d);
+
+	if(ds.style.display=="inline"){
+		ds.style.display="none";
+		
+		}else{
+			ds.style.display="inline";
+			
+			
+			}
+	}
+function dump_other(j){
+	var iframe=document.getElementById('iframe1');
+	
+	iframe.src=j+".html"+"?"+"id="+quanjuxinxi.id+"&"+"name"+"="+quanjuxinxi.name;
+	
+	
+	
+	}
+	//quanjuguanjian全局关键信息
+	var quanjuxinxi={
+		id:"ee",//关键值
+		name:"ee",//用户名
+		time:"ee",//时间
+		
+		
+		}
+		
+		
+		function tip(value){
+	
+	
+	//var scrolltop=document.documentElement.scrollTop||document.body.scrollTop;
+	document.documentElement.scrollTop = value;
+	document.body.scrollTop = value;
+	}
+//var xinxi=new quanjuxinxi();
+		
+
+</script>
+
+<script type="text/jscript">
+
+
+var zxjx=new Array("zo","1");
+var tijian=new Array();
+
+
+function t_click(f){
+	//alert("dd");
+	var at=$(f).attr("b");
+var div_a=$(f).parent("div").attr("y");
+var div=parseInt(div_a);
+//alert(div);
+if($(f).attr("on")=="0"){
+	var sa="[fg="+div_a+"]";
+	//alert(sa);
+	$(sa).css("background-color","#fff");
+	tijian[div]=at;
+	$(f).css("background","#aaa");
+	$(f).attr("on","1");
+	}else{
+		
+		tijian[div]="a";
+		$(f).css("background-color","#fff");
+		$(f).attr("on","0");
+		
+		
+		}
+tj($("#syy").attr("num"));
+
+
+	}
+
+
+
+
+
+
+
+function tj(re){
+	var d=0;
+	var xml=new writexml();
+	xml.startelement('root');
+	xml.startelement("handle");
+	xml.element("name","9");
+	xml.element("error","2");
+	xml.element("handle_type","3");
+	xml.endelement("handle");
+	xml.startelement("bordy");
+	
+	for(d in tijian){
+		
+	xml.startelement("un"+d)
+	xml.element("name",d);
+	xml.element("data",tijian[d]);
+	xml.element("type","3");
+	xml.endelement("un"+d);	
+		
+		}
+		var f=parseInt(d)+1;
+	xml.startelement("un"+f)
+	xml.element("name",zxjx[0]);
+	xml.element("data",zxjx[1]);
+	xml.element("type","3");
+	xml.endelement("un"+f);		
+	f+=1;
+	xml.startelement("un"+f)
+	xml.element("name","baoyou");
+	xml.element("data",bhy[0]);
+	xml.element("type","3");
+	xml.endelement("un"+f);	
+	f+=1;
+	xml.startelement("un"+f)
+	xml.element("name","huodao");
+	xml.element("data",bhy[1]);
+	xml.element("type","3");
+	xml.endelement("un"+f);	
+	f+=1;
+	xml.startelement("un"+f)
+	xml.element("name","youhuo");
+	xml.element("data",bhy[2]);
+	xml.element("type","3");
+	xml.endelement("un"+f);	
+	f+=1;
+	xml.startelement("un"+f)
+	xml.element("name","pici");
+	xml.element("data",$("#data").attr("pici"));
+	xml.element("yeshu",re);
+	xml.endelement("un"+f);
+	
+	xml.endelement("bordy");
+	xml.endelement("root");
+	var dd=xml.savexml();
+	//alert(dd);
+	document.write(dd);
+	function callback(d){
+		//alert(d);
+		//document.write(d);obj.hand.size
+		var obj = eval ("(" + d + ")");
+		for(var i=0;i<8;i++){
+		var oj=eval("obj.un"+0);
+		if(oj.shop_link!="kong"){
+			//cretetabl1e([oj.soure,oj.ip,oj.city,oj.link_,oj.clicks]);
+		//create_serch([oj.name,oj.link1,oj.data,oj.time]);
+			createshop([oj.follow,oj.name,oj.username,oj.price,oj.shop_link]);
+			}
+			
+			else
+			{
+		//	create_serch(['b','b','暂时没有相关信息',' b']);	
+				alert(d);
+				}
+		
+		
+		}
+		
+		
+		
+		
+		
+		}
+	
+	
+	//ajax('login/login_one.php',"xml",d,callback,"text");
+	$.post('/jj/s/shopitm/xin.php',{"xml":dd},callback,"text");
+	
+	
+	}
+
+
+
+
+function submit_shop(){
+	
+	
+var xml=new writexml();
+	xml.startelement('root');
+	xml.startelement("handle");
+	xml.element("name","1");
+	xml.element("error","2");
+	xml.element("handle_type","3");
+	xml.endelement("handle");
+	xml.startelement("bordy");
+	
+	xml.startelement("un1")
+	xml.element("name","serch_keyword");
+	xml.element("data",document.getElementById('serch_keyword').value);
+	xml.element("type","3");
+	xml.endelement("un1");
+	
+	xml.startelement("un2")
+	xml.element("name","hiden");
+	xml.element("data",document.getElementById('hiden').value);//ID值
+	xml.element("type","3");
+	xml.endelement("un2");
+	
+	xml.endelement("bordy");
+	xml.endelement("root");
+	var d=xml.savexml();//	
+alert(d);
+	function callback(d){
+		//alert(d);
+		//document.write(d);obj.hand.size
+		var obj = eval ("(" + d + ")");
+		
+		if(oj.classify!=""){
+			var d0=oj.classify.condition;
+			for(var i=0;i<d0.length;i++){
+				
+				tijian[i]="a";
+				
+				}
+			$("#data").attr("num",oj.classify.id[0]);
+			
+			create([0,oj.classify.condition[0]],oj.classify.brand);//
+			create([1,oj.classify.condition[1]],oj.classify.prices);
+			
+			
+			}
+		
+		
+		
+		for(var i=0;i<8;i++){
+		var oj=eval("obj.un"+0);
+		if(oj.shop_link!="kong"){
+			//cretetabl1e([oj.soure,oj.ip,oj.city,oj.link_,oj.clicks]);
+		//create_serch([oj.name,oj.link1,oj.data,oj.time]);
+			createshop([oj.follow,oj.name,oj.username,oj.price,oj.shop_link]);
+			}
+			
+			else
+			{
+		//	create_serch(['b','b','暂时没有相关信息',' b']);	
+				//alert(d);
+				}
+		
+		
+		}
+		
+		
+		
+		
+		
+		}
+	
+	
+	//ajax('login/login_one.php',"xml",d,callback,"text");
+	$.post('/jj/s/s_shop.php',{"xml":d},callback,"text");
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
+
+
+function serch(){
+	
+	
+	var g=document.getElementById("serch_keyword");
+	if(g.value==""){
+		alert('dssf');
+		return false;
+	
+		}else {
+			
+			submit_shop();
+			
+			}
+	
+	}
+
+
+
+
+</script>
+
+
+
+</head>
+<style type="text/css">
+
+.left_item{ display:block; padding:2px 3px; border-bottom: 1px #fff solid}
+.left_no_border{ border-bottom: 0px #fff solid}
+.lefts{text-decoration:none;     font-style: normal; display:block; color:#fff; font-size:16px; font-family:"Microsoft YaHei UI"; text-align:center; padding:1px;}
+</style>
+<body  class="kuang" style="padding:0px; margin:0; min-width:800px; background-color: #f5f5f5;" onload="daohang_init()">
+<div  id="leftnav" style="width:50px; height:540px; margin-left:10px;  position:absolute; top:100px; background-color:#6cc"><div><a onClick="tip(500)" class="left_item"><em class="lefts">1F</em><em class="lefts">科技</em></a></div>
+<div><a onClick="tip(500)" class="left_item"><em class="lefts">2F</em><em class="lefts">娱乐</em></a></div>
+<div><a onClick="tip(800)" class="left_item"><em class="lefts">3F</em><em class="lefts">新闻</em></a></div>
+<div><a onClick="tip(1100)" class="left_item"><em class="lefts">4F</em><em class="lefts">军事</em></a></div>
+<div><a onClick="tip(1400)" class="left_item"><em class="lefts">5F</em><em class="lefts">文化</em></a></div>
+<div><a onClick="tip(1700)" class="left_item"><em class="lefts">6F</em><em class="lefts">体育</em></a></div>
+<div><a onClick="tip(2000)" class="left_item"><em class="lefts">7F</em><em class="lefts">创业</em></a></div>
+<div><a onClick="tip(2800)" class="left_item"><em class="lefts">8F</em><em class="lefts">新奇</em></a></div>
+<div><a onClick="tip(3200)" class="left_item"><em class="lefts">9F</em><em class="lefts">购物</em></a></div>
+<div><a onClick="tip(3500)" class="left_item"><em class="lefts">10F</em><em class="lefts">文明</em></a></div>
+<div><a onClick="tip(0)" class="left_item left_no_border"><em class="lefts">返回</em><em class="lefts">顶部</em></a></div>
+</div>
+<div class="userlogin" id="userlogin" style="position: absolute; background-color: #66cccc; border: 1px solid #00F; margin: 0; padding: 0px; min-width: 800px; height: 25px; width: 99.7%; "> 
+<div class=" difang" id="top_login_p" style=" border:0px solid #000; margin:0; padding:0px; height:20px; float:left; width:50% ">
+  
+  <div class=" kuang  " id="top_login_id" style=" margin-left:20%; float:left; top:2px; padding:0px; width:100px;   ">
+  
+  <font class="user_conter_font"><a style=" padding:3px; width:50px; display:inline; cursor:pointer; height:40px;" href="../../lo/Login.html" id="login_id_a1">登录</a></font>
+  <font class="user_conter_font"><a id="reg_login" href="javascript:Sign_out(&#39;#reg_login&#39;);">注册</a></font>
+  
+  </div>
+  
+  
+  
+  
+  <div class="kuang" style=" float:left; height:25px; width: 100px; background-color:#CFF">
+  <div onclick="pd_c();" id="weizhi" style="  height:25px; width: 100px; background-color:#CFF">位置：林州</div>
+  
+  <div id="prive" style="clear:both; width:100px; visibility: hidden ;display:list-item; list-style:none; border:solid 1px #FFFFFF; background-color:#fff;  height:auto; text-align:center"> 
+  
+  <div id="henan" name="pro" onclick="province(&#39;#henan&#39;,&#39;#henan_&#39;)" style="  margin-left:5px; margin-right:5px; line-height:20px; display:inline-block">河南</div>
+   <div name="pro" id="shandong" onclick="province(&#39;#shandong&#39;,&#39;#shandong_&#39;)" style=" margin-left:5px; margin-right:5px; line-height:20px; display:inline-block">山东</div>
+  <div style="margin-left:5px; margin-right:5px; line-height:20px; display:inline-block">河南</div>
+   <div style=" margin-left:5px; margin-right:5px; line-height:20px; display:inline-block">河南</div>
+  
+  </div>
+ 
+  
+  
+  
+  </div>
+  <script type="text/javascript">
+ function pd_c(){
+	var fd= $('#prive').css("visibility");
+	 if(fd=="hidden")
+	 {
+		 $('#prive').css("visibility","visible");
+		 }else{
+			 
+			  $('#prive').css("visibility","hidden");
+			  $('#city').css("visibility","hidden");
+			  $("[name='city']").css("visibility","hidden");
+			 }
+	 
+	 
+	 }
+  function province(id,id1){
+	
+	 var fd= $(id).css("visibility");//父
+	 var fd1= $(id1).css("visibility");//子
+	 // alert(fd1);
+	 if(fd1=="hidden" ) {
+		//  alert("1");
+		  $(id).css("background-color","#586965");
+		
+		$("[name='city']").css("visibility","hidden");	
+			$(id1).css("visibility","visible");
+			$('#city').css("visibility","visible");
+			
+		 }else{
+			///  alert("2");
+			   $('#city').css("visibility","hidden");
+			$(id1).css("visibility","hidden"); 
+			// $(id).css("background-color","#aaa");
+			 $("[name='pro']").css("background-color","#fff");
+
+			 }
+	  
+	  
+	  
+	  
+	  
+	  }
+	  function city(id){
+		  
+		  $('#weizhi').text("位置:"+$(id).text());//改变位置
+		  
+		pd_c();
+		 window.location=http+"dump/jump.php?jp="+$(id).attr('num');
+		  
+		  
+		  }
+  
+  
+  
+  </script>
+ 
+  <div class="kuang" style=" float:left; height:25px; width: 100px;"><div style=" height:25px; width: 100px; "></div>
+  
+  <div id="city" style="clear:both; display:list-item; width:100px; border:solid 1px #FFFFFF; list-style:none; height:auto; background-color:rgba(236, 236, 241); visibility:hidden"> 
+  <div name="city" id="henan_" style="position:absolute;visibility:hidden; background-color:#fff;  width:100px;">
+  <div onclick="city(&#39;#anyang&#39;)" num="12" id="anyang" style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 安阳</div>
+  <div style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 安阳</div>
+  <div style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 安阳</div>
+  </div>
+  
+  <div name="city" id="shandong_" style="position:absolute; width:100px; background-color:#fff; visibility:hidden">
+  <div style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 临阳</div>
+  <div style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 临阳</div>
+  <div style="display:inline-block;margin-left:5px; margin-right:5px; line-height:20px; "> 临阳</div>
+  </div>
+  
+  
+  
+  
+  
+  </div>
+ 
+  
+  
+  
+  </div>
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+  
+  </div>
+  
+ 
+  
+  
+  
+ 
+  
+  
+<div class="kuang" style="  padding:0px; margin:0 ; border:solid 0px #000000; height:20px; float:right; width:40%">
+<script type="text/javascript">
+//alert("denglu");
+//dologin("fffff",false);
+function dologin( id1,den){
+	
+	if(den){
+	
+	$('#login_id_a1').text(id1);
+	$('#reg_login').text('退出');
+	$('#login_id_a1').attr("login",den);
+	$('#reg_login').attr("login",den);
+	
+	}else{
+		$('#login_id_a1').text(id1);
+	$('#reg_login').text('注册');
+	$('#login_id_a1').attr("login",den);
+	$('#reg_login').attr("login",den);
+	
+		
+		
+		}
+		
+		}
+
+function Sign_out(id){
+
+	var fd=$(id).attr("login");
+	//alert(fd);
+	if(fd!="false"){
+		socket_send();//退出
+		//$(id).attr("href",http+"dump/jump.php?jp=11");
+		}
+	
+	else{
+		//$(id).attr("href",http+"dump/jump.php?jp=11");
+		//alert("zhixing");
+		window.location=http+"lo/reger.html";
+		
+		}
+	
+	
+	//return false;
+	
+	}
+	function socket_send(){
+		
+	
+	//ajax('login/login_one.php',"xml",d,callback,"text");
+	$.post('/jj/login/sign_out.php',{"id": getCookie('id'),"username":getCookie('username')});
+	
+	$('#login_id_a1').text("登录");
+	$('#reg_login').text('注册');
+	$('#login_id_a1').attr("login",false);
+	$('#reg_login').attr("login",false);	
+	$('#user_login_id').css("visibility","visible");	
+		
+		}
+
+
+function init(){
+	//alert("d1");
+	var href=getdata(location.href);
+	if(href==null){
+		//alert("d");
+		return false;
+		}
+		var d=href.length/2;
+	for(var i=0; i<d;i++){
+		
+		if(href[i]=="jump"){
+			//alert(href[i+1]);
+			
+			switch(href[i+1]){
+				case "0":{dump_other('base_user');}break;
+				case "1":{dump_other('chagemail');}break;
+				case "2":{dump_other('fixpower1');}break;
+				case "3":{dump_other('sofa');}break;
+				case "4":{dump_other('user_ziliao');}break;
+				case "5":{dump_other('work');}break;
+				case "6":{dump_other('shishi');}break;
+				case "7":{dump_other('bubiao');}break;
+				case "8":{dump_other('mylink');}break;
+				case "9":{dump_other('myspread');}break;
+				case "10":{dump_other('mypay');}break;
+				case "11":{dump_other('paypower');}break;
+				case "12":{dump_other('fixpaypower');}break;
+				case "13":{dump_other('trander');}break;
+				case "14":{dump_other('shopcenter');}break;
+				case "15":{dump_other('myorder');}break;
+				case "16":{dump_other('clict');}break;
+				
+				}
+			}
+	
+		}
+	}
+
+
+</script>
+
+
+<div class=" kuang" id="uer_select1" onmouseout="mouseout('ds','#uer_select1');" style=" float:left; border:solid 0px #FF0000; width:80px">
+
+<div id="ff" class="user_conter" style=" padding:3px 3px; text-align:center;  " onmouseover="mousein('ds','#uer_select1');"> 
+<a href="javascript:jump_w(&#39;0&#39;)" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的林北</a></div>
+<div class="userconter_data" id="ds" onmouseover="mousein('ds','#uer_select1');" style="margin: 0px; line-height:20px;  visibility: hidden; padding: 0px;"> 
+
+<div class=" userconter_data_1" id="userconter_data_1" style="text-align:center; margin:0; padding:0px;">
+<a href="javascript:jump_w(15)" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的订单</a>
+</div>
+<div style=" margin:0; padding:0px; text-align:center;"><a href="javascript:jump_w(9)" style="font-size:14px; font-family:'Microsoft YaHei UI'; display:block">我的推广</a></div>
+<div style=" margin:0; padding:0px; text-align:center;"><a href="javascript:jump_w(10)" style="font-size:14px; font-family:'Microsoft YaHei UI'; display:block">我的财富</a></div>
+
+
+
+<script type="text/javascript">
+
+function jump_w(gh){
+	window.location=http+"u/?jump="+gh;
+	//alert("sd");
+	/*//var fu= $('#reg_login').attr("login");
+	//alert("dfsf"+fu);
+	if(fu=="true"){
+window.location=http+"u/?jump="+gh;	
+	}else {
+		alert("请先登录！！");
+		return;
+		}*/
+	}
+
+
+
+</script>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+<div id="mytesk" onmouseout="mouseout('ds1','#mytesk'); " style="  border:solid 0px #FF0000; text-align:center;padding-top:5px; margin:0; padding:0px; float:left; width:80px">
+<div id="ff1" class="user_conter" style="text-align:center; padding:3px 3px;" onmouseover="javascript:mousein('ds1','#mytesk');"> 
+<a href="../task/index.html" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的任务</a></div>
+<div class="userconter_data" id="ds1" onmouseover="javascript:mousein('ds1','#mytesk');" style="border:0px dotted #03F; line-height:20px; visibility:hidden; margin:0; padding:0px;">
+
+<div class=" userconter_data_1"  style="text-align:center; margin:0; padding:0px;">
+<a href="javascript:jump_c(&#39;&#39;);" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的信息</a>
+</div>
+<div style="margin:0; padding:0px;text-align:center;"><a href="javascript:jump_c(&#39;&#39;);" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的订单</a></div>
+
+
+
+</div>
+</div>
+<script type="text/javascript">
+
+
+function jump_c(gh){
+	var fu= $('#reg_login').attr("login");
+	//alert("dfsf"+fu);
+	if(fu=="true"){
+window.location=http+"/task/?jump="+gh;	
+	}else if(fu=="false"){
+		alert("请先登录！！");
+		return;
+		}
+	}
+
+
+
+
+
+
+
+
+</script>
+
+
+<div id="clictserver" onmouseout=" javascript:mouseout('ds2','#clictserver');" style=" border:solid 0px #FF0000; margin:0; padding:0px;text-align:center; float:left; width:80px">
+<div  class="user_conter" style="height:25px;text-align:center; padding-top:2px" onmouseover="javascript:mousein('ds2','#clictserver');"> 
+<a href="javascript:jump_k(&#39;kehu&#39;);" id="kehu" target="_blank" style="font-size:14px; font-family:'Microsoft YaHei UI';">客户服务</a></div>
+<div class="userconter_data" id="ds2" onmouseover="javascript:mousein('ds2','#clictserver');" style="visibility: hidden; margin: 0px; padding: 0px;">
+
+<div class=" userconter_data_1"  style="text-align:center; margin:0; padding:0px;">
+<a href="javascript:jump_k(&#39;my&#39;);" id="my" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的信息</a>
+</div>
+<div style=" margin:0; padding:0px;text-align:center;"><a href="javascript:jump_k(&#39;dd&#39;);" id="dd" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的订单</a></div>
+
+<script type="text/javascript">
+//客户服务
+function jump_k(gh){
+	
+	
+window.location=http+"client/client.html?jump="+gh;	
+	
+	}
+
+
+
+
+
+
+</script>
+
+
+</div>
+</div>
+
+
+ 
+ 
+ 
+ 
+
+<div id="sitedh" onmouseout=" javascript:mouseout('ds3','#sitedh');" style="border: solid 0px  #0FF; margin:0; padding:0px; float:left; width:80px">
+<div  class="user_conter" style="height:25px;text-align:center; padding-top:2px" onmouseover="javascript:mousein('ds3','#sitedh');"> 
+<a href="javascript:jump_s(&#39;&#39;);" style="font-size:14px; font-family:'Microsoft YaHei UI';">网站导航</a></div>
+<div class="userconter_data" id="ds3" onmouseover="javascript:mousein('ds3','#sitedh');" style="border: 0px dotted rgb(0, 51, 255); visibility: hidden; margin: 0px; padding: 0px;">
+
+<div class=" userconter_data_1"  style="border:0px dotted #03F;text-align:center; margin:0; padding:0px;">
+<a href="javascript:jump_s(&#39;&#39;);" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的信息</a>
+</div>
+<div style="border:0px dotted #03F; margin:0; padding:0px;text-align:center;"><a href="javascript:jump_s(&#39;&#39;);" style="font-size:14px; font-family:'Microsoft YaHei UI';">我的订单</a></div>
+<script type="text/javascript">
+
+function jump_s(gh){
+	var fu= $('#reg_login').attr("login");
+	//alert("dfsf"+fu);
+	if(fu=="true"){
+window.location=http+"daohang/sitedaohang.html?jump="+gh;	
+	}else if(fu=="false"){
+		alert("请先登录！！");
+		return;
+		}
+	}
+
+
+
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div style="  padding:0px; margin-bottom:4px; top:0px; z-index:80; width:99%; height:20px">
+
+
+</div>
+
+
+
+
+
+<div class="main" id="main_id" style=" min-width:800px; margin:0; padding:0px">
+<div style=" margin:0 auto; border:1px solid  #6cc; width:80% ; min-width:800px;">
+
+<div class="logo_div" id="logo_id" style="background-color: #6cc; width:100%; height:65px;"> <a target="_blank" href="javascript:h();" style="margin:0; padding:0; ">
+<img style="vertical-align:middle; float:left; border:1px solid #000; margin:0; padding:0px;" id="logo_img_id" class="logo_img" src="../image/user_image/logo.gif">
+</a>
+
+<div style=" padding-top:15px; height:50px; width:58%; border:solid #03F 0px;  float:left; text-align:center ">
+
+  <input class="serch_keyword1" id="serch_keyword" name="keyword" style="padding:0px; border:solid 1px #03F; width:250px; margin:0; height:30px" type="text"    />
+  <button class="serch_button1" id="serch_button_in" style="padding:0px; margin:0; width:80px; height:30px"  onclick="serch();">搜索</button>
+<input type="button"  class="shuru" name="ww" id="hiden"  value="ff" style="visibility:hidden; display:none" />
+</div>
+
+
+</div>
+<script type="text/javascript">
+
+function h(){
+	
+	window.location=http;
+	}
+</script>
+
+
+
+<div class="daohang" id="dahang_id" style="clear:both; background-color:#FFF">
+<table class="daohang_table" id="daohang_table_id" onmousemove="on_show()" onmouseout="on_hide()" style="border-radius:5px;border: 1px solid #03F;padding:0px; background-color: #6cc; margin:0;width:100%;text-align:center;z-index:99;">
+<tr class="one_select_tr" id="one_select_tr_id">
+<td class="shouye" style="width:20%;  text-align:center;" nu="0" onMouseOver="on_over(this)" id="home"><a class="daohang_a" href="index.html">首页</a></td>
+<td class="shouye" style="width:20%;  text-align:center; " onMouseOver="on_over(this)"  nu="1" id="shoping"><a class="daohang_a" href="../home/s_shop/index.html">商城</a></td>
+<td class="shouye" style="width:20%; text-align:center;" onMouseOver="on_over(this)" nu="2" id="serch"><a class="daohang_a" href="../serch/index.html">寻找</a></td>
+<td class="shouye" style="width:20%; text-align:center;" onMouseOver="on_over(this)" nu="3" id="news"><a class="daohang_a" href="../home/s_home/index.html">快报</a></td>
+<td class="shouye" style="width:20%; text-align:center;" onMouseOver="on_over(this)" nu="4" id="client"><a class="daohang_a" href="../client/client.html">客户</a></td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="kuang" onmousemove="on_show()" style="height:2px; clear:both; width:100%"></div>
+<div class="kuang"  id="fd" onmouseover="on_show1()" onmouseout="on_hide()" style="display: none; position: absolute; margin: 0 auto; z-index: 1000; width: 80%; height: 136px; min-width:640px; background-color: rgb(255, 255, 255);">
+
+<div class="kuang" num="0" onMouseOver="on_over(this)" style="width:20%; float:left; background-color:#f1f1f1; height:135px;">
+
+<ul class="kuang"  style=" margin-top:10px; width:100%;  padding:0; line-height:25px;">
+
+
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; ">游戏</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">邮箱</a></li>
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  font-size:14px; font-family:'Microsoft YaHei UI';  text-align:right; ">网站</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">网络</a></li>
+</ul>
+
+
+</div>
+
+<div class="kuang" num="1" onMouseOver="on_over(this)"  style="width:20%; float:left; border:solid 0px #0000FF; height:135px;">
+<ul class="kuang"  style=" margin-top:10px; width:100%;  padding:0; line-height:25px;">
+
+
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; ">游戏</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">邮箱</a></li>
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  font-size:14px; font-family:'Microsoft YaHei UI';  text-align:right; ">网站</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">网络</a></li>
+</ul>
+
+
+</div>
+
+<div class="kuang" num="2"  onMouseOver="on_over(this)" style="width:20%; float:left; border:solid 0px #0000FF; height:135px;">
+
+<ul class="kuang"  style=" margin-top:10px; width:100%;  padding:0; line-height:25px;">
+
+
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; ">游戏</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">邮箱</a></li>
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  font-size:14px; font-family:'Microsoft YaHei UI';  text-align:right; ">网站</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">网络</a></li>
+</ul>
+
+</div>
+<div class="kuang" num="3"  onMouseOver="on_over(this)" style="width:20%; float:left; border:solid 0px #0000FF; height:135px;">
+
+<ul class="kuang"  style=" margin-top:10px; width:100%;  padding:0; line-height:25px;">
+
+
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; ">游戏</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">邮箱</a></li>
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  font-size:14px; font-family:'Microsoft YaHei UI';  text-align:right; ">网站</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">网络</a></li>
+</ul>
+
+</div>
+<div class="kuang"  num="4" onMouseOver="on_over(this)" style="width:20%; float:left; border:solid 0px #0000FF; height:135px;">
+
+<ul class="kuang"  style=" margin-top:10px; width:100%;  padding:0; line-height:25px;">
+
+
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; ">游戏</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">邮箱</a></li>
+<li class="kuang" style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block; float:right; margin-right:15px;  font-size:14px; font-family:'Microsoft YaHei UI';  text-align:right; ">网站</a></li>
+<li class="kuang"  style="width:50%;   border:solid 0px #000000;  display:block; float:left;"><a style="display:block;  font-size:14px; font-family:'Microsoft YaHei UI'; margin-left:15px;">网络</a></li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+<!--ddd-->
+
+
+<div class="kuang" style="width:100%; height:800px; min-width:800px; border:0px solid #3FF; background-color:#FFF">
+<div class="kuang" style="height:30px; min-width:800px; border:solid 1px #000;">
+<ul class="kuang" style="  margin:0; padding:4px; " id="changyong">
+
+<li style="display:block; border:solid 1px #00F; text-align:center;  width:50px; float:left"><a >dsds</a></li>
+<li style="display:block; border:solid 1px #00F;  text-align:center; width:70px;  float:left">游戏</li>
+<li style="display:block; border:solid 1px #00F;  text-align:center; float:left; width:70px;">手机</li>
+<li style="display:block; border:solid 1px #00F;  text-align:center; float:left; width:70px;">机器</li>
+
+</ul>
+
+
+
+</div>
+
+<!--左边框-->
+
+<div class="kuang" style="float:left;  width:20%; border:solid 0px #0FF; height:770px;">
+<div style="display:block; margin-top:10px;  border:solid 1px #0F9; width:100%; height:200px;  ">
+
+s
+
+</div>
+
+<div class="kuang" style="display:block; margin-top:10px;  border:solid 1px #0F9; width:100%; height:200px;  ">
+
+
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+<li style="width:100%; display:block;  text-align:center"><a >林北网</a></li>
+
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+
+<!--右边框-->
+<div class="kuang" style=" float: right; width:79%;  border:solid 0px #0FF; height:770px;">
+
+
+
+<div class="kuang" style="display:block;  margin-top:10px; border:solid 1px #0F9; width:100%; height:150px;  ">
+<div>
+<ul id="site_w" style="  margin:0; padding:6px; line-height:28px; ">
+<li style="display:block; text-align:center; margin-left:20px; margin-right:20px; width:80px;  float:left"><a style="font-size:14px; font-family:'Microsoft YaHei UI'">百度•贴吧</a></li>
+<li style="display:block;  text-align:center; margin-left:20px; margin-right:20px; width:80px;  float:left"><a> <font class="difang">百度•贴吧</font></a></li>
+<li style="display:block;  text-align:center; margin-left:20px; margin-right:20px; float:left; width:80px;"><a> <font class="difang">百度•贴吧</font></a></li>
+<li style="display:block;  text-align:center; margin-left:20px; margin-right:20px; float:left; width:80px;"><a> <font class="difang">百度•贴吧</font></a></li>
+
+<li style="display:block;  text-align:center; margin-left:20px; margin-right:20px; float:left; width:100px;">添加常用网址</li>
+
+
+</ul>
+</div>
+</div>
+
+<div class="kuang" style="display:block; margin-top:10px; min-width:640px; border:solid 1px #0F9; width:100%; height:350px;  ">
+<div id="list_data" style=" list-style:none; line-height:28px;">
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:#6cc" href="game/index.html">游戏</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="game/index.html">更多</a></div>
+
+
+
+</div>
+
+<script type="text/javascript">
+
+function jump_item(g){
+	//alert(path_site);
+	window.location=path_site+"/"+$(g).attr("site_link")+".html";
+	
+	}
+
+
+</script>
+
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="new/index.html">新闻</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="new/index.html">更多</a></div>
+
+
+
+</div>
+
+
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="novel/index.html">小说</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="novel/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="Life/index.html">生活</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="Life/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="shoping/index.html">商城</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="shoping/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="tour/index.html">旅游</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="tour/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="map/index.html">地图</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="map/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="music/index.html">音乐</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="music/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="mobile/index.html">手机</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="mobile/index.html">更多</a></div>
+
+
+
+</div>
+
+</div>
+
+
+</div>
+
+<div class="kuang" style="display:block;  margin-top:10px; display:list-item; line-height:28px; list-style:none; border:solid 1px #0F9; width:100%; height:200px;  ">
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="recruit/index.html">招聘</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a   href="recruit/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="software/index.html">软件</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a   href="software/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="army/index.html">军事</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a  href="army/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style="color:  #6cc" href="bank/index.html">银行</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a   href="bank/index.html">更多</a></div>
+
+
+
+</div>
+
+<div class="kuang" style=" clear:both;  border:solid 0px #00FFFF ; width:99%; margin:0 auto; padding-top:10px">
+<div style="width:5%; border:solid 0px #0033FF; font-size:14px; font-family:'Microsoft YaHei UI'; text-align:right; float:left;"><a style=" color:  #6cc" href="car/index.html">汽车</a></div>
+<div class="kuang" style="width:89%; border:solid 0px #0033FF; float:left"  >
+<ul style=" margin:0; padding:0; list-style:none">
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+<li style="width:14%; border:solid 0px #000; text-align:right; font-size:14px; font-family:'Microsoft YaHei UI'; float:left"><a>林大幅北</a></li>
+
+</ul>
+
+</div>
+<div class="kuang" style="width:5%; border:solid 0px #0033FF; font-family:'Microsoft YaHei UI';  float:right;"><a   href="car/index.html">更多</a></div>
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+<div name='science' style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div id="keji" div_class="model:2,dataid:33,size:10;class:a@title_model,id:keji,fun:createa,tag:a,size:1;class:li@list_li#a@list_a,id:keji,tag:ul,size:10,fun:createli" style="width:100%; border-bottom:solid 1px #00CC00; "><a  class="title_model" style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul class="model_ul" id="keji_ui" style="margin:0; padding:0; line-height:28px; list-style:none">
+<li class="list_li" style="width:25%; display:block; float:left; text-align:center"><a class="list_a">林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:right; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div name="yue" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+<div name="newss" style="border:0px solid #CC6; height:300px; width:100%; clear:both; background-color:#fff">
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:35%; border:solid 0px #00F">
+
+<div style="width:98%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+<div class="kuang" style="float:left; height:300px; width:30%; border:solid 0px #00F">
+
+<div style="width:100%; border:solid 1px #00FF99; height:290px;">
+<div style="width:100%; border-bottom:solid 1px #00CC00; "><a style="display:inline-block; font-size:14px; font-family:'Microsoft YaHei UI'; padding:5px 5px;">历史</a></div>
+<ul style="margin:0; padding:0; line-height:28px; list-style:none">
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+<li style="width:25%; display:block; float:left; text-align:center"><a>林北网</a></li>
+
+
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+<!--jieshu-->
+
+
+
+<div class="dibu" style=" clear:both; margin:0 auto; display:block; padding-bottom:1px;padding-top:1px;background-color: #138e8e;border-top:solid #03F 1px;width:100%;">
+<div class=" kuang" style=" float:left"><font class="difang"><a id="difang">地方频道:</a></font></div>
+<table class="difang_tabl" style="border-collapse:collapse;">
+<tbody>
+<tr>
+<td class="difangpingdao_td" style="border-right:solid 1px #000; "><font class="difang"  style="  text-align:center"><a href="javascript:jump_p(&#39;henan_10&#39;);" id="henan_100">河南</a></font></td>
+<td class="difangpingdao_td" style="border-right:solid 1px #000; "><font class="difang"  style=" text-align:center"><a>河南</a></font></td>
+<td class="difangpingdao_td" style="border-right:solid 1px #000; "><font class="difang"  style="  text-align:center"><a>河南</a></font></td>
+</tr></tbody></table>
+
+</div>
+<script type="text/javascript">
+function  jump_p(id){
+	
+var dd=	id.indexOf('_');
+	var str=id.substr(dd+1);
+	
+	window.location=http+"channel/index.html?pd="+str;
+	}
+
+
+
+</script>
+<div style="margin:0 auto;background-color: #6cc;padding:0px;border-top:solid #03F 1px;width:100%;height:150px;">
+<div class="kuang" style="margin:0 auto; padding:0px;  margin-top:2px;width:100%">
+<ul class="f">
+
+
+<li class="li" style="float:left">
+<ul class="d">
+<li class="lii"><a class="dibu_a">新手指引</a></li>
+<li class="lii"><a class="dibu_a">支付问题</a></li>
+<li class="lii"><a class="dibu_a">成为代理</a></li>
+</ul>
+
+
+</li>
+
+<li class="li" style="float:left"> <ul class="d">
+<li class="lii"><a class="dibu_a">地区加盟</a></li>
+<li class="lii"><a class="dibu_a">校园代理</a></li>
+<li class="lii"><a class="dibu_a">免责声明</a></li>
+
+</ul>   </li>
+
+
+<li class="li" style="float:left"> <ul class="d">
+<li class="lii"><a class="dibu_a">关于支付</a></li>
+<li class="lii"><a class="dibu_a">关于商品</a></li>
+<li class="lii"><a class="dibu_a">成为供应商</a></li>
+</ul>   </li>
+
+
+<li class="li" style="float:left"> <ul class="d">
+<li class="lii"><a class="dibu_a">关于链接</a></li>
+<li class="lii"><a class="dibu_a">关于注册</a></li>
+<li class="lii"><a class="dibu_a">手机版APP</a></li>
+</ul>   </li>
+
+<li class="li" style="float:left"> <ul class="d">
+<li class="lii"><a class="dibu_a">关于链接</a></li>
+<li class="lii"><a class="dibu_a">关于注册</a></li>
+<li class="lii"><a class="dibu_a">手机版APP</a></li>
+</ul>   </li>
+
+</ul>
+</div>
+
+</div>
+<div class="zuidibu" style="margin:0 auto;background-color: #6cc;padding:0px;border-top:1px solid #03F;width:100%;text-align:center;">
+<div class="zuidibu_div" style="margin:0 auto; padding:5px;">豫ICP备案12345</div>
+<table class="zuidibu_table" style="border-collapse:collapse;  margin:0 auto; padding:3px; min-width:400px; width:30%">
+<tbody><tr><td class="zuidibu_table_td" style="border-right:solid 1px #000; "> <font class="difang"><a href="file:///G|/t/j/aboutus.html">公司简介</a></font></td>
+<td class="zuidibu_table_td" style="border-right:solid 1px #000; "> <font class="difang"><a href="file:///G|/t/j/AD.html">广告服务</a></font></td>
+<td class="zuidibu_table_td" style="border-right:solid 1px #000; "> <font class="difang"><a href="file:///G|/t/j/contactus.html">联系我们</a></font></td>
+<td class=" zuidibu_table_td" style="border-right:solid 0px #000;"><font class="difang"><a href="file:///G|/t/j/career.html">招聘精英</a></font></td>
+</tr></tbody></table>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+</body></html>

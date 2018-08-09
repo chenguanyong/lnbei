@@ -1,0 +1,65 @@
+[ 2018-07-11T10:58:43+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] lb.com/ [运行时间：0.328019s][吞吐率：3.05req/s] [内存消耗：2,332.55kb] [文件加载：47]
+[ info ] [ LANG ] E:\f\phpace_dev\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'lb.com',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => 'sss',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] E:\f\phpace_dev\public/../application/index\view\Login\login.html [ array (
+) ]
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\f\phpace_dev\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\f\phpace_dev\public/../application/index\view\Login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-07-11T10:58:50+08:00 ] 127.0.0.1 127.0.0.1 GET /favicon.ico
+[ log ] lb.com/favicon.ico [运行时间：0.193011s][吞吐率：5.18req/s] [内存消耗：1,621.45kb] [文件加载：38]
+[ info ] [ LANG ] E:\f\phpace_dev\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'lb.com',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'referer' => 'http://lb.com/lnbei.png',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'PHPSESSID=7hvk0l99dlfjs7ofs542knuao3',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
