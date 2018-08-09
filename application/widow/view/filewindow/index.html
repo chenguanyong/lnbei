@@ -1,0 +1,85 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">图片管理</h4>
+      </div>
+      <div class="modal-body">
+	      <div class="row">
+	      		<div class="col-sm-12">
+	      			<div class="tabbable">
+						<ul class="nav nav-tabs" id="myTab">
+							<li class="active">
+								<a data-toggle="tab" href="#home">
+									<i class="green ace-icon fa fa-android bigger-120"></i>
+									本地上传
+								</a>
+							</li>
+
+							<li>
+								<a data-toggle="tab" href="#tabimage">
+									<i class="green ace-icon fa fa-android bigger-120"></i>
+									图片空间
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#tabvideo">
+									<i class="green ace-icon fa fa-android bigger-120"></i>
+									本地视频
+								</a>
+							</li>
+							<li>
+								<a data-toggle="tab" href="#tabfile">
+									<i class="green ace-icon fa fa-android bigger-120"></i>
+									云文件
+								</a>
+							</li>
+						</ul>
+
+						<div class="tab-content " style="height:200px;">
+							<div id="home" class="tab-pane fade in active">
+								<div class="row">
+									<div class="col-sm-12">
+										<label class="ace-file-input ace-file-multiple">
+											<input multiple="" type="file" id="id-input-file-3">
+											<span class="ace-file-container" data-title="上传文件">
+											<span class="ace-file-name" data-title="No File ...">
+											<i class=" ace-icon ace-icon fa fa-cloud-upload"></i>
+											</span>
+											</span>
+											<a class="remove" href="#"><i class=" ace-icon fa fa-times"></i></a>
+										</label>
+									</div>
+								</div>
+							</div>
+
+							<div id="tabimage" class="tab-pane fade">
+								<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.</p>
+							</div>
+
+							<div id="tabvideo" class="tab-pane fade">
+								<p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade.</p>
+							</div>
+
+							<div id="tabfile" class="tab-pane fade">
+								<p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin.</p>
+							</div>
+						</div>
+					</div>
+	      		</div>
+	      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>

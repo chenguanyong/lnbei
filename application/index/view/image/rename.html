@@ -1,0 +1,15 @@
+     <form class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色名称</label>
+            <div class="layui-input-inline">
+                <input class="layui-input" type="text" name="title" placeholder="输入角色名称"  lay-verify="title">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit="" lay-filter="add-role" data-href="{:url('roleAdd')}">确定</button>
+                <button class="layui-btn" lay-submit="" lay-filter="add-role" data-href="{:url('roleAdd')}"><i class="fa fa-mail-reply"></i>取消</button>
+            </div>
+        </div>
+    </form>

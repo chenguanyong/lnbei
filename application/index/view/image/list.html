@@ -1,0 +1,356 @@
+{include file="public\head" /}
+{include file="public\iframe_header" /}
+<div class="row">
+<div class="col-xs-12" style=" background: #ffffaa; border: 1px #ffffaa solid">
+<div class="space-3"></div>
+<button doaction="rename" class="btn btn-sm btn-link">重命名</button>
+<button doaction="mod" class="btn btn-sm btn-link">移动</button>
+<button doaction="dele" class="btn btn-sm btn-link">删除</button>
+<button doaction="edit" class="btn btn-sm btn-link">编辑</button>
+</div>
+<div class="space-6"></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 " style="max-height:500px;overflow:auto;border-bottom: 1px solid #cccccc;sScrollY:auto">
+		<!-- PAGE CONTENT BEGINS -->
+		<div>
+		<div class="space-4"></div>
+				<ul class="ace-thumbnails clearfix">
+					<!-- #section:pages/gallery.caption -->
+					{volist name="Image" id="vo"}
+					<li data-on="off" data-id="{$vo['ID']}">
+						<a  data-rel="colorbox">
+							<img width="150" height="150" alt="150x150" src="{$Think.config.__PUBLIC__}/static/assets/images/gallery/thumb-3.jpg" />
+							<div class="text">
+								<div class="inner">{$vo['ImageName']}</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12" style="text-align:center"><a class="title" style="padding:3px 3px;">{$vo['ImageName']}</a></div>
+							</div>
+						</a>
+						
+						<div class="tools tools-bottom">
+							<a doaction="link" data-id="{$vo['ID']}">
+								<i class="ace-icon fa fa-link"></i>
+							</a>
+	
+							<a doaction="edit" data-id="{$vo['ID']}">
+								<i class="ace-icon fa fa-pencil"></i>
+							</a>
+	
+							<a doaction="dele" data-id="{$vo['ID']}">
+								<i class="ace-icon fa fa-times red"></i>
+							</a>
+						</div>
+					</li>
+					{/volist}
+					<!-- /section:pages/gallery.caption -->
+				</ul>
+		</div>
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!--  -->
+<div class="row">
+	<div class="col-xs-9"></div><div class="col-xs-3"><div id="pages"></div></div>
+</div>
+<!-- 重命名模态框 -->
+<div id="renamemodal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+
+    <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">重命名</h4>
+      </div>
+       <div class="modal-body">
+       <form class="form-horizontal">
+			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right"> 文件名 </label>
+
+				<div for="node" class="col-sm-8">
+						<input type="text" id="renametext"  placeholder="请输入文件名" class="form-control valid" aria-invalid="false">
+				</div>
+			</div>
+		</form>
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" id="renamesure" class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 移动文件 -->
+<div id="modifymodal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+
+    <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">移动</h4>
+      </div>
+       <div class="modal-body">
+	    	<div class="row">
+	          <div class="col-md-12 col-sm-12">
+		          <div style="max-height:200px; overflow: auto; sScrollX:auto;sScrollY:auto">
+		          	<ul style="font-size:8px; overflow: auto; width:100%; sScrollX:auto;sScrollY:auto" id="pictureCatalogtree" class="ztree"></ul>
+		          </div>
+	          </div>
+	        </div>
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" id="sureMove" class="btn btn-primary">移动</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{include file="public\foot" /}
+<script>
+(function ($){
+	var $scrpe = {
+			companyid:{$companyid},//当前公司ID
+			cityID:{$cityID},//当前城市ID
+			keyword:"",//当前keyword
+			type:""
+		};
+	layui.use(['laypage', 'layer'], function(){
+		  var layer = layui.layer,
+		  laypage = layui.laypage;
+		 // layer.msg($("#chen").attr("dref"));
+			//window.parent.layer = layer;
+		  $(document).on("dblclick",".ace-thumbnails.clearfix li .text ",function (){
+			  
+			layer.open({
+				  type: 1,
+				  title: false,
+				  content: $(this).parent("a").find("img"),
+				  maxmin: true
+				});
+		  });
+		  laypage({
+			    cont: 'pages'
+			        ,pages: {$count}
+			        ,groups: 2
+			        ,curr:{$page}
+			        ,first: false
+			        ,last: false
+			        ,jump: function(obj, first){
+			          if(!first){
+			        	  var url = "{:url('index/Image/getImageList')}"+"?companyID="+$scrpe.companyid+"&cityID="+$scrpe.cityID;
+			        	  if($scrpe.keyword !=""){
+			        		 url += "&keyword="+$scrpe.keyword;
+			        	  }else if($scrpe.type !=""){
+			        		 url += "&type="+$scrpe.type;
+			        	  }
+			            window.location.href=url + "&page="+obj.curr+"&num=18";
+			          }
+			        }
+			    ,prev: '<em><</em>'
+			    ,next: '<em>></em>'
+			  });
+		});
+	$(document).on("click",".ace-thumbnails.clearfix li ",function (){
+		//alert("dd");
+	  	var select = $(this).attr("data-on");
+	  	//alert(select);
+	  	if(select == "on"){
+	  		$(".ace-thumbnails.clearfix li").attr("data-on","off");
+	  	}else{
+	  		$(".ace-thumbnails.clearfix li").attr("data-on","off");
+	  		$(this).attr("data-on","on");
+	  	}
+	
+	});
+	//题首删除
+	$(document).on("click","button[doaction=dele]",function (){
+		var sub = true;
+		if($(".ace-thumbnails.clearfix [data-on=on]").length == 0){
+			layer.alert('请先选择一个', {
+				  skin: 'layui-layer-molv' //样式类名
+				  ,closeBtn: 0
+				});
+			return false;
+		}
+		var obj = $(".ace-thumbnails.clearfix [data-on=on]");
+		var id = obj.attr("data-id");
+		if(sub){
+			$.post("{:url('index/Image/deleImage')}",{id:id},function(data){
+				
+				if(data.code == 1){
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+					obj.hide();
+				}else{
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}
+		
+	});
+	//重命名
+	$(document).on("click","button[doaction=rename]",function (){
+		var sub = true;
+		if($(".ace-thumbnails.clearfix [data-on=on]").length == 0){
+			layer.alert('请先选择一个', {
+				  skin: 'layui-layer-molv' //样式类名
+				  ,closeBtn: 0
+				});
+			return false;
+		}
+		var obj = $(".ace-thumbnails.clearfix [data-on=on]");
+		var id = obj.attr("data-id");
+		$("#renamesure").attr("data-id",id);
+		$('#renamemodal').modal("show");
+	});
+	$(document).on("click","#renamesure",function (){
+		var id = $(this).data("id");
+		var ImageName = $("#renametext").val();
+		var sub = true;
+		if(sub){
+			$.post("{:url('index/Image/renameImage')}",{id:id,ImageName:ImageName},function(data){
+				
+				if(data.code == 1){
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+					});
+					$('#renamemodal').modal("hide");
+				}else{
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+					});
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}		
+		
+	});
+	//题首移动
+	$(document).on("click","button[doaction=mod]",function (){
+		if($(".ace-thumbnails.clearfix [data-on=on]").length == 0){
+			layer.alert('请先选择一个', {
+				  skin: 'layui-layer-molv' //样式类名
+				  ,closeBtn: 0
+				});
+			return false;
+		}
+		var id = $(".ace-thumbnails.clearfix [data-on=on]").attr("data-id");
+		$('#sureMove').attr("data-imgid",id);
+		$('#modifymodal').modal('show');
+		
+	});
+	//移动提交
+	$(document).on("click","#sureMove",function (){
+		var id = $(this).data("imgid");
+		var dirID = $(this).data("dirid");
+		var sub = true;
+		if(sub){
+			$.post("{:url('index/Image/moveDir')}",{id:id,dirID:dirID},function(data){
+				
+				if(data.code == 1){
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+					$('#modifymodal').modal('hide');
+				}else{
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}
+	});
+	//题首编辑
+	$(document).on("click","button[doaction=edit]",function (){
+		
+		
+		
+	});
+	//删除
+	$(document).on("click",".tools.tools-bottom [doaction=dele]",function (){
+		var obj = $(this);
+		var id = obj.attr("data-id");
+		if(sub){
+			$.post("{:url('index/Image/deleImage')}",{id:id},function(data){
+				
+				if(data.code == 1){
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+					
+				}else{
+					layer.alert(data.msg, {
+						  skin: 'layui-layer-molv' //样式类名
+						  ,closeBtn: 0
+						});
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}
+		return false;
+	});
+	//编辑
+	$(document).on("click",".tools.tools-bottom [doaction=edit]",function (){
+		
+		
+		
+	});
+	//复制链接
+	$(document).on("click",".tools.tools-bottom [doaction=link]",function (){
+		
+		
+		
+	});
+	//图片目录
+	var setting = {
+			async: {
+				enable: true,
+				url:"{:url('index/Directory/index')}",
+				autoParam:["id", "name=n", "level=lv"],
+				otherParam:{"otherParam":"zTreeAsyncTest"},
+				dataFilter: filter
+			},
+			callback: {
+				onClick: function (event, treeId, treeNode){
+						// alert(treeNode.tId + ", " + treeNode.name);
+					 //$scrpe.depart = treeNode.id;
+					 $('#sureMove').attr("data-dirID",treeNode.id);
+				}
+			}
+		};
+
+		function filter(treeId, parentNode, childNodes) {
+			if (!childNodes) return null;
+			for (var i=0, l=childNodes.length; i<l; i++) {
+				childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+			}
+			return childNodes;
+		}
+
+		$(document).ready(function(){
+			$.fn.zTree.init($("#pictureCatalogtree"), setting);
+		});
+})(window.jQuery);
+
+</script>

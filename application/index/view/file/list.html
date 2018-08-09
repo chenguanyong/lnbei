@@ -1,0 +1,185 @@
+{include file="public\head" /}
+{include file="public\iframe_header" /}
+<div class="row">
+<div class="col-xs-12" style=" background: #ffffaa; border: 1px #ffffaa solid">
+<div class="space-3"></div>
+<button doaction="rename" class="btn btn-sm btn-link">重命名</button>
+<button doaction="mod" class="btn btn-sm btn-link">修改</button>
+<button doaction="dele" class="btn btn-sm btn-link">删除</button>
+<button doaction="edit" class="btn btn-sm btn-link">编辑</button>
+</div>
+<div class="space-6"></div>
+</div>
+<div class="row">
+	<div class="col-xs-12 " style="max-height:500px;overflow:auto;border-bottom: 1px solid #cccccc;sScrollY:auto">
+		<!-- PAGE CONTENT BEGINS -->
+		<div>
+				<ul class="ace-thumbnails clearfix">
+					<!-- #section:pages/gallery.caption -->
+					{
+					<li data-on="off" data-id="2">
+						<a  data-rel="colorbox">
+							<img width="150" height="150" alt="150x150" src="{$Think.config.__PUBLIC__}/static/assets/images/gallery/thumb-3.jpg" />
+							<div class="text">
+								<div class="inner">Sample Caption on Hover</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-12" style="text-align:center"><a class="title" style="padding:3px 3px;">Sample Cap</a></div>
+							</div>
+						</a>
+						
+						<div class="tools tools-bottom">
+							<a doaction="link">
+								<i class="ace-icon fa fa-link"></i>
+							</a>
+	
+							<a doaction="edit">
+								<i class="ace-icon fa fa-pencil"></i>
+							</a>
+	
+							<a doaction="dele">
+								<i class="ace-icon fa fa-times red"></i>
+							</a>
+						</div>
+					</li>
+	
+					<!-- /section:pages/gallery.caption -->
+				</ul>
+		</div>
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!--  -->
+<div class="row">
+	<div class="col-xs-9"></div><div class="col-xs-3"><div id="pages"></div></div>
+</div>
+{include file="public\foot" /}
+<script>
+(function ($){
+	layui.use(['laypage', 'layer'], function(){
+		  var layer = layui.layer,
+		  laypage = layui.laypage;
+		 // layer.msg($("#chen").attr("dref"));
+			//window.parent.layer = layer;
+		  $(document).on("dblclick",".ace-thumbnails.clearfix li .text ",function (){
+			  
+			layer.open({
+				  type: 1,
+				  title: false,
+				  content: $(this).parent("a").find("img"),
+				  maxmin: true
+				});
+		  });
+		  laypage({
+			    cont: 'pages'
+			        ,pages: 50
+			        ,groups: 2
+			        ,first: false
+			        ,last: false
+			        ,jump: function(obj, first){
+			          if(!first){
+			            layer.msg('第 '+ obj.curr +' 页');
+			          }
+			        }
+			    ,prev: '<em><</em>'
+			    ,next: '<em>></em>'
+			  });
+		});
+	$(document).on("click",".ace-thumbnails.clearfix li ",function (){
+		//alert("dd");
+	  	var select = $(this).attr("data-on");
+	  	//alert(select);
+	  	if(select == "on"){
+	  		$(".ace-thumbnails.clearfix li").attr("data-on","off");
+	  	}else{
+	  		$(".ace-thumbnails.clearfix li").attr("data-on","off");
+	  		$(this).attr("data-on","on");
+	  	}
+	
+	});
+	//题首删除
+	$(document).on("click",".col-xs-12 [doaction=dele]",function (){
+		var sub = true;
+		if($(".ace-thumbnails.clearfix [data-on=on]").length == 0){
+			layer.alert('请先选择一个', {
+				  skin: 'layui-layer-molv' //样式类名
+				  ,closeBtn: 0
+				});
+			return false;
+		}
+		var id = $(".ace-thumbnails.clearfix [data-on=on]").attr("data-id");
+		if(sub){
+			$.post("{:url('index/Image/dele')}",{id:id},function(data){
+				
+				if(data.code == 1){
+					alert(data.msg);
+				}else{
+					alert(data.msg);
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}
+		
+	});
+	//重命名
+	$(document).on("click",".col-xs-12 [doaction=rename]",function (){
+		var sub = true;
+		if($(".ace-thumbnails.clearfix [data-on=on]").length == 0){
+			layer.alert('请先选择一个', {
+				  skin: 'layui-layer-molv' //样式类名
+				  ,closeBtn: 0
+				});
+			return false;
+		}
+		var id = $(".ace-thumbnails.clearfix [data-on=on]").attr("data-id");
+		if(sub){
+			$.post("{:url('index/Image/dele')}",{id:id},function(data){
+				
+				if(data.code == 1){
+					alert(data.msg);
+				}else{
+					alert(data.msg);
+				}
+				
+			},"json");
+		}else{
+			return false;
+		}		
+		
+		
+	});
+	//题首修改
+	$(document).on("click",".col-xs-12 [doaction=mod]",function (){
+		
+		
+		
+	});
+	//题首编辑
+	$(document).on("click",".col-xs-12 [doaction=edit]",function (){
+		
+		
+		
+	});
+	//删除
+	$(document).on("click",".tools.tools-bottom [doaction=dele]",function (){
+		
+		
+		
+	});
+	//编辑
+	$(document).on("click",".tools.tools-bottom [doaction=edit]",function (){
+		
+		
+		
+	});
+	//复制链接
+	$(document).on("click",".tools.tools-bottom [doaction=link]",function (){
+		
+		
+		
+	});
+
+})(window.jQuery);
+
+</script>

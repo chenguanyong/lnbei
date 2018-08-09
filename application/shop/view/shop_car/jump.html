@@ -1,0 +1,34 @@
+{include file="public/header"}
+<body class="gray-bg">
+
+
+    <div class="wrapper wrapper-content">
+    <h1>已成功加入购物车</h1>
+        <div class="row">
+            <div class="col-sm-9">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody>
+
+                                    <?php
+                                    foreach($list as $value){
+										echo "<tr>";
+										echo "<td><img style='width:80px;height:80px' src='" . $value["goodsImg"] . "'>" . $value["goods_name"] . "</td>";
+										echo "<td>" . $value["goods_price"] . "</td>";	
+										echo "<td>" . $value["goods_num"] . "</td></tr>";
+									}?>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        
+            </div>
+            <div class="col-sm-3 ">
+            	<a class="btn btn-primary btn-lg" href="{:url('mall/Shopping/index')}">继续购物</a>
+            	<a class="btn btn-primary btn-lg" href="{:url('mall/ShopCar/index')}">去购物车结算</a>
+            </div>
+        </div>
+    </div>
+
+{include file="public/footer"}

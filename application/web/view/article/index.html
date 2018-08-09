@@ -1,0 +1,479 @@
+<title>文章列表</title>
+<div class="row" style="margin:0px;">
+  <div class="panel panel-default col-xs-12" style="border:#000 0px solid; padding:2px">
+    <!-- div.table-responsive -->
+
+    <div class="panel panel-default" style="margin:0px 0px">
+      <div class="panel-body">
+        <div class="row">
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtn"  class="input-group-addon">
+						归属地区
+					</span>
+					<input type="text" id="citySel" class="form-control search-query" placeholder="请选择城市">
+					<div id="menuContentareas" class="menuContent" style="display:none; z-index:333;border:1px #dddddd solid;background-color: #ffffff; position: absolute; max-height:200px; overflow: auto;">
+						<ul id="treeDemoareas" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>
+				</div>
+			</div>
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtns" class="input-group-addon">
+						归属公司
+					</span>
+					<input type="text" id="companySels"  class="form-control search-query" placeholder="请选择公司">
+					<div id="menuContentcompany" class="menuContent" style="display:none; z-index:333;border:1px #dddddd solid;background-color: #ffffff; position: absolute; max-height:200px; overflow: auto;">
+						<ul id="treeDemocompany" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>					
+				</div>
+			</div>
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtnss" class="input-group-addon">
+						归属部门
+					</span>
+					<input type="text" id="departSelss"  class="form-control search-query" placeholder="请选择部门">
+					<div id="menuContentdepart" class="menuContent" style="display:none; z-index:333;border:1px #dddddd solid;background-color: #ffffff; position: absolute; max-height:200px; overflow: auto;">
+						<ul id="treeDemodepart" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>					
+				</div>
+			</div>			
+        </div>
+      </div>
+    </div><!-- div.dataTables_borderWrap -->
+    
+    
+    
+    
+<div class="space-2"></div>
+    <div class="row">
+      <div class="col-xs-8 ">
+        <div class="clearfix">
+          <button class="btn btn-sm " data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">待审核</button>
+           <button class="btn btn-sm btn-success" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">一审</button>
+            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">二审</button>
+             <button class="btn btn-sm btn-yellow" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">三审</button>
+              <button class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">四审</button>
+              <button class="btn btn-link btn-success" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">最新</button>
+            <button class="btn btn-link btn-danger" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">今日</button>
+             <button class="btn btn-link btn-yellow" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">上周</button>
+              <button class="btn btn-link btn-primary" data-toggle="modal" data-target="#myModal2" data-whatever="查看日志内容">未通过</button>
+
+        </div>
+      </div>
+ 		<div class="col-xs-3  pull-right">
+				<div class="input-group">
+				<input type="text" class="form-control" name="keywords" placeholder="Look within results">
+				<div class="input-group-btn">
+					<button type="button" class="btn btn-default no-border btn-sm">
+						<i class="ace-icon fa fa-search icon-on-right bigger-110"></i>
+					</button>
+				</div>
+			</div>
+		</div> 
+
+    </div>
+    <div class="space-2"></div>
+   <div class="panel panel-default" style="margin:0px 0px;">
+      <div class="panel-body" style="margin:0px 0px; padding:5px 0px">
+		    <div class="row">
+			      <div class="col-xs-12 ">
+			      <div class="row">
+			      <div class=" col-sm-12" style="margin:0px 0px;">
+			      		<div style="float:left;padding:0px 15px">添加时间:</div>	
+						<div class="input-group input-group-sm col-sm-2" style="float:left">
+							<input type="text" id="datepicker" class="form-control hasDatepicker">
+							<span class="input-group-addon">
+								<i class="ace-icon fa fa-calendar"></i>
+							</span>
+						</div>
+						<div   style="float:left; padding:5px 15px">至</div>	
+						<div class="input-group input-group-sm col-sm-2" style="float:left">
+							<input type="text" id="datepicker" class="form-control hasDatepicker">
+							<span class="input-group-addon">
+								<i class="ace-icon fa fa-calendar"></i>
+							</span>
+						</div>
+						<button class="btn btn-sm btn-primary" style=" margin:0px 15px">查看</button>	
+					</div>
+					</div>
+			      </div>
+		       </div>
+      </div>
+    </div><!-- div.dataTables_borderWrap -->
+
+
+<div class="space-2"></div>
+    <div style="clear:both">
+
+<!--  -->
+				<table id="simple-table" class="table  table-bordered table-hover">
+					<thead>
+						<tr>
+							<th class="center">
+								<label class="pos-rel">
+									<input type="checkbox" class="ace" />
+									<span class="lbl"></span>
+								</label>
+							</th>
+							<th class="center">标题</th>
+							<th class="center">分类</th>
+							<th class="center">封面</th>
+							<th class="center">浏览量</th>
+							<th class="center">
+								下载量
+							</th>
+							<th class="center">
+								创建时间
+							</th>
+							<th class="center">
+								更新时间
+							</th>
+							<th class="center">状态</th>
+
+							<th class="center">操作</th>
+						</tr>
+					</thead>
+
+					<tbody id="article_list">
+
+					</tbody>
+					</table>
+                <script id="arlist" type="text/html">
+                    {{# for(var i=0;i<d.length;i++){  }}
+
+						<tr>
+							<td class="center">
+								<label class="pos-rel">
+									<input type="checkbox" class="ace" />
+									<span class="lbl"></span>
+								</label>
+							</td>
+
+							<td class="center">
+								{{d[i].title}}
+							</td>
+
+							<td>
+								{{d[i].cate_name}}
+							</td>
+							<td><img src="{{d[i].image}}"></td>
+							<td class="hidden-480">{{d[i].browsecount}}</td>
+							<td>{{d[i].downcount}}</td>
+
+							<td class="hidden-480">
+								{{d[i].create_time}}
+							</td>
+							<td class="hidden-480">
+								{{d[i].update_time}}
+							</td>
+							<td class="hidden-480">
+								{{d[i].IsDelete}}
+							</td>
+							<td>
+								<div class="hidden-sm hidden-xs btn-group">
+									<button class="btn btn-xs btn-success">
+										<i class="ace-icon fa fa-check bigger-120"></i>
+									</button>
+
+									<button class="btn btn-xs btn-info">
+										<i class="ace-icon fa fa-pencil bigger-120"></i>
+									</button>
+
+									<button class="btn btn-xs btn-danger">
+										<i class="ace-icon fa fa-trash-o bigger-120"></i>
+									</button>
+
+									<button class="btn btn-xs btn-warning">
+										<i class="ace-icon fa fa-flag bigger-120"></i>
+									</button>
+								</div>
+
+								<div class="hidden-md hidden-lg">
+									<div class="inline pos-rel">
+										<button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+											<i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+										</button>
+
+										<ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+											<li>
+												<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+													<span class="blue">
+														<i class="ace-icon fa fa-search-plus bigger-120"></i>
+													</span>
+												</a>
+											</li>
+
+											<li>
+												<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+													<span class="green">
+														<i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+													</span>
+												</a>
+											</li>
+
+											<li>
+												<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+													<span class="red">
+														<i class="ace-icon fa fa-trash-o bigger-120"></i>
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</td>
+						</tr>
+                    {{# } }}
+                </script>
+<!--  -->
+
+
+    </div>
+    <div id="page"></div>
+  </div>
+</div>
+
+<div>
+ 
+
+</div><!-- Button trigger modal -->
+<!-- Modal -->
+
+<div class="modal fade bs-example-modal-sm" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">查看</h4>
+      </div>
+
+      <div class="modal-body">
+
+			<div class="row">
+				<div class="col-sm-3">标题</div>
+				<div class="col-sm-9" id="modal-title"></div>
+				<div class="col-sm-3">内容</div>
+				<div class="col-sm-9" ><p id="modal-body"></p></div>
+				<div class="col-sm-3">错误代码</div>
+				<div class="col-sm-9" ><p id="modal-code"></p></div>
+			</div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> <button type="button" id='depart'   data-tree='' data-value='' class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+  <div id="dialog-message" class="hide">
+    <p>您确定要删除该用户？</p>
+  </div><!-- #dialog-message -->
+  <!-- #dialog-confirm -->
+</div>
+
+<div id="dialog" title="提示信息" style='display:none'>
+  <p>请先选中一行！</p>
+</div>
+
+<div id="dialog_delete" title="提示信息" style='display:none'>
+  <p>确定要删除！</p>
+</div>
+<script>
+/**
+ * [user_state 文章状态]
+ * @param  {[type]} val [description]
+ * @Author
+ */
+
+var laytpl,laypage;
+ var url='{:url("web/article/index")}?page=0&hid=0';
+var allpages=8;
+
+
+
+
+var scripts = [null, "{$Think.config.__PUBLIC__}/static/components/datatables/media/js/jquery.dataTables.js", "{$Think.config.__PUBLIC__}/static/components/_mod/datatables/jquery.dataTables.bootstrap.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-buttons/js/dataTables.buttons.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-buttons/js/buttons.flash.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-buttons/js/buttons.html5.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-buttons/js/buttons.print.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-buttons/js/buttons.colVis.js", "{$Think.config.__PUBLIC__}/static/components/datatables.net-select/js/dataTables.select.js", null]
+$('.page-content-area').ace_ajax('loadScripts', scripts, function ()
+{
+    //inline scripts related to this page
+    jQuery(function ($)
+    {
+    	layui.use(['layer', 'laypage','laytpl'], function () {
+    	    var 
+    	            layer = layui.layer,
+    	   			 laytpl =layui.laytpl,
+    	    		laypage = layui.laypage;
+    	    
+
+    	    laypage({
+    	        cont: 'page'
+    	        ,pages: 100 //总页数
+    	        ,groups: 5 //连续显示分页数
+    	      });
+        	$.post('{:url("web/article/index")}',{hid:163,page:1},function (data){
+        		
+        		var getTpl = arlist.innerHTML;
+        		laytpl(getTpl).render(data, function(html){
+        			article_list.innerHTML = html;
+        		});
+        	},"json");
+
+    	    
+    	   });
+
+/***
+ * 城市列表
+ */
+ var treeobj = {
+			city:0,
+			company:0
+	};
+	var settingCity = {
+			async: {
+				enable: true,
+				url:"{:url('index/Area/ajaxGetArea')}",
+				autoParam:["id", "name=n", "level=lv"],
+				otherParam:{"otherParam":"1"},
+				dataFilter: filter
+			},
+			callback: {
+				onClick: zTreeCityOnClick
+			}
+		};
+	function zTreeCityOnClick(event, treeId, treeNode){
+		//console.dir(treeNode.id);
+		//alert(treeNode.tId + ", " + treeNode.name);
+		treeobj.city=treeNode.id;
+		$("#citySel").val(treeNode.name);
+		$.fn.zTree.init($("#treeDemocompany"),settingcompany );
+		hideMenu();
+	}
+	function filter(treeId, parentNode, childNodes) {
+		if (!childNodes) return null;
+		for (var i=0, l=childNodes.length; i<l; i++) {
+			childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+		}
+		return childNodes;
+	}
+/****
+ * 归属公司
+ */
+
+	var settingcompany = {
+			async: {
+				enable: true,
+				url:"{:url('index/department/ajaxGetDepart')}?flag=0",
+				autoParam:["id", "name=n", "level=lv"],
+				otherParam:{"otherParam":treeobj.city},
+				
+			},
+			callback: {
+				onClick: zTreeCompanyOnClick
+			}
+		};
+		function zTreeCompanyOnClick(event, treeId, treeNode){
+			$("#companySels").val(treeNode.name);
+			treeobj.company=treeNode.id;
+			$.fn.zTree.init($("#treeDemodepart"), settingdepart );
+			hideMenus();
+		}
+
+/****
+ * 归属部门
+ */
+	var settingdepart = {
+			async: {
+				enable: true,
+				url:"{:url('index/department/ajaxGetDepart')}?flag=1",
+				autoParam:["id", "name=n", "level=lv"],
+				otherParam:{"otherParam":treeobj.company},
+				
+			},
+	callback: {
+		onClick: zTreeDepartOnClick
+	}
+		
+		};
+	function zTreeDepartOnClick(event, treeId, treeNode){
+		$("#departSelss").val(treeNode.name);
+		hideMenuss();
+	}
+ 			function beforeClick(treeId, treeNode) {
+    			var check = (treeNode && !treeNode.isParent);
+    			if (!check) alert("只能选择城市...");
+    			return check;
+    		}
+    		
+    		function onClick(e, treeId, treeNode) {
+    			var zTree = $.fn.zTree.getZTreeObj("treeDemoareas"),
+    			nodes = zTree.getSelectedNodes(),
+    			v = "";
+    			nodes.sort(function compare(a,b){return a.id-b.id;});
+    			for (var i=0, l=nodes.length; i<l; i++) {
+    				v += nodes[i].name + ",";
+    			}
+    			if (v.length > 0 ) v = v.substring(0, v.length-1);
+    			var cityObj = $("#citySel");
+    			cityObj.attr("value", v);
+    		}
+    		
+    		function showMenu() {
+    			$("body").bind("mousedown", onBodyDown);
+    			$(".menuContent").fadeOut("fast");
+    			var cityObj = $("#citySel");
+    			$("#menuContentareas").addClass("active");
+    			var cityOffset = $("#citySel").offset();
+    			$("#menuContentareas").css({top: cityObj.outerHeight() + "px"}).slideDown("fast");
+    			
+    		}
+    		function hideMenu() {
+    			$("#menuContentareas").fadeOut("fast");
+    		}
+    		function showMenus() {
+    			$("body").bind("mousedown", onBodyDown);
+    			$(".menuContent").fadeOut("fast");
+    			var cityObj = $("#companySels");
+    			$("#menuContentcompany").addClass("active");
+    			var cityOffset = $("#companySels").offset();
+    			$("#menuContentcompany").css({top: cityObj.outerHeight() + "px"}).slideDown("fast");
+    			
+    		}
+    		function hideMenus() {
+    			$("#menuContentcompany").fadeOut("fast");
+    		}
+    		function showMenuss() {
+    			$("body").bind("mousedown", onBodyDown);
+    			$(".menuContent").fadeOut("fast");
+    			var cityObj = $("#departSelss");
+    			$("#menuContentdepart").addClass("active");
+    			var cityOffset = $("#departSelss").offset();
+    			$("#menuContentdepart").css({top: cityObj.outerHeight() + "px"}).slideDown("fast");
+    		}
+    		function hideMenuss() {
+    			$("#menuContentdepart").fadeOut("fast");
+    		}
+    		$(document).ready(function(){
+    			$.fn.zTree.init($("#treeDemoareas"), settingCity);
+
+    		});
+    		
+    		$("#menuBtn").on("click",showMenu);
+    		$("#menuBtns").on("click",showMenus);
+    		$("#menuBtnss").on("click",showMenuss);
+    		function onBodyDown(event) {
+				if (!(event.target.id == "menuBtn" || event.target.id == "menuBtnss" || event.target.id == "menuBtns" || event.target.id == "citySel" || event.target.id == "menuContentareas" || $(event.target).parents("#menuContentareas").length>0)) {
+					hideMenu();
+					hideMenus();
+					hideMenuss();
+				}
+			}
+    }
+    );
+
+
+}
+);
+</script>

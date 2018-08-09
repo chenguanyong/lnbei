@@ -1,0 +1,888 @@
+
+<title>Content sliders based on Bootstrap modals - Ace Admin</title>
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/components/_mod/x-editable/bootstrap-editable.css" />
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/components/jquery.gritter/css/jquery.gritter.css" />
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/ace.css" />
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/css/common.css" />
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/components/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" />
+<!-- ajax layout which only needs content area -->
+<div class="page-header">
+	<h1>文章编辑
+	</h1>
+</div><!-- /.page-header -->
+
+<div class="row">
+	<div class="col-xs-12" >
+		
+		<div class="row" style="margin:0px; padding:0px">	
+			<div class="col-xs-12" style="margin:0px; padding:0px">
+
+						<!-- PAGE CONTENT BEGINS -->
+						<form class="form-horizontal" id="articsubmitform" role="form">
+							<!-- #section:elements.form -->
+							<div class="form-group">
+								<label class="col-sm-1 control-label no-padding-right" for="form-field-1">文章名称:</label>
+				
+								<div for="title" class="col-sm-11">
+									<input type="text" name="title"  placeholder="请输入文章名" class="col-xs-12 col-sm-12" />
+								</div>
+							</div>
+				
+							<div class="form-group">
+								<label class="col-sm-1 control-label  no-padding-right" for="form-field-1-1">关键字: </label>
+				
+								<div for="keyword"  class="col-sm-11">
+									<input type="text" id="form-field-1-1" name="keyword" placeholder="Text Field" class="col-xs-12 col-sm-12" />
+								</div>
+							</div>
+				
+							<!-- /section:elements.form -->
+							<div class="space-4"></div>
+				
+							<div class="form-group">
+								<label class="col-sm-1 control-label  no-padding-right" for="form-field-2"> 文章描述: </label>
+				
+								<div for="descript" class="col-sm-11">
+									<textarea name="descript" class="col-xs-11 col-sm-12" id="form-field-9" maxlength="50"></textarea>
+								</div>
+							</div>
+							<!-- /section:elements.form -->
+							<div class="space-4"></div>
+				
+							<div class="form-group">
+										<label  class="col-sm-1 control-label  no-padding-right"> 文章类别 :</label>
+		
+										<div class="col-xs-12 col-sm-11">
+
+											<select name="navid" class="col-xs-11 col-sm-4" id="onecate">
+												<option value=""></option>
+												<option value="AL">Alabama</option>
+												<option value="AK">Alaska</option>
+												<option value="AZ">Arizona</option>
+												<option value="AR">Arkansas</option>
+											</select>
+											<select name="cateid" class="col-xs-11 col-sm-4" id="twocate">
+												<option value=""></option>
+												<option value="AL">Alabama</option>
+												<option value="AK">Alaska</option>
+												<option value="AZ">Arizona</option>
+												<option value="AR">Arkansas</option>
+											</select>
+											<select name="catesubid"  class="col-xs-11 col-sm-4" id="threecate">
+												<option value=""></option>
+												<option value="AL">Alabama</option>
+												<option value="AK">Alaska</option>
+												<option value="AZ">Arizona</option>
+												<option value="AR">Arkansas</option>
+											</select>																						
+										</div>
+									</div>						
+			
+							<div class="space-4"></div>
+							<h3 class="header smaller lighter blue">
+										文章信息
+										<small>主要内容</small>
+							</h3>				
+							<div class="form-group " >
+							<label class="col-sm-1  control-label no-padding-right" for="form-field-2"> 文章内容: </label>
+							<div for="content" class="col-sm-11">
+				 				<script id="editor" name="content" type="text/plain" class="col-xs-11 col-sm-12" style="padding:0px;height:500px;"></script>
+							</div>
+							</div>
+							<div class="space-4"></div>
+				
+							<div class="form-group">
+								<label class="col-sm-1 control-label no-padding-right" for="form-field-6">作者:</label>
+				
+								<div for="auth" class="col-sm-11">
+									<input data-rel="tooltip" class="col-xs-12 col-sm-12" type="text" name="auth" placeholder="请输入作者姓名" title="Hello Tooltip!" data-placement="bottom" />
+								</div>
+							</div>	
+							<div class="space-4"></div>
+				
+							<div class="form-group">
+								<label class="col-sm-1 control-label no-padding-right" for="form-field-6">保密级别:</label>
+				
+								<div class="col-sm-3">
+										<select class="form-control" name="baomi" id="form-field-select-1">
+											<option value=""></option>
+											<option value="1">普通</option>
+											<option value="2">机密</option>
+											<option value="3">绝密</option>
+										</select>									
+								</div>
+							</div>
+							<div class="space-4"></div>
+			<div class="form-group">
+				<label class="col-sm-1 control-label no-padding-right" for="food">选择权限</label>
+
+				<div class="col-sm-11">
+					<!-- #section:plugins/input.multiselect -->
+					<script id="userreadauth"  type="text/html">
+						{{# for(var i=0; i<d.length; i++){ }}
+
+							<option value="{{ d[i].value }}">{{ d[i].title }}</option>
+						{{ } }}
+
+					</script>
+					<select id="food" class="multiselect" multiple="">
+
+					</select>
+
+					<!-- /section:plugins/input.multiselect -->
+				</div>
+			</div>									
+							<div class="space-4"></div>
+				
+							<div class="form-group">
+								<label class="col-sm-1 control-label no-padding-right" for="form-field-4">是否对外:</label>
+				
+								<div class="col-sm-11">
+										<div class="control-group">
+												<div class="radio inline">
+													<label>
+														<input name="tuijian" type="radio" value=0 class="ace">
+														<span class="lbl"> 否</span>
+													</label>
+												</div>
+
+												<div class="radio inline">
+													<label>
+														<input name="tuijian" type="radio" value=0 class="ace">
+														<span class="lbl"> 是</span>
+													</label>
+												</div>
+										</div>
+								</div>
+								
+							</div>
+
+
+							<div class="space-4"></div>
+							<div class="clearfix form-actions">
+								<div class="col-md-offset-3 col-md-9">
+									<button id="savebutton" class="btn btn-info" type="submit">
+										<i class="ace-icon fa fa-check bigger-110"></i>
+										保存
+									</button>
+				
+									&nbsp; &nbsp; &nbsp;
+									<button class="btn" type="reset">
+										<i class="ace-icon fa fa-undo bigger-110"></i>
+										重置
+									</button>
+								</div>
+							</div>
+				
+							<div class="hr hr-24"></div>
+				
+				
+							</form>
+				
+						<!-- PAGE CONTENT ENDS -->
+		
+
+		
+				
+				<!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+			
+		
+		</div>
+				
+		<div id="top-menu" class="modal aside" data-fixed="true" data-placement="top" data-background="true" data-backdrop="invisible" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body container">
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1 white">
+								<h3 class="lighter">Bootstrap Grid &amp; Elements</h3>
+								With invisible backdrop
+							</div>
+
+							<div class="col-sm-5 text-center line-height-2">
+								<a class="btn btn-app btn-Default no-radius" href="#">
+									<i class="ace-icon fa fa-pencil-square-o bigger-230"></i>
+									Default
+									<span class="label label-light arrowed-in-right badge-left">11</span>
+								</a>
+
+								&nbsp; &nbsp;
+								<a class="btn btn-info btn-app no-radius" href="#">
+									<i class="ace-icon fa fa-cog bigger-230"></i>
+									Mailbox
+									<span class="label label-danger arrowed-in">6+</span>
+								</a>
+
+								&nbsp; &nbsp;
+								<a class="btn btn-app btn-light no-radius" href="#">
+									<i class="ace-icon fa fa-print bigger-230"></i>
+									Print
+								</a>
+							</div>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+
+				<button class="btn btn-inverse btn-app btn-xs ace-settings-btn aside-trigger" data-target="#top-menu" data-toggle="modal" type="button">
+					<i data-icon1="fa-chevron-down" data-icon2="fa-chevron-up" class="ace-icon fa fa-chevron-down bigger-110 icon-only"></i>
+				</button>
+			</div><!-- /.modal-dialog -->
+		</div>
+
+		<div id="bottom-menu" class="modal aside" data-fixed="true" data-placement="bottom" data-background="true" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body container">
+						<div class="row">
+							<div class="col-sm-5 col-sm-offset-1 white">
+								<h3 class="lighter">Bootstrap Grid &amp; Elements</h3>
+								With dark modal backdrop
+							</div>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+
+				<button class="btn btn-yellow btn-app btn-xs ace-settings-btn aside-trigger" data-target="#bottom-menu" data-toggle="modal" type="button">
+					<i data-icon2="fa-chevron-down" data-icon1="fa-chevron-up" class="ace-icon fa fa-chevron-up bigger-110 icon-only"></i>
+				</button>
+			</div><!-- /.modal-dialog -->
+		</div>
+
+		<div id="right-menu" class="modal aside" data-body-scroll="false" data-offset="true" data-placement="right" data-fixed="true" data-backdrop="false" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header no-padding">
+						<div class="table-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								<span class="white">&times;</span>
+							</button>
+							扩展设置
+						</div>
+					</div>
+
+					<div class="modal-body">
+					<h4 class="header green" style="margin:5px 5px;">上传文章封面</h4>
+										<form  class="dropzone well" id="dropzone">
+											<div class="fallback">
+												<input name="file" type="file" multiple="" />
+											</div>
+										</form>
+							<h4 class="header green" style="margin:5px 5px;">权限设置</h4>
+							
+						<div id="authption" class="row">
+									<div class="col-sm-12">
+										<button id="menuBtnss"  class="btm btn-sm btn-primary col-sm-3">
+						选择
+										</button>
+										<div class="input-group col-sm-9">
+											<input type="text" id="departSelss"  class="form-control search-query" placeholder="请选择...">
+											<div id="menuContentdepart" class="menuContent" style="display:none; position:absolute;background-color:#ffffff; top:31px; z-index:10000; overflow:auto; max-height:200px; max-width:200px;border:1px #ffaadd solid ">
+												<ul id="treeDemodepart" class="ztree" style="margin-top:0; width:160px; height:100px;"></ul>
+											</div>					
+										
+										</div>
+										
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 5px;">是否评论</h4>
+											<div class="col-sm-12">
+											<div class="form-group">
+												<div class="col-sm-12">
+														<div class="control-group">
+																<div class="radio inline">
+																	<label>
+																		<input  name="iscomment" type="radio" class="ace">
+																		<span class="lbl"> 否</span>
+																	</label>
+																</div>
+				
+																<div class="radio inline">
+																	<label>
+																		<input name="iscomment" type="radio" class="ace">
+																		<span class="lbl"> 是</span>
+																	</label>
+																</div>
+														</div>
+												</div>
+												
+											</div>
+											</div>
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 5px;">转向链接</h4>
+											<div class="col-sm-12">
+											<div class="form-group">
+												<div class="col-sm-12">
+												<input  name="relurl" class="col-xs-12 col-sm-12" type="text" style="margin:0px;"  placeholder="请输入链接"  />
+													<div class="radio inline">
+														<label>
+															<input name="relurllink" type="radio" class="ace">
+															<span class="lbl"> 转向链接</span>
+														</label>
+													</div>
+												</div>
+											</div>
+											</div>
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 5px;">是否审核</h4>
+											<div class="col-sm-12">
+												<div class="col-sm-12">
+														<div class="control-group">
+																<div class="radio inline">
+																	<label>
+																		<input name="isstatus" type="radio" class="ace">
+																		<span class="lbl"> 否</span>
+																	</label>
+																</div>
+				
+																<div class="radio inline">
+																	<label>
+																		<input name="isstatus" type="radio" class="ace">
+																		<span class="lbl"> 是</span>
+																	</label>
+																</div>
+														</div>
+												</div>
+											</div>
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 4px;">是否推荐</h4>
+											<div class="col-sm-12">
+												<div class="col-sm-12">
+														<div class="control-group">
+																<div class="radio inline">
+																	<label>
+																		<input name="isrecommend" type="radio" class="ace">
+																		<span class="lbl"> 否</span>
+																	</label>
+																</div>
+				
+																<div class="radio inline">
+																	<label>
+																		<input name="isrecommend" type="radio" class="ace">
+																		<span class="lbl"> 是</span>
+																	</label>
+																</div>
+														</div>
+												</div>
+											</div>
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 5px;">是否热点</h4>
+											<div class="col-sm-12">
+												<div class="col-sm-12">
+														<div class="control-group">
+																<div class="radio inline">
+																	<label>
+																		<input name="ishot" type="radio" class="ace">
+																		<span class="lbl"> 否</span>
+																	</label>
+																</div>
+				
+																<div class="radio inline">
+																	<label>
+																		<input name="ishot" type="radio" class="ace">
+																		<span class="lbl"> 是</span>
+																	</label>
+																</div>
+														</div>
+												</div>
+											</div>
+									</div>
+									<div class="col-sm-12">
+											<div class="space-4"></div>
+											<h4 class="header green" style="margin:5px 5px;">是否发布</h4>
+											<div class="col-sm-12">
+												<div class="col-sm-12">
+														<div class="control-group">
+																<div class="radio inline">
+																	<label>
+																		<input name="ispublish" type="radio" class="ace">
+																		<span class="lbl"> 否</span>
+																	</label>
+																</div>
+				
+																<div class="radio inline">
+																	<label>
+																		<input name="ispublish" type="radio" class="ace">
+																		<span class="lbl"> 是</span>
+																	</label>
+																</div>
+														</div>
+												</div>
+											</div>
+									</div>																											
+						</div>	
+							
+							
+					</div>
+				</div><!-- /.modal-content -->
+
+				<button class="aside-trigger btn btn-info btn-app btn-xs ace-settings-btn" data-target="#right-menu" data-toggle="modal" type="button">
+					<i data-icon1="fa-plus" data-icon2="fa-minus" class="ace-icon fa fa-plus bigger-110 icon-only"></i>
+				</button>
+			</div><!-- /.modal-dialog -->
+		</div>
+
+		<div id="my-modal" class="modal fade" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h3 class="smaller lighter blue no-margin">A modal with a slider in it!</h3>
+					</div>
+
+					<div class="modal-body">
+
+						1
+						<br />
+						<br />
+						<br />
+						<br />
+						<br />
+						2
+					</div>
+
+					<div class="modal-footer">
+						<button class="btn btn-sm btn-danger pull-right" data-dismiss="modal">
+							<i class="ace-icon fa fa-times"></i>
+							Close
+						</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+
+		<div id="aside-inside-modal" class="modal" data-placement="bottom" data-background="true" data-backdrop="false" tabindex="-1">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-xs-12 white">
+								<h3 class="lighter no-margin">Inside another modal</h3>
+
+								<br />
+								<br />
+
+							</div>
+						</div>
+					</div>
+				</div><!-- /.modal-content -->
+
+				<button class="btn btn-default btn-app btn-xs ace-settings-btn aside-trigger" data-target="#aside-inside-modal" data-toggle="modal" type="button">
+					<i data-icon2="fa-arrow-down" data-icon1="fa-arrow-up" class="ace-icon fa fa-arrow-up bigger-110 icon-only"></i>
+				</button>
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+
+	var scripts = [null,"__js__/ueditor/ueditor.config.js","__js__/ueditor/ueditor.all.min.js","__js__/ueditor/zh-cn/zh-cn.js","__com__/components/_mod/jquery-ui.custom/jquery-ui.custom.js","__com__/components/_mod/bootstrap-multiselect/bootstrap-multiselect.js","__com__/components/jqueryui-touch-punch/jquery.ui.touch-punch.js","__com__/components/markdown/lib/markdown.js","__com__/components/bootstrap-markdown/js/bootstrap-markdown.js","__com__/components/jquery.hotkeys/index.js","__com__/components/_mod/bootstrap-wysiwyg/bootstrap-wysiwyg.js","__com__/components/bootbox.js/bootbox.js","{$Think.config.__PUBLIC__}/static/components/dropzone/dist/dropzone.js", null]
+	$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($){
+			 /***
+			 全局变量
+			 */
+			var $scrpe = {
+					companyID:0,//当前文件夹
+					cityID:0,
+					
+				};
+			 	layui.use(['laytpl','layer'], function(){
+			 		  var laytpl = layui.laytpl;
+			 		  var layer = layui.layer;
+			 		  //初始化选择器
+			 		  function initSelect(){
+				 		$.post("{:url('index/admin/index')}",{companyID:0,cityID:0},function (data){
+				 		var gtl = userreadauth.innerHTML;
+					 		  //使用方式跟独立组件完全一样
+					 		  if(data.code==1){			
+					 			  laytpl(gtl).render(data, function(string){
+										$("#food").html(string);
+					 			  });
+					 		  }else{
+					 			  layer.alert(data.msg);
+					 		  }
+				 		},"json");
+			 		  }
+			 		  //
+			 		  $(document).on("click","#onecate",function (){
+					 		$.post("{:url('index/admin/index')}",{companyID:0,cityID:0},function (data){
+						 		var gtl = userreadauth.innerHTML;
+							 		  //使用方式跟独立组件完全一样
+							 		  if(data.code==1){			
+							 			  laytpl(gtl).render(data, function(string){
+												$("#onecate").html(string);
+							 			  });
+								 		  $(document).on("click","#twocate",function(){
+										 		$.post("{:url('index/admin/index')}",{companyID:0,cityID:0},function (data){
+											 		
+												 		  //使用方式跟独立组件完全一样
+												 		  if(data.code==1){			
+												 			  laytpl(gtl).render(data, function(string){
+																	$("#twocate").html(string);
+												 			  });
+													 		  $(document).on("click","#threecate",function(){
+															 		$.post("{:url('index/admin/index')}",{companyID:0,cityID:0},function (data){
+																 		
+																	 		  //使用方式跟独立组件完全一样
+																	 		  if(data.code==1){			
+																	 			  laytpl(gtl).render(data, function(string){
+																						$("#threecate").html(string);
+																	 			  });
+																	 		  }else{
+																	 			  layer.alert(data.msg);
+																	 		  }
+																 		},"json");
+													 		  });  
+												 			  
+												 		  }else{
+												 			  layer.alert(data.msg);
+												 		  }
+											 		},"json");
+								 		  }); 
+							 		  }else{
+							 			  layer.alert(data.msg);
+							 		  }
+						 		},"json");
+			 		  });
+
+			 		  
+			 		  
+			 		}); 
+				$('.multiselect').multiselect({
+					 enableFiltering: false,
+					 enableHTML: true,
+					 buttonContainer: '<div class="btn-group " />',//承载按钮和下拉框 
+					 buttonClass: 'btn btn-white btn-primary ',
+					 includeSelectAllOption: true,//全选 
+					    nonSelectedText: '全部',//没有值的时候button显示值  
+					    nSelectedText: '个被选中',//有n个值的时候显示n个被选中  
+					    allSelectedText: '全选',//所有被选中的时候 全选（n）  
+					    numberDisplayed: 1000,//当超过1000个标签的时候显示n个被选中  
+					    selectAllText: '全选', 
+					 templates: {
+						button: '<button type="button" class="multiselect dropdown-toggle" data-toggle="dropdown" style="text-align:center;background-color: #ffffff;border: 1px solid #D5D5D5;"><span class="multiselect-selected-text"></span></button>',  
+						ul: '<ul style="max-height: 200px;overflow-x: hidden;overflow-y: auto;-webkit-tap-highlight-color: rgba(0,0,0,0);" class="multiselect-container dropdown-menu "></ul>',
+						filter: '<li class="multiselect-item filter"><div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span><input class="form-control multiselect-search" type="text"></div></li>',
+						filterClearBtn: '<span class="input-group-btn"><button class="btn btn-default btn-white btn-grey multiselect-clear-filter" type="button"><i class="fa fa-times-circle red2"></i></button></span>',
+						li: '<li><a tabindex="0"><label></label></a></li>',
+				        divider: '<li class="multiselect-item divider"></li>',
+				        liGroup: '<li class="multiselect-item multiselect-group"><label></label></li>'
+					 }
+					});
+				var getSelected = function () {  
+				    var selectValueStr = [];  
+				    $(".select2_sample1 option:selected").each(function () {  
+				        selectValueStr.push($(this).val());  
+				    });  
+				    return selectValueStr;  
+				} 
+
+			 /****
+			  * 本地权限
+			  */
+
+				var setting = {
+						check: {
+							enable: true,
+							chkboxType: {"Y":"", "N":""}
+						},
+						view: {
+							dblClickExpand: false
+						},
+			 			async: {
+			 				enable: true,
+			 				url:"{:url('index/Area/ajaxGetArea')}",
+			 				autoParam:["id", "name=n", "level=lv"],
+			 				otherParam:{"otherParam":0},
+			 				
+			 			},
+						callback: {
+							beforeClick: beforeClick,
+							onCheck: onCheck
+						}
+					};
+
+					function beforeClick(treeId, treeNode) {
+						var zTree = $.fn.zTree.getZTreeObj("treeDemodepart");
+						zTree.checkNode(treeNode, !treeNode.checked, null, true);
+						return false;
+					}
+					
+					function onCheck(e, treeId, treeNode) {
+						var zTree = $.fn.zTree.getZTreeObj("treeDemodepart"),
+						nodes = zTree.getCheckedNodes(true),
+						v = "";
+						for (var i=0, l=nodes.length; i<l; i++) {
+							v += nodes[i].name + ",";
+						}
+						if (v.length > 0 ) v = v.substring(0, v.length-1);
+						var cityObj = $("#departSelss");
+						cityObj.attr("value", v);
+					}
+
+					function showMenu() {
+						$("#menuContentdepart").slideDown("fast");
+
+						$("body").bind("mousedown", onBodyDown);
+					}
+					function hideMenu() {
+						$("#menuContentdepart").fadeOut("fast");
+						$("body").unbind("mousedown", onBodyDown);
+					}
+					function onBodyDown(event) {
+						if (!(event.target.id == "menuBtnss" || event.target.id == "citySel" || event.target.id == "menuContentdepart" || $(event.target).parents("#menuContentdepart").length>0)) {
+							hideMenu();
+						}
+					}
+					//获取值
+					function getValue(){
+						var zTree = $.fn.zTree.getZTreeObj("treeDemodepart"),
+						nodes = zTree.getCheckedNodes(true),
+						v = "";
+						for (var i=0, l=nodes.length; i<l; i++) {
+							v += nodes[i].id + ",";
+						}
+						return v;
+					}
+
+					$(document).ready(function(){
+						$.fn.zTree.init($("#treeDemodepart"), setting);
+						$("#menuBtnss").on("click",function (){
+							showMenu();
+						});
+					});
+	
+					$('textarea[data-provide="markdown"]').each(function(){
+				        var $this = $(this);
+				
+						if ($this.data('markdown')) {
+						  $this.data('markdown').showEditor();
+						}
+						else $this.markdown()
+						
+						$this.parent().find('.btn').addClass('btn-white');
+				    });
+				      var input = {};
+						$("#savebutton").on("click",function(){
+						$("#articsubmitform").find("[name]").each(function(){
+						
+						//input.$(this).attr("name") = $(this).val();
+						//alert($(this).val());
+						console.dir("input."+$(this).attr("name")+"='"+$(this).val()+"';");
+						eval("input."+$(this).attr("name")+"='"+$(this).val()+"';");
+					});
+						$("#authption").find(":checked").each(function(){
+							
+							console.dir(input);
+							eval("input."+$(this).attr("name")+"='"+$(this).attr("checked")+"';");
+						});
+					//input.id=$("#submit").attr("data-id");
+					
+				});
+
+
+									
+	/**
+	*
+	*百度富文本
+	*
+	*/
+	var UEObj = null;
+	function init(){
+		 UEObj = UE.getEditor('editor');
+		
+	}
+	//获取编辑器的内容
+	function getUECont(){
+		if(UEObj.hasContents()){
+			return UEObj.getContent();
+		}else{
+			return null;
+		}
+	}
+	init();
+	/**
+	*
+	*封面上传
+	*
+	*/	
+	var done = function (df){
+		console.log(df);
+		return false;
+	}
+	  Dropzone.autoDiscover = false;
+	  Dropzone.options.myAwesomeDropzone = false;
+  var myDropzone = new Dropzone('#dropzone', {
+  url:"{:url('index/Upload/uploadSPImage')}",
+  method:"post",
+  clickable:true,
+  thumbnailWidth:50,
+  thumbnailHeight:50,
+  maxThumbnailFilesize:2,
+
+  autoProcessQueue:false,
+  dictDefaultMessage:"选择文件(连续点击可以上传多张)",
+  dictFallbackMessage:"您的浏览器不支持",
+  previewTemplate:'<div class="dz-preview dz-file-preview" >'+
+  '<div class="dz-details" >'+
+   ' <div class="dz-filename"><span data-dz-name></span></div>'+
+   ' <div class="dz-size" data-dz-size></div>'+
+    '<img data-dz-thumbnail />'+
+  '</div>'+
+  '<div class="dz-progress" style="width:200px;"><span class="dz-upload" style="height:20px;border: 1px #ffaaaa solid" data-dz-uploadprogress></span></div>'+
+ ' <div class="dz-success-mark"></div>'+
+  '<div class="dz-error-mark"><span>✘</span></div>'+
+  '<div class="dz-error-message"><span data-dz-errormessage></span></div>'+
+'</div>'
+  });
+
+	//上传文件
+	$(document).on("click","#uploadFile",function (){
+		var big = "[";
+		for( x in $scrpe.file){
+			if($scrpe.file[x].imgName == "undefined"){continue;}
+			big =big+'{"imgName":"'+$scrpe.file[x].imgName+'","imgNamePath":"'+$scrpe.file[x].imgNamePath+'","size":"'+$scrpe.file[x].size+'","type":"'+$scrpe.file[x].type+'"},';
+		}
+		big = big.substr(0,big.length-1)+']';
+		$.post("{:url('index/image/addImages')}",
+				{dirID:$scrpe.picdirID,data:big},
+				function (data){
+					if(data.code == 1){
+						alert(data.msg);
+						$('#myupload').modal("hide");
+						if(myDropzone != null){
+							myDropzone.removeAllFiles();
+						}
+					}else{
+						alert(data.msg);
+					}
+				},
+				"json");	
+	});
+  Dropzone.options.myAwesomeDropzone = {
+		  paramName: "file", // The name that will be used to transfer the file
+		  maxFilesize: 10, // MB
+		  accept: function(file, done) {
+		   done();
+		  },
+		  uploadprogress: function(file, progress, bytesSent) {
+			    console.dir(progress);
+	}
+};
+
+  myDropzone.on("complete", function(file) {
+		  //myDropzone.removeFile(file);
+	  });
+  //返回服务器数据
+  myDropzone.on("success", function(file,data) {
+	 console.dir(data);
+	 //myDropzone. removeAllFiles();
+	 if(data.code==1){
+	 	$scrpe.file.push({imgName:data.name,imgNamePath:data.image_name,size:file.size,type:file.type});
+	 }else{
+		alert(data.msg);
+	 }
+  });
+  //处理最大文件数量
+  myDropzone.on("maxfilesexceeded", function(file) {
+	  console.log("df");
+	  console.dir(file);
+  });
+  myDropzone.on("uploadprogress", function(file,progress,bytesSent) {
+	  console.log("df");
+	  console.dir(file);
+  });
+  //删除文件
+  myDropzone.on("removedfile", function(file) {
+	  console.log("df");
+	  console.dir(file);
+  });
+  //访问添加文件html
+	myDropzone.on("addedfile", function(file) {
+		console.dir(file.previewElement);
+		$("#uploadbutton").click(function (){
+			 myDropzone.processQueue();
+		});
+	/*  file.previewElement.children[4].addEventListener("click", function() {
+		  console.log("upload..");
+		  myDropzone.processQueue(file);
+	  });*/
+	  file.previewElement.children[3].addEventListener("click", function() {
+		  myDropzone.removeFile(file);
+	  });
+	});	
+  //正在上传
+	myDropzone.on("sending", function(file, xhr, formData) {
+	  // Will send the filesize along with the file as POST data.
+	  formData.append("filesize", file.size);
+	});	  
+  Dropzone.confirm = function(question, accepted, rejected) {
+	  // Ask the question, and call accepted() or rejected() accordingly.
+	  alert("sdf");
+	  console.log(question);
+	};
+
+	// 在键盘按下并释放及提交后验证提交表单
+  $("#articsubmitform").validate({
+	    rules: {
+	    	FileName: "required",
+	    	title:"required",
+	    	content:"required",
+	    	keyword:"required",
+	    	descript:"required",
+	    	auth:"required"
+	    },
+	    messages: {
+	    	FileName: "请输入文件名",
+	    	title:"请输入文章标题",
+	    	content:"请输入文章内容",
+	    	keyword:"请输入文章关键字",
+	    	descript:"请输入文章描述",
+	    	auth:"请输入作者"
+	    },
+	    submitHandler: function() {
+	    	
+	    	
+	    	var txt = getUECont();
+	    	var depart = $scrpe.companyID;
+	    	var directory = $scrpe.cityID;
+			//富文本内容
+	    	if(txt ==null){
+				return false;
+			}else{
+				inout.content = txt;
+			}
+			var auth = getSelected();
+			inout.auth = auth;
+			input.benauth = getValue();
+	    	$.post("{:url('index/Directory/ajaxNewFolder')}",input,function(data){
+	    		if(data.code == 1){
+	    			window.location="{:url('index')}";
+	    		}else{
+	    			
+	    			alert(data.msg);
+	    		}
+	    		
+	    	},"json");
+	    	return false;
+	    }
+  });
+
+});
+	  
+	});
+</script>

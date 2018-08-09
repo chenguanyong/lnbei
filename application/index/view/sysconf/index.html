@@ -1,0 +1,205 @@
+<title>系统配置</title>
+<style>
+.LB-right{
+	 text-align: right;
+}
+
+</style>
+
+<div class="row" >
+   <div class="panel panel-default " style="margin-left:18px">
+      <div class="panel-body">
+       
+        <div class="row">
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtn"  class="input-group-addon">
+						归属地区
+					</span>
+					<input type="text" id="citySel" class="form-control search-query" placeholder="请选择城市">
+					<div id="menuContentareas" class="menuContent" style="display:none; z-index:333;border:1px #ffaaff solid;background-color: #ff22aa; position: absolute;">
+						<ul id="treeDemoareas" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>
+				</div>
+			</div>
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtns" class="input-group-addon">
+						归属公司
+					</span>
+					<input type="text" id="companySels"  class="form-control search-query" placeholder="请选择公司">
+					<div id="menuContentcompany" class="menuContent" style="display:none; position: absolute; z-index:333;border:1px #ffaaff solid;background-color: #ff22aa">
+						<ul id="treeDemocompany" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>					
+				</div>
+			</div>
+        	<div class="col-sm-3">
+				<div class="input-group">
+					<span id="menuBtnss" class="input-group-addon">
+						归属部门
+					</span>
+					<input type="text" id="departSelss"  class="form-control search-query" placeholder="请选择部门">
+					<div id="menuContentdepart" class="menuContent" style="display:none; position: absolute; z-index:333;border:1px #ffaaff solid;background-color: #ff22aa">
+						<ul id="treeDemodepart" class="ztree" style="margin-top:0; width:160px;"></ul>
+					</div>					
+				</div>
+			</div>			
+        </div>
+      </div>
+    </div><!-- div.dataTables_borderWrap -->
+
+
+			<div class="col-sm-12" style="margin-left:6px">
+				<!-- #section:elements.tab -->
+				<div class="tabbable">
+				
+					<ul class="nav nav-tabs" id="headTitleHtml"></ul>
+				<script id="headTitle" type="text/html">
+					
+					{{#  for(var i = 0; i< d.PID.length ; i++){ }}
+						{{# if(i==0){ }}
+						 <li class="active">
+						{{# }else{ }}
+						<li >
+						{{# } }}	
+							<a data-toggle="tab"  href="#a{{ d.PID[i].ID }}">
+								<i class="{{ d.PID[i].Class }}"></i>
+								{{ d.PID[i].Value }}
+							</a>
+ 						 </li>
+						
+					{{#  } }}
+					
+				</script>
+					<div id="bodyView" class="tab-content" style="height:550px;">
+					
+					</div>
+					<script id="bordyHtml" type="text/html">
+					{{#  for(var i=0; i < d.PID.length; i++ ){ }}
+ 						
+						{{# if(i==0){ }}
+						<div id="a{{ d.PID[i].ID }}" class="tab-pane fade in active ">
+						{{# }else{ }}
+						<div id="a{{ d.PID[i].ID }}" class="tab-pane ">
+						{{# } }}
+						
+							<form class="form-horizontal" id="b{{ d.PID[i].ID }}" role="form">
+							<div class="row">
+								{{# var f =  Math.ceil(d.list.length%10); }}
+								{{# for(var c = 0; c < f; c++){ }}
+									<div class="col-sm-4">
+									{{# for(var a=0; a<d.list.length; a++){ }}
+										{{# if(d.list[a].PID === d.PID[i].ID){ }}
+										<div class="space-6"></div>			
+											<div class="row">		
+													<div class="col-sm-4 LB-right"  >{{ d.list[a].Title }}</div>
+													<div class="col-sm-8" for="{{ d.list[a].Name }}">
+														{{# if(d.list[a].Type === 0){ }}
+														<input type="text" class="input-xlarge"  name="{{ d.list[a].Name }}" autocomplete="off" value="{{ d.list[a].Value }}" placeholder="{{ d.list[a].Remarks }}"/>
+														{{# }else if(d.list[a].Type === 1){ }}
+															{{# if(d.list[a].Value == 1){ }}
+															<input type="checkbox" class="ace ace-switch ace-switch-5" style="opacity:1" name="{{ d.list[a].Name }}" autocomplete="off" checked placeholder="{{ d.list[a].Remarks }}"/>					
+															{{# }else{ }}
+															<input type="checkbox" class="ace ace-switch ace-switch-5" style="opacity:1"  name="{{ d.list[a].Name }}" autocomplete="off"  placeholder="{{ d.list[a].Remarks }}"/>					
+															{{# } }}
+														<!--	<span data-action="switch-span-lbl" class="lbl middle"></span>	-->
+														{{# }else if(d.list[a].Type === 2){ }}
+															{{# if(d.list[a].value == 1){ }}
+															<input type="radio" class="input-xlarge"  name="{{ d.list[a].Name }}" autocomplete="off" checked placeholder="{{ d.list[a].Remarks }}"/>					
+															{{# }else{ }}
+															<input type="radio" class="input-xlarge"  name="{{ d.list[a].Name }}" autocomplete="off"  placeholder="{{ d.list[a].Remarks }}"/>					
+															{{# } }}															
+														{{# }else if(d.list[a].Type === 3){ }}
+															<select name="{{ d.list[a].Name }}">
+																{{# for(var g=0 ; g < d.list[a].data.length; g++){ }}
+																<option value="{{ d.list[a].data[g].id  }}">{{ d.list[a].data[g].Name }}</option>
+																{{# } }}
+															</select>
+														{{# } }}		
+													</div>																				
+											</div>
+										{{# } }}
+									{{# } }}
+									</div>
+								{{# } }}	
+							</div>
+ 							<div class="space-12"></div>	
+							<div class="row">
+								<div class="col-sm-12" style="text-align:center;">
+									<button type="submit"  class="btn btn-primary" >提交</button>
+									<button type="button" class="btn btn-primary" >返回上一页</button>
+								</div>
+							</div>
+							</form>
+						</div>
+					{{#  } }}
+
+					</script>
+				</div>
+
+				<!-- /section:elements.tab -->
+			</div><!-- /.col -->
+
+			<div class="vspace-6-sm"></div>
+
+</div>
+
+<script>
+
+(function($){
+	var scripts = [null,"__js__/LBtree/trees.js", null]
+	$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($){});
+	});
+	layui.use('laytpl', function(){
+		  var laytpl = layui.laytpl;
+		  var d=new Date();
+		$.post("{:url('index/Sysconf/getConfigAjax')}",{cash:d.getTime()},function (str){
+		  //使用方式跟独立组件完全一样
+		  if(str.code == 1){
+			  var getTpl = headTitle.innerHTML;
+			  laytpl(getTpl).render(str.data, function(string){
+				  headTitleHtml.innerHTML = string;
+			  });
+			  getTpl = bordyHtml.innerHTML;
+			  laytpl(getTpl).render(str.data, function(string){
+				  bodyView.innerHTML = string;
+				  objFormInput(str.data);
+			  });
+
+		  }else{
+			  alert(str.msg);
+		  }
+
+		},"json");  
+	
+	});
+	function objFormInput(obj){
+		 console.log(obj);
+		for(var i=0;i<obj.PID.length;i++){
+			  var ruleMessage = window.LbInput.buildRuleAndMessage(obj.list);
+				//表单配置
+			  var formInput = {
+						form:"#b"+obj.PID[0].ID,//form表单的选择器
+						rules:ruleMessage.rule,//验证规则
+						messages:ruleMessage.msg,//验证弹出的消息
+						submitFun:function(str){
+							if(str.code == "1"){
+								alert("成功");
+							}else{
+								alert("失败");
+							}
+							
+						},	//提交回调函数
+						url:"{:url('index/sysconf/saveConf')}",//提交的数据
+					  }
+		
+			  window.LbInput.bindFrom(formInput);
+		}
+		
+	}
+
+})(window.jQuery)
+
+</script>

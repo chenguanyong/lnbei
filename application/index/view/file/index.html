@@ -1,0 +1,291 @@
+<title>图片管理</title>
+<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/css/common.css" />
+
+<div class="row" style="margin:0px; padding:0px;">
+  <div class="col-xs-2" style="padding:0px; margin:0px" >
+    <div class="col-xs-12">
+      <div class="widget-box">
+        <div class="widget-header widget-header-flat">
+          <h4 class="widget-title smaller">图片列表</h4>
+        </div>
+
+        <div class="widget-body" style="font-size:10px; height:300px; overflow:auto">
+          <div class="widget-main" style="font-size:10px;overflow:auto">
+            <ul id="picturetreeview" class="ztree" style="font-size:8px; width:100%; sScrollX:auto;sScrollY:auto"></ul>
+          </div>
+        </div>
+      </div>
+      <div class="widget-box">
+        <div class="widget-header widget-header-flat">
+          <h4 class="widget-title smaller">部门列表</h4>
+        </div>
+
+        <div class="widget-body" style="font-size:10px; height:300px; overflow:auto">
+          <div class="widget-main" style="font-size:10px;">
+            <ul id="usertreeview" class="ztree" style="font-size:8px; width:100%;  "></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default col-xs-10 " style="border:#000 0px solid; padding:0px; margin:0px">
+    <!-- div.table-responsive -->
+	<div class="tabbable">
+			<h4 class="panel-title header smaller lighter " style="margin-top:3px;margin-bottom:5px;">
+
+				<button id="NewFolder" data-toggle="modal" data-id="0" data-target="#myModal" class="btn btn-sm btn-primary">
+					<i class="ace-icon fa fa-folder-o align-top bigger-125"></i>新建文件夹
+				</button> 
+				<button id="Upload" data-toggle="modal" data-id="0" data-target="#myupload" class="btn btn-sm btn-primary">
+					<i class="ace-icon fa fa-cloud-upload align-top bigger-125"></i>上传文件
+				</button>
+				<button id="Recycle" class="btn btn-sm btn-primary">
+					<i class="ace-icon fa fa-trash-o align-top bigger-125"></i>回收站
+				</button>
+				<div class="btn-group">
+					<button data-toggle="dropdown" class="btn btn-primary btn-white dropdown-toggle">
+						<i>文件类型：</i>
+						全部
+						<i class="ace-icon fa fa-angle-down icon-on-right"></i>
+					</button>
+
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">只显示图片</a>
+						</li>
+
+						<li>
+							<a href="#">只显示文件夹</a>
+						</li>
+					</ul>
+			</div>
+				
+			</h4>
+				<p><a >
+					我的图片
+				</a></p>
+			</div>
+	<div class="space-6"></div>
+	<div class="row">
+		<div class="col-sm-12">
+			<iframe scrolling="no" style="width:99.9%; height:600px;" frameborder=0 src="{:url('Image/getImageList')}"></iframe>
+		</div>
+	</div>
+
+
+
+   </div>
+</div>
+
+
+<!-- ff -->
+<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">新建文件夹</h4>
+      </div>
+      <div class="modal-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<form class="form-horizontal"  id="submitform" role="form" >
+									<div class="form-group">
+										<label class="col-sm-3 control-label no-padding-right" > 文件夹: </label>
+
+										<div for="FileName" class="col-sm-8">
+											<input type="text" id="FileName" name="FileName" placeholder="请输入文件名" class="form-control" />
+										</div>
+									</div>
+							      	<div class="modal-footer">
+      										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+     										<button type="submit" id="submitbutton" class="btn btn-primary">确定</button>
+    								</div>
+								</form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 结束模态框 -->
+
+<!-- ff -->
+<div class="modal fade bs-example-modal-sm" id="myupload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">新建文件夹</h4>
+      </div>
+      <div class="modal-body">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+			<form  class="dropzone well" id="dropzone">
+				<div class="fallback">
+					<input name="file" type="file" multiple="" />
+				</div>
+			</form>
+							      	<div class="modal-footer">
+      										<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+     										<button type="submit" id="submitbutton" class="btn btn-primary">确定</button>
+    								</div>
+								
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 结束模态框 -->
+<div class="col-sm-6">
+  <div id="dialog-message" class="hide">
+    <p>您确定要删除该用户？</p>
+  </div><!-- #dialog-message -->
+  <!-- #dialog-confirm -->
+</div>
+
+<div id="dialog" title="提示信息" style='display:none'>
+  <p>请先选中一行！</p>
+</div>
+
+<div id="dialog_delete" title="提示信息" style='display:none'>
+  <p>确定要删除！</p>
+</div>
+<script>
+
+(function ($)
+{
+	//部门目录
+	    	var setting = {
+				async: {
+					enable: true,
+					url:"{:url('index/Directory/index')}",
+					autoParam:["id", "name=n", "level=lv"],
+					otherParam:{"otherParam":"zTreeAsyncTest"},
+					dataFilter: filter
+				}
+			};
+
+			function filter(treeId, parentNode, childNodes) {
+				if (!childNodes) return null;
+				for (var i=0, l=childNodes.length; i<l; i++) {
+					childNodes[i].name = childNodes[i].name.replace(/\.n/g, '.');
+				}
+				return childNodes;
+			}
+			//图片目录
+	    	var settings = {
+				async: {
+					enable: true,
+					url:"{:url('index/Department/ajaxGetDepartListZtree')}",
+					autoParam:["id", "name=n", "level=lv"],
+					otherParam:{"otherParam":"zTreeAsyncTest"},
+					dataFilter: filter
+				}
+			};
+
+			$(document).ready(function(){
+				$.fn.zTree.init($("#picturetreeview"), setting);
+				$.fn.zTree.init($("#usertreeview"), settings);
+			});
+
+//新建文件按钮
+$(document).on("click","#NewFolder",function (){
+	$.post("",
+			{},
+			function (){
+				
+			},
+			"json");	
+});
+$.validator.setDefaults({
+
+    submitHandler: function() {
+    	var id = $("#NewFolder").data("id");
+    	var txt = $("#FileName").val();
+    	$.post("{:url('index/Directory/ajaxNewFolder')}",{id:id,name:txt},function(data){
+    		if(data.code == 1){
+    			window.location="{:url('index')}";
+    		}else{
+    			alert(data.msg);
+    		}
+    		
+    	},"json");
+    	return false;
+    }
+    
+});
+
+	// 在键盘按下并释放及提交后验证提交表单
+	  $("#signupForm").validate({
+		    rules: {
+		     trueName: "required",
+		     userName: {
+		        required: true,
+		        minlength: 2
+		      },
+		      userEmail: {
+		        required: true,
+		        email: true
+		      },
+		      userPhone:{
+		    	  required: true, 
+		    		rangelength:[11,12]
+		      },
+		      brithday:{
+		    	  required: true, 
+		    	  date:true
+		      },
+		      loginName:{
+		    	  required: true, 
+		    		rangelength:[5,10]
+		      },
+		      userQQ:{
+		    	  number:true,
+		    	  rangelength:[5,13]
+		      },
+		      agree: "required"
+		    },
+		    messages: {
+		    	trueName: "请输入您的名字",
+		    	loginName: {
+		        required: "请输入用户名",
+		        minlength: "用户名必需由两个字母组成"
+		      },
+		      userEmail: "请输入一个正确的邮箱",
+		      userPhone: "请输入一个正确手机号",
+		      brithday: "请输入你的生日",
+		      userName: "请输入你的昵称",
+		      userQQ: "请输入qq"
+		      
+		    }
+	  });
+	
+
+var scripts = [null, "{$Think.config.__PUBLIC__}/static/components/dropzone/dist/dropzone.js" ,null]
+$('.page-content-area').ace_ajax('loadScripts', scripts, function ()
+{
+    //inline scripts related to this page
+    jQuery(function ($)
+    {
+  	  Dropzone.autoDiscover = false;
+  	
+	  var myDropzone = new Dropzone('#dropzone', {
+	  url:"{:url('index/Upload/uploadAdImage')}",method:"post",
+
+
+	
+	  }); 
+
+	});
+
+
+
+});
+
+})(window.jQuery);
+</script>

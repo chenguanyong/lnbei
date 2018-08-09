@@ -1,0 +1,137 @@
+{include file="public/header"}
+<body class="gray-bg" >
+   <div class="wrapper wrapper-content">
+        <div class="row">
+           <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                    	<h1><a href="{:url('mall/Shopping/index')}">商城首页</a></a></h1>
+                        <h5>购物车</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="table_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="table_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="table_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>商品</th>
+                                        <th>价格</th>
+                                        <th>时间</th>
+                                        <th>数量</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach($list as $value){
+										echo "<tr>";
+										echo '<td><input data-id=' . $value["id"] . ' type="checkbox" /></td>';
+										echo "<td><img style='width:80px;height:80px' src='" . $value["goodsImg"] . "'>" . $value["goods_name"] . "</td>";
+										echo "<td>" . $value["goods_price"] . "</td>";	
+										echo "<td>" . date('Y-m-d',$value["add_time"]) . "</td>";	
+										echo "<td><input type='number' value='" . $value["goods_num"] . "' class='form-control'></td>";
+									}?>
+                                </tbody>
+                            </table>
+                        </div>
+                        <table class="table invoice-total">
+                        <tbody>
+                            <tr>
+                                <td><strong>已选择：</strong>
+                                </td>
+                                <td id="allshop">0</td>
+                            </tr>
+                            <tr>
+                                <td><strong>总计</strong>
+                                </td>
+                                <td  >¥<span id="price">0</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right">
+                        <a data-href="{:url('Order/ajaxBuildOrderByCar')}" class="btn btn-w-m btn-primary" id="jiesuan">去结算</a>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{include file="public/footer"}
+
+<script>
+(function ($){
+	$(document).on("click","#jiesuan",function(){
+		var id = $(this).data("goodsid")
+		var goodsSize= $("#goodsSize").val();
+		var url = $(this).data("href");
+		var price =$("#price").text();
+		var json = "";
+		var size = "";
+		if($("tbody tr td :checked").length == 0){
+			parent.layer.alert('请选择一个宝贝');
+			return false;
+			}
+		$("tbody tr td :checked").each(function(){
+			
+			json = $(this).attr("data-id") + "," + json;
+			 sizes = $(this).parent("td").parent("tr").find("[type=number]").val();
+			size = size + "_" +sizes;	
+		});
+		//alert(price);
+		if(url !=null){
+		$.post(url,{json:json,price:price,size:size},function(data){
+			
+			if(data.code == 1){
+				//alert(data.msg);
+				window.location = "{:url('Order/orderinfo')}?order_id="+data.data;
+			}else{
+				alert(data.msg);
+			}
+		},"json");
+		}
+	});
+	$(document).on("click","tbody tr td input[type=checkbox]",function (){
+		
+		var allprice = 0;
+		var allshop = 0;
+		$("tbody tr td :checked").each(function (){
+			var price = $(this).parent("td").parent("tr").children("td").eq(2).text();
+			var size = $(this).parent("td").parent("tr").find("[type=number]").val();
+			allprice = parseFloat(price) * size +allprice;
+		});
+		$(this).parent("td").parent("tr").find("[type=number]").attr("disabled","true");
+		allshop = $("tbody tr td :checked").length;
+		$("#price").text(allprice);
+		$("#allshop").text(allshop);
+	});
+	$(document).on("click","tbody tr td input[type=checkbox]",function (){
+		$("tbody tr td :disabled").each(function (){
+			var obj = $(this).parent("td").parent("tr");
+			if(obj.find("[type=checkbox]").prop("checked") == false){
+				obj.find("[type=number]").attr("disabled",false);
+			}
+		});		
+	});
+})(window.jQuery);
+
+
+</script>
+  

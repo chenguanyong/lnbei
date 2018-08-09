@@ -1,0 +1,89 @@
+{include file="public/header"}
+<body class="gray-bg" >
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content p-xl">
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+
+                        <div class="col-sm-6 text-right">
+                            <h4>单据编号：</h4>
+                            <h4 class="text-navy">{$order.order_sn}</h4>
+                            <address>
+                                   <strong>{$order.consignee}</strong><br>
+                      				  中国-{$province}-{$city}-{$district}- {$order.address} <br>
+                                   <abbr title="Phone">总机：</abbr>{$order.mobile}
+                            </address>
+                            <p>
+                                <span><strong>日期：</strong>{$order.add_time}</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive m-t">
+                        <table class="table invoice-table">
+                            <thead>
+                                <tr>
+                                    <th>商品名称</th>
+                                    <th>数量</th>
+                                    <th>单价</th>
+                                    <th>时间</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <?php
+                                    foreach($goods as $value){
+										echo "<tr>";
+										echo '<td>'. $value["goods_name"] .'</td>';
+										echo "<td>" . $value["goods_num"] . "</td>";
+										echo "<td>" . $value["goods_price"] . "</td>";	
+										echo "<td>" . $value["member_goods_price"] . "</td>";	
+										echo "<td>" . $value["sku"] . "</td>";
+										echo '</tr>';		
+									}?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /table-responsive -->
+					<div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <h4>使用积分</h4>
+                            <h4 class="text-navy">52</h4>
+							<p>使用优惠卷</p>	
+                            <p>
+                            使用折扣
+                            </p>
+                        </div>
+                    </div>
+                    <table class="table invoice-total">
+                        <tbody>
+                            <tr>
+                                <td><strong>总计</strong>
+                                </td>
+                                <td>&yen;{$order.goods_price}</td>
+                            </tr>                        
+                            <tr>
+                                <td><strong>邮费</strong>
+                                </td>
+                                <td>&yen;{$order.shipping_price}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>应付</strong>
+                                </td>
+                                <td>&yen;{$order.order_amount}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {include file="public/footer"}
+

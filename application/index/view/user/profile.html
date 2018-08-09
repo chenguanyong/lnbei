@@ -1,0 +1,551 @@
+
+<title>个人资料</title>
+
+<link rel="stylesheet" href="__com__/components/_mod/jquery-ui.custom/jquery-ui.custom.css" />
+<link rel="stylesheet" href="__com__/components/jquery.gritter/css/jquery.gritter.css" />
+<link rel="stylesheet" href="__com__/components/select2/dist/css/select2.css" />
+<link rel="stylesheet" href="__com__/components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
+<link rel="stylesheet" href="__com__/components/_mod/x-editable/bootstrap-editable.css" />
+<link rel="stylesheet" href="__js__/cropper/dist/cropper.min.css" />
+<link rel="stylesheet" href="__js__/cropper/dist/main.css" />
+
+
+<div class="row">
+	<div class="col-xs-12">
+		<!-- PAGE CONTENT BEGINS -->
+		<div class="clearfix">
+		</div>
+		<div class="hr dotted"></div>
+		<div>
+			<div id="user-profile-1" class="user-profile row">
+				<div class="col-xs-12 col-sm-3 center">
+					<div>
+						<!-- #section:pages/profile.picture -->
+						<span class="profile-picture">
+							<!-- <a data-toggle="modal" data-target=".bs-example-modal-lg"><img id="avatar" class="editable img-responsive" alt="Alex's Avatar" src="__com__/assets/avatars/profile-pic.jpg" /></a>
+							-->
+							  <div id="crop-avatar">
+    <div class="avatar-view" title="Change the avatar">
+      <img src="__js__/cropper/examples/crop-avatar/images/picture.jpg" alt="头像">
+    </div>
+   <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <form class="avatar-form" action="{:url('index/Upload/uploadFaceByCrop')}" enctype="multipart/form-data" method="post">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title" id="avatar-modal-label">更换头像</h4>
+            </div>
+            <div class="modal-body">
+              <div class="avatar-body">
+
+                <!-- Upload image and data -->
+                <div class="avatar-upload">
+                  <input type="hidden" class="avatar-src" name="avatar_src">
+                  <input type="hidden" class="avatar-data" name="avatar_data">
+                  <label for="avatarInput">Local upload</label>
+                  <input type="file" class="avatar-input" id="avatarInput" name="avatar_file">
+                </div>
+
+                <!-- Crop and preview -->
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="avatar-wrapper"></div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="avatar-preview preview-lg"></div>
+                    <div class="avatar-preview preview-md"></div>
+                    <div class="avatar-preview preview-sm"></div>
+                  </div>
+                </div>
+
+                <div class="row avatar-btns">
+                  <div class="col-md-10">
+                  <div class="row">
+			           <div class="col-md-12">   
+		           			<div class="btn-group">
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="-90" title="Rotate -90 degrees">Rotate Left</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="-15">-15deg</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="-30">-30deg</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="-45">-45deg</button>
+		                    
+			           
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="90" title="Rotate 90 degrees">Rotate Right</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="15">15deg</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="30">30deg</button>
+		                      <button type="button" class="btn btn-primary" data-method="rotate" data-option="45">45deg</button>
+		                    </div>
+	                    </div>
+                    </div>
+                  </div>
+                  <div class="col-md-2">
+                    <button type="submit" class="btn btn-primary btn-block avatar-save">Done</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div> -->
+          </form>
+        </div>
+      </div>
+    </div><!-- /.modal -->
+    </div>
+							
+						</span>
+
+						<!-- /section:pages/profile.picture -->
+						<div class="space-4"></div>
+
+						<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
+							<div class="inline position-relative">
+								<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+									<i class="ace-icon fa fa-circle light-green"></i>
+									&nbsp;
+									<span class="white">陈官勇</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="space-6"></div>
+
+					<!-- #section:pages/profile.contact -->
+					<div class="profile-contact-info">
+						<div class="profile-contact-links align-left">
+							<a  data-toggle="modal" data-target="#Modify_password" class="btn btn-link">
+								<i class="ace-icon fa fa-plus-circle bigger-120 green"></i>
+								修改密码
+							</a>
+
+							<a href="#index/user/detailInfo" class="btn btn-link">
+								<i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+								完善资料
+							</a>
+							<a href="#index/user/verification" class="btn btn-link">
+								<i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+								实名验证
+							</a>	
+							<a href="#index/user/editAvatar" class="btn btn-link">
+								<i class="ace-icon fa fa-envelope bigger-120 pink"></i>
+								修改头像
+							</a>													
+
+						</div>
+
+						<div class="space-6"></div>
+
+						<div class="profile-social-links align-center">
+							<a href="#" class="tooltip-info" title="" data-original-title="Visit my Facebook">
+								<i class="middle ace-icon fa fa-facebook-square fa-2x blue"></i>
+							</a>
+
+							<a href="#" class="tooltip-info" title="" data-original-title="Visit my Twitter">
+								<i class="middle ace-icon fa fa-twitter-square fa-2x light-blue"></i>
+							</a>
+
+							<a href="#" class="tooltip-error" title="" data-original-title="Visit my Pinterest">
+								<i class="middle ace-icon fa fa-pinterest-square fa-2x red"></i>
+							</a>
+						</div>
+					</div>
+
+					<!-- /section:pages/profile.contact -->
+					<div class="hr hr12 dotted"></div>
+
+					<!-- #section:custom/extra.grid -->
+					<div class="clearfix">
+						<div class="grid2">
+							<span class="bigger-175 blue">25</span>
+
+							<br />
+							关注
+						</div>
+
+						<div class="grid2">
+							<span class="bigger-175 blue">12</span>
+
+							<br />
+							赞
+						</div>
+					</div>
+
+					<!-- /section:custom/extra.grid -->
+					<div class="hr hr16 dotted"></div>
+				</div>
+<!-- dfs -->
+<script id="usertpl" type="text/html">
+				<div class="col-xs-12 col-sm-9">
+					<div class="center">
+						<span class="btn btn-app btn-sm btn-light no-hover">
+							<span class="line-height-1 bigger-170 blue"> {{ d.Grade }} </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 等级 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-yellow no-hover">
+							<span class="line-height-1 bigger-170"> {{ d.Integral }} </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 积分 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-pink no-hover">
+							<span class="line-height-1 bigger-170"> 4 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 消息 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-grey no-hover">
+							<span class="line-height-1 bigger-170"> 23 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 任务 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-success no-hover">
+							<span class="line-height-1 bigger-170"> 120 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 在线时间 </span>
+						</span>
+
+						<span class="btn btn-app btn-sm btn-primary no-hover">
+							<span class="line-height-1 bigger-170"> 55 </span>
+
+							<br />
+							<span class="line-height-1 smaller-90"> 好友 </span>
+						</span>
+					</div>
+
+					<div class="space-12"></div>
+
+					<!-- /section:pages/profile.info -->
+					<h3 class="row header smaller lighter blue">
+						<span class="col-xs-6"> 详细资料 </span><!-- /.col -->
+					</h3>
+					<div class="tabbable tabs-below">
+						<div class="tab-content" style="height:370px;">
+							<div id="home2" class="tab-pane in active">
+									<div class="profile-user-info profile-user-info-striped">
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 系统角色  </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="username">alexdoe</span>
+											</div>
+										</div>
+				
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 所属公司 </div>
+				
+											<div class="profile-info-value">
+												<i class="fa fa-map-marker light-orange bigger-110"></i>
+												<span class="editable" id="country">Netherlands</span>
+												<span class="editable" id="city">Amsterdam</span>
+											</div>
+										</div>
+				
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 所属部门 </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="age">38</span>
+											</div>
+										</div>
+				
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 所在地区  </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="signup">2010/06/20</span>
+											</div>
+										</div>
+				
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 最后登录时间 </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="login">3 hours ago</span>
+											</div>
+										</div>
+				
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 当前IP </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="about">Editable as WYSIWYG</span>
+											</div>
+										</div>
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 域名 </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="about">Editable as WYSIWYG</span>
+											</div>
+										</div>
+										<div class="profile-info-row">
+											<div class="profile-info-name"> 当前时间 </div>
+				
+											<div class="profile-info-value">
+												<span class="editable" id="about">2017/3/3</span>
+											</div>
+										</div>																				
+									</div>
+								
+							</div>
+	
+							<div id="profile2" class="tab-pane">
+					<!-- #section:pages/profile.info -->
+					
+					<div class="profile-user-info profile-user-info-striped">
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 职位 </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="username">{{ d.Position }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 工号  </div>
+							<div class="profile-info-value">
+								<i class="fa fa-map-marker light-orange bigger-110"></i>
+								<span class="editable" id="country">{{ d.workID }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 入职时间  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="age">{{ d.InductionTime }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 工号  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="signup">2010/06/20</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 状态 </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="login">{{ d.state }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 级别  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="about">{{ d.Grade }}</span>
+							</div>
+						</div>
+					</div>
+
+							</div>
+	
+							<div id="dropdown12" class="tab-pane">
+
+					<!-- #section:pages/profile.info -->
+					
+					<div class="profile-user-info profile-user-info-striped">
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 用户名 </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="username">{{ d.UserName }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 地址 </div>
+
+							<div class="profile-info-value">
+								<i class="fa fa-map-marker light-orange bigger-110"></i>
+								<span class="editable" >{{ d.Adress }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 年龄 </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="age">{{ d.Age }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 昵称 </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="signup">{{ d.Nickname }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 真实姓名  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="login">{{ d.Nickname }}</span>
+							</div>
+						</div>
+
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 手机号  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="about">{{ d.moblie }}</span>
+							</div>
+						</div>
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 邮箱  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="about">{{ d.email }}</span>
+							</div>
+						</div>
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 个性签名  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="about">{{ d.Personsigna }}</span>
+							</div>
+						</div>	
+						<div class="profile-info-row">
+							<div class="profile-info-name"> 状态  </div>
+
+							<div class="profile-info-value">
+								<span class="editable" id="about">Editable as WYSIWYG</span>
+							</div>
+						</div>																	
+					</div>
+
+							</div>
+						</div>
+
+						<ul class="nav nav-tabs" id="myTab2">
+							<li class="active">
+								<a data-toggle="tab" href="#home2">系统信息</a>
+							</li>
+	
+							<li>
+								<a data-toggle="tab" href="#profile2">工作信息</a>
+							</li>
+	
+							<li>
+								<a data-toggle="tab" href="#dropdown12">基本信息</a>
+							</li>
+						</ul>
+					</div>					
+									
+				</div>
+				</script>
+				<!-- fs -->
+				<div id="info"></div> -->
+			</div>
+		</div>
+
+
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+</div><!-- /.row -->
+
+<div class="modal fade" id="Modify_password" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">修改密码</h4>
+      </div>
+      <div class="row">
+      	<div class="col-sm-12">
+	      <form class="form-horizontal" role="form">
+	      <div class="modal-body">
+	        	
+				<!-- #section:elements.form -->
+				<div class="form-group">
+					<label class="col-sm-4 control-label no-padding-right" for="form-field-1"> 输入密码 </label>
+	
+					<div class="col-sm-8">
+						<input type="password"  placeholder="请输入密码" class="col-xs-10 col-sm-7" />
+					</div>
+				</div>
+	
+				<div class="form-group">
+					<label class="col-sm-4 control-label no-padding-right" for="form-field-1-1"> 再输入一次 </label>
+	
+					<div class="col-sm-8">
+						<input type="password"  placeholder="请重新输入密码" class="col-xs-10 col-sm-7" />
+					</div>
+				</div>
+				
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	        <button type="button" class="btn btn-primary">保存</button>
+	      </div>
+	      </form>
+	      </div>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<!--  
+<script id="demo" type="text/html">
+<h3>{{ d.title }}</h3>
+<ul>
+{{#  layui.each(d.list, function(index, item){ }}
+  <li>
+    <span>{{ item.modname }}</span>
+    <span>{{ item.alias }}：</span>
+    <span>{{ item.site || '' }}</span>
+  </li>
+{{#  }); }}
+ 
+{{#  if(d.list.length === 0){ }}
+  无数据
+{{#  } }} 
+</ul>
+</script>
+//第二步：建立视图。用于呈现渲染结果。
+<div id="view"></div> -->
+<!-- page specific plugin scripts -->
+
+<!--[if lte IE 8]>
+  <script src="__com__/components/ExplorerCanvas/excanvas.js"></script>
+<![endif]-->
+
+
+<script type="text/javascript" src="__js__/cropper/dist/cropper.min.js"></script>
+<script type="text/javascript" src="__js__/cropper/dist/main.js"></script>
+<script type="text/javascript">
+(function ($){
+		layui.use('laytpl', function(){
+			  var laytpl = layui.laytpl;
+			  var d=new Date();
+			$.post("{:url('index/user/getUserInfo')}",{cash:d.getTime()},function (str){
+			  //使用方式跟独立组件完全一样
+			  if(str.code == 1){
+				  var getTpl = usertpl.innerHTML;
+				  laytpl(getTpl).render(str.data, function(string){
+					  info.innerHTML = string;
+				  });
+			  }else{
+				  alert(str.msg);
+			  }
+			},"json");  
+		
+		});
+})(window.jQuery)
+</script>

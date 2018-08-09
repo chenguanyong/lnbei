@@ -1,0 +1,352 @@
+
+<title>Wysiwyg &amp; Markdown Editor - Ace Admin</title>
+
+<link rel="stylesheet" href="__com__/components/_mod/jquery-ui.custom/jquery-ui.custom.css" />
+
+<div class="row">	
+	<div class="col-xs-12">
+		<div class="row">
+			<div class="col-xs-12">
+				<!-- PAGE CONTENT BEGINS -->
+				<form class="form-horizontal" role="form">
+					<!-- #section:elements.form -->
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Text Field </label>
+		
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1" placeholder="Username" class="col-xs-10 col-sm-5" />
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-1-1"> Full Length </label>
+		
+						<div class="col-sm-9">
+							<input type="text" id="form-field-1-1" placeholder="Text Field" class="form-control" />
+						</div>
+					</div>
+		
+					<!-- /section:elements.form -->
+					<div class="space-4"></div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-2"> Password Field </label>
+		
+						<div class="col-sm-9">
+							<input type="password" id="form-field-2" placeholder="Password" class="col-xs-10 col-sm-5" />
+							<span class="help-inline col-xs-12 col-sm-7">
+								<span class="middle">Inline help text</span>
+							</span>
+						</div>
+					</div>
+		
+					<div class="space-4"></div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-input-readonly"> Readonly field </label>
+		
+						<div class="col-sm-9">
+							<input readonly="" type="text" class="col-xs-10 col-sm-5" id="form-input-readonly" value="This text field is readonly!" />
+							<span class="help-inline col-xs-12 col-sm-7">
+								<label class="middle">
+									<input class="ace" type="checkbox" id="id-disable-check" />
+									<span class="lbl"> Disable it!</span>
+								</label>
+							</span>
+						</div>
+					</div>
+		
+					<div class="space-4"></div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-4">Relative Sizing</label>
+		
+						<div class="col-sm-9">
+							<input class="input-sm" type="text" id="form-field-4" placeholder=".input-sm" />
+							<div class="space-2"></div>
+		
+							<div class="help-block" id="input-size-slider"></div>
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-5">Grid Sizing</label>
+		
+						<div class="col-sm-9">
+							<div class="clearfix">
+								<input class="col-xs-1" type="text" id="form-field-5" placeholder=".col-xs-1" />
+							</div>
+		
+							<div class="space-2"></div>
+		
+							<div class="help-block" id="input-span-slider"></div>
+						</div>
+					</div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right">Input with Icon</label>
+		
+						<div class="col-sm-9">
+							<!-- #section:elements.form.input-icon -->
+							<span class="input-icon">
+								<input type="text" id="form-field-icon-1" />
+								<i class="ace-icon fa fa-leaf blue"></i>
+							</span>
+		
+							<span class="input-icon input-icon-right">
+								<input type="text" id="form-field-icon-2" />
+								<i class="ace-icon fa fa-leaf green"></i>
+							</span>
+		
+							<!-- /section:elements.form.input-icon -->
+						</div>
+					</div>
+		
+					<div class="space-4"></div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-6">Tooltip and help button</label>
+		
+						<div class="col-sm-9">
+							<input data-rel="tooltip" type="text" id="form-field-6" placeholder="Tooltip on hover" title="Hello Tooltip!" data-placement="bottom" />
+							<span class="help-button" data-rel="popover" data-trigger="hover" data-placement="left" data-content="More details." title="Popover on hover">?</span>
+						</div>
+					</div>
+		
+					<div class="space-4"></div>
+		
+					<div class="form-group">
+						<label class="col-sm-3 control-label no-padding-right" for="form-field-tags">Tag input</label>
+		
+						<div class="col-sm-9">
+							<!-- #section:plugins/input.tag-input -->
+							<div class="inline">
+								<input type="text" name="tags" id="form-field-tags" value="Tag Input Control" placeholder="Enter tags ..." />
+							</div>
+		
+							<!-- /section:plugins/input.tag-input -->
+						</div>
+					</div>
+		
+					<div class="clearfix form-actions">
+						<div class="col-md-offset-3 col-md-9">
+							<button class="btn btn-info" type="button">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								Submit
+							</button>
+		
+							&nbsp; &nbsp; &nbsp;
+							<button class="btn" type="reset">
+								<i class="ace-icon fa fa-undo bigger-110"></i>
+								Reset
+							</button>
+						</div>
+					</div>
+		
+					<div class="hr hr-24"></div>
+		
+		
+					</form>
+		
+				<!-- PAGE CONTENT ENDS -->
+			</div><!-- /.col -->
+		</div><!-- /.row -->		
+		<div class="wysiwyg-editor" id="editor1"></div>
+
+		<div class="hr hr-double dotted"></div>
+
+		
+		<!-- PAGE CONTENT ENDS -->
+	</div><!-- /.col -->
+	
+
+</div><!-- /.row -->
+
+<!-- page specific plugin scripts -->
+<script type="text/javascript">
+	var scripts = [null,"__com__/components/_mod/jquery-ui.custom/jquery-ui.custom.js","__com__/components/jqueryui-touch-punch/jquery.ui.touch-punch.js","__com__/components/markdown/lib/markdown.js","__com__/components/bootstrap-markdown/js/bootstrap-markdown.js","__com__/components/jquery.hotkeys/index.js","__com__/components/_mod/bootstrap-wysiwyg/bootstrap-wysiwyg.js","__com__/components/bootbox.js/bootbox.js", null]
+	$('.page-content-area').ace_ajax('loadScripts', scripts, function() {
+	  //inline scripts related to this page
+		 jQuery(function($){
+	
+	$('textarea[data-provide="markdown"]').each(function(){
+        var $this = $(this);
+
+		if ($this.data('markdown')) {
+		  $this.data('markdown').showEditor();
+		}
+		else $this.markdown()
+		
+		$this.parent().find('.btn').addClass('btn-white');
+    })
+	
+	
+	
+	function showErrorAlert (reason, detail) {
+		var msg='';
+		if (reason==='unsupported-file-type') { msg = "Unsupported format " +detail; }
+		else {
+			//console.log("error uploading file", reason, detail);
+		}
+		$('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>'+ 
+		 '<strong>File upload error</strong> '+msg+' </div>').prependTo('#alerts');
+	}
+
+	//$('#editor1').ace_wysiwyg();//this will create the default editor will all buttons
+
+	//but we want to change a few buttons colors for the third style
+	$('#editor1').ace_wysiwyg({
+		toolbar:
+		[
+			'font',
+			null,
+			'fontSize',
+			null,
+			{name:'bold', className:'btn-info'},
+			{name:'italic', className:'btn-info'},
+			{name:'strikethrough', className:'btn-info'},
+			{name:'underline', className:'btn-info'},
+			null,
+			{name:'insertunorderedlist', className:'btn-success'},
+			{name:'insertorderedlist', className:'btn-success'},
+			{name:'outdent', className:'btn-purple'},
+			{name:'indent', className:'btn-purple'},
+			null,
+			{name:'justifyleft', className:'btn-primary'},
+			{name:'justifycenter', className:'btn-primary'},
+			{name:'justifyright', className:'btn-primary'},
+			{name:'justifyfull', className:'btn-inverse'},
+			null,
+			{name:'createLink', className:'btn-pink'},
+			{name:'unlink', className:'btn-pink'},
+			null,
+			{name:'insertImage', className:'btn-success'},
+			null,
+			'foreColor',
+			null,
+			{name:'undo', className:'btn-grey'},
+			{name:'redo', className:'btn-grey'}
+		],
+		'wysiwyg': {
+			fileUploadError: showErrorAlert
+		}
+	}).prev().addClass('wysiwyg-style2');
+
+	
+	/**
+	//make the editor have all the available height
+	$(window).on('resize.editor', function() {
+		var offset = $('#editor1').parent().offset();
+		var winHeight =  $(this).height();
+		
+		$('#editor1').css({'height':winHeight - offset.top - 10, 'max-height': 'none'});
+	}).triggerHandler('resize.editor');
+	*/
+	
+
+	$('#editor2').css({'height':'200px'}).ace_wysiwyg({
+		toolbar_place: function(toolbar) {
+			return $(this).closest('.widget-box')
+			       .find('.widget-header').prepend(toolbar)
+				   .find('.wysiwyg-toolbar').addClass('inline');
+		},
+		toolbar:
+		[
+			'bold',
+			{name:'italic' , title:'Change Title!', icon: 'ace-icon fa fa-leaf'},
+			'strikethrough',
+			null,
+			'insertunorderedlist',
+			'insertorderedlist',
+			null,
+			'justifyleft',
+			'justifycenter',
+			'justifyright'
+		],
+		speech_button: false
+	});
+	
+	
+
+
+	$('[data-toggle="buttons"] .btn').on('click', function(e){
+		var target = $(this).find('input[type=radio]');
+		var which = parseInt(target.val());
+		var toolbar = $('#editor1').prev().get(0);
+		if(which >= 1 && which <= 4) {
+			toolbar.className = toolbar.className.replace(/wysiwyg\-style(1|2)/g , '');
+			if(which == 1) $(toolbar).addClass('wysiwyg-style1');
+			else if(which == 2) $(toolbar).addClass('wysiwyg-style2');
+			if(which == 4) {
+				$(toolbar).find('.btn-group > .btn').addClass('btn-white btn-round');
+			} else $(toolbar).find('.btn-group > .btn-white').removeClass('btn-white btn-round');
+		}
+	});
+
+
+	
+
+	//RESIZE IMAGE
+	
+	//Add Image Resize Functionality to Chrome and Safari
+	//webkit browsers don't have image resize functionality when content is editable
+	//so let's add something using jQuery UI resizable
+	//another option would be opening a dialog for user to enter dimensions.
+	if ( typeof jQuery.ui !== 'undefined' && ace.vars['webkit'] ) {
+		
+		var lastResizableImg = null;
+		function destroyResizable() {
+			if(lastResizableImg == null) return;
+			lastResizableImg.resizable( "destroy" );
+			lastResizableImg.removeData('resizable');
+			lastResizableImg = null;
+		}
+
+		var enableImageResize = function() {
+			$('.wysiwyg-editor')
+			.on('mousedown', function(e) {
+				var target = $(e.target);
+				if( e.target instanceof HTMLImageElement ) {
+					if( !target.data('resizable') ) {
+						target.resizable({
+							aspectRatio: e.target.width / e.target.height,
+						});
+						target.data('resizable', true);
+						
+						if( lastResizableImg != null ) {
+							//disable previous resizable image
+							lastResizableImg.resizable( "destroy" );
+							lastResizableImg.removeData('resizable');
+						}
+						lastResizableImg = target;
+					}
+				}
+			})
+			.on('click', function(e) {
+				if( lastResizableImg != null && !(e.target instanceof HTMLImageElement) ) {
+					destroyResizable();
+				}
+			})
+			.on('keydown', function() {
+				destroyResizable();
+			});
+	    }
+
+		enableImageResize();
+
+		/**
+		//or we can load the jQuery UI dynamically only if needed
+		if (typeof jQuery.ui !== 'undefined') enableImageResize();
+		else {//load jQuery UI if not loaded
+			//in Ace demo ../../components will be replaced by correct components path
+			$.getScript("../../components/_mod/jquery-ui.custom/jquery-ui.custom.min.js", function(data, textStatus, jqxhr) {
+				enableImageResize()
+			});
+		}
+		*/
+	}
+
+
+});
+	});
+</script>

@@ -1,0 +1,239 @@
+{include file="public/header"}
+<body class="gray-bg" >
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox-content p-xl">
+                    <h1><a href="{:url('mall/Shopping/index')}">商城首页</a></a></h1>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+
+                        <div class="col-sm-6 text-right">
+                            <h4>单据编号：</h4>
+                            <h4 class="text-navy">{$order.order_sn}</h4>
+                            <address>
+                                        <strong>{$order.consignee}</strong><br>
+                             中国-{$province}-{$city}-{$district}- {$order.address} <br>
+                                        <abbr title="Phone">总机：</abbr>{$order.mobile}
+                                    </address>
+                            <p>
+                                <span><strong>日期：</strong>{$order.add_time}</span>
+                            </p>
+                        </div>
+                    </div>
+<div><button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  修改地址
+</button></div>
+                    <div class="table-responsive m-t">
+                        <table class="table invoice-table">
+                            <thead>
+                                <tr>
+                                    <th>商品名称</th>
+                                    <th>数量</th>
+                                    <th>单价</th>
+                                    <th>时间</th>
+                                    <th>备注</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <?php
+                                    foreach($goods as $value){
+										echo "<tr>";
+										echo '<td>'. $value["goods_name"] .'</td>';
+										echo "<td>" . $value["goods_num"] . "</td>";
+										echo "<td>" . $value["goods_price"] . "</td>";	
+										echo "<td>" . $value["member_goods_price"] . "</td>";	
+										echo "<td>" . $value["sku"] . "</td>";
+										echo '</tr>';		
+									}?>
+                            </tbody>
+                        </table>
+                    </div>
+                 <div class="row" style="height:100px">
+                 	<h4>物流信息</h4>
+	                 <div class="col-sm-6">
+									<select class="form-control m-b" name="account">
+                                       {volist name="expresslist" id="vo"}
+											<option value="{$vo.expressId}">{$vo.expressName}</option>
+										{/volist}
+
+                                    </select>
+	                 </div>
+
+                 </div>
+                 <div class="row" style="height:100px">
+                    <h4>支付信息</h4>
+					<div class="col-sm-2">
+					   <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3" id="inlineCheckbox3">信用卡支付</label>                 	                    
+					</div>
+					<div class="col-sm-2">
+					    <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3" id="inlineCheckbox3">白条</label>                	                    
+					</div>
+					<div class="col-sm-2">
+					    <label class="checkbox-inline">
+                             <input type="checkbox" value="option3" id="inlineCheckbox3">在线支付</label>                	                    
+					</div>	
+					<div class="col-sm-2">
+					    <label class="checkbox-inline">
+                             <input type="checkbox" value="option3" id="inlineCheckbox3">货到付款</label>                	                    
+					</div>									
+					
+                 </div>
+                    <!-- /table-responsive -->
+				<div class="row">
+                        <div class="col-sm-6">
+                        <h4>使用优惠</h4>
+                 <table class="table ">
+                        <tbody>
+                            <tr>
+                                <td>可用积分:<strong id="userScore">{$userInfo.userScore}</strong>
+                                </td>
+                                <td><div class="input-group">
+                                        <input id="ScoreInput" type="number" class="form-control"> <span class="input-group-btn"> <button id="ScoreButton" type="button" data-order="{$order.order_id}" class="btn btn-primary">使用积分
+                                        </button> </span>
+                                    </div></td>
+                            </tr>                        
+                            <tr>
+                                <td><strong>可用优惠卷：</strong>0
+                                </td>
+                                <td><a class="btn btn-primary">使用优惠卷</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                        </div>
+
+                        <div class="col-sm-6 text-right">
+
+                        </div>
+                    </div>
+                    
+                    <table class="table invoice-total">
+                        <tbody>
+                            <tr>
+                                <td><strong>总计</strong>
+                                </td>
+                                <td>&yen;{$order.goods_price}</td>
+                            </tr>                        
+                            <tr>
+                                <td><strong>邮费</strong>
+                                </td>
+                                <td>&yen;{$order.shipping_price}</td>
+                            </tr>
+                            <tr>
+                                <td><strong>应付</strong>
+                                </td>
+                                <td>&yen;<strong id="amount">{$order.order_amount}</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="text-right">
+                        <button class="btn btn-primary"><i class="fa fa-dollar"></i> 去付款</button>
+                    </div>
+
+                    <div class="well m-t"><strong>注意：</strong> 请在30日内完成付款，否则订单会自动取消。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">请选择地址</h4>
+      </div>
+      <div class="modal-body">
+<div class="ibox float-e-margins">
+
+                    <div class="ibox-content">
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>收货人</th>
+                                    <th>手机号</th>
+                                    <th>地址</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {volist name="address" id="vo"}
+                                <tr id="{$vo.addressId}">
+                                    <td><input type="checkbox"></td>
+                                    <td>{$vo.userName}</td>
+                                    <td>{$vo.userPhone}</td>
+                                    <td>{$vo.userAddress}</td>
+                                </tr>
+							{/volist}
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" id="save" class="btn btn-primary">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    {include file="public/footer"}
+<script>
+
+(function ($){
+	
+	$(document).on("click","td input[type=checkbox]",function (){
+		
+		if(!$(this).is(':checked')){
+			$("td input[type=checkbox]").prop('checked',false);
+		}else{
+			$("td input[type=checkbox]").prop('checked',false);
+			$(this).prop('checked',true);
+		}
+		
+	});
+	$("#save").on("click",function(){
+		var id = $("td :checked").parent("td").parent("tr").attr("id");
+    	$.post("{:url('Order/editAddress')}",{id:id,order:{$order.order_id}},function(data){
+    		if(data.code == 1){
+    			window.location="{:url('Order/orderinfo')}?order_id="+data.data;
+    		}else{
+    			alert(data.msg);
+    		}
+    		
+    	},"json");
+		
+	});
+	$("#ScoreButton").on("click",function(){
+		var integral = $("#ScoreInput").val();
+		if(integral == 0){
+			return false;
+		}
+    	$.post("{:url('Order/ajaxUseIntegral')}",{integral:integral,orderid:{$order.order_id}},function(data){
+    		if(data.code == 1){
+    			$("#amount").text(data.data);
+    			$("#userScore").text(data.Userintegral);
+    		}else{
+    			alert(data.msg);
+    		}
+    		
+    	},"json");
+		
+	});
+	
+	
+})(window.jQuery);
+
+
+</script>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>lnbei--快速开发平台</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="description" content="林北网 - 一个提供快速开发系统的网站">
+		<meta name="keyword" content="林北,林北网,php,cms,企业建站,官网,建站,php,admin,前端开发,快速开发平台,系统,oa,插件,商城,放心用,电子商务">
+		<!-- bootstrap & fontawesome -->
+		<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/bootstrap.css" />
+		<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/components/font-awesome/css/font-awesome.css" />
+
+
+		<!-- text fonts -->
+		<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/ace-fonts.css" />
+
+		<!-- ace styles -->
+		<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/ace.css" class="ace-main-stylesheet" id="main-ace-style" />
+		
+		<style>
+		.jumbotron.has-background {
+			background: transparent url("images/home-bg.jpg") top center no-repeat;
+			/* background source: https://pixabay.com/en/apple-steve-jobs-quotes-scrabble-758334/ */
+		}
+		.section-contact {
+			background: #222 url("images/map-contact.jpg") center no-repeat;
+		}
+		</style>
+
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/ace-part2.css" class="ace-main-stylesheet" />
+			<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/assets/css/ace-ie.css" />
+		<![endif]-->
+		
+		
+		<link rel="stylesheet" href="{$Think.config.__PUBLIC__}/static/frontend.css" />
+
+		<!-- HTML5shiv and Respond.js for IE8 to support HTML5 elements and media queries -->
+		<!--[if lte IE 8]>
+		<script src="{$Think.config.__PUBLIC__}/static/components/html5shiv/dist/html5shiv.min.js"></script>
+		<script src="{$Think.config.__PUBLIC__}/static/components/respond/dest/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="no-skin pos-rel" data-spy="scroll" data-target="#menu">
+		<div id="navbar" class="navbar navbar-default navbar-fixed-top">
+			<div class="navbar-container container" id="navbar-container">
+				
+				<button data-target="#menu" data-toggle="collapse" type="button" class="pull-right navbar-toggle collapsed">
+					<span class="sr-only">Toggle menu</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<div class="navbar-header navbar-left">
+					<a href="home" class="navbar-brand">
+						<small>
+							<i class="glyphicon glyphicon-star "></i>
+							<span class="light-green">ln</span>bei
+						</small>
+					</a>
+				</div>
+
+				<div class=" navbar-header navbar-right" role="navigation">
+					<div id="menu" class="collapse navbar-collapse">
+						<ul class="nav navbar-nav navbar-right" role="tablist">
+							<li>
+								<a href="#services">文档</a>
+							</li>
+							
+							<li class="sep visible-md visible-lg">
+								<i class="ace-icon fa fa-circle white"></i>
+							</li>
+							
+							<li>
+								<a href="index">Dome</a>
+							</li>
+							
+							<li class="sep visible-md visible-lg">
+								<i class="ace-icon fa fa-circle white"></i>
+							</li>
+							
+							<li>
+								<a href="#slider">API</a>
+							</li>
+							
+							<li class="sep visible-md visible-lg">
+								<i class="ace-icon fa fa-circle white"></i>
+							</li>
+							
+							<li>
+								<a href="#contact">商城</a>
+							</li>
+							
+							<li class="sep visible-md visible-lg">
+								<i class="ace-icon fa fa-circle white"></i>
+							</li>
+							
+							<li>
+								<a href="#"><span class="light-green">社区</span> &nbsp;<i class="fa fa-user bigger-110 light-green"></i></a>
+							</li>
+						</ul>
+					</div>				
+				</div>
+			</div><!-- /.navbar-container -->
+		</div>
+		
+		<div class="main-container" id="top">
+			<div class="jumbotron main-background">
+			
+			  <img src="img/home-bg.jpg" class="img-main-background" data-src="https://pixabay.com/en/apple-steve-jobs-quotes-scrabble-758334/" />
+			  
+			  <div class="container pos-rel">
+				<div class="text-center">
+					<p class="white"><i class="glyphicon glyphicon-star  bigger-300"></i></p>
+					<br />
+					<h1 class="white" style="font-size:50px; font-family: serif; font-weight: 1;">最经典的快速开发平台</h1>
+					<h3 class="light-blue"></h3>
+					<br />
+					<br />
+					<br />
+					<a class="btn btn-purple btn-lg" href="#" style="width:250px" role="button"><i class="ace-icon fa fa-arrow-circle-o-down bigger-200"></i><span class="bigger-200 no-text-shadow">下载</span></a>
+					<br />
+					<br />
+					<p class="text-center light-blue" style="font-size:14px"><span>当前版本：V2.1</span>&nbsp;&nbsp;<span>升级日志:<a class="btn btn-link ">更新日志</a></span></p>				
+					<p class="text-center light-blue" style="font-size:14px"><span>下载量：200</span></p>
+					
+					
+				</div>
+			  </div>
+			</div>
+			
+			
+			<section id="services" class="section section-grey" style=" display:none">
+				<div class="container">
+					<div class="row">
+						<div class="text-center">
+							<h2 class="text-primary">Services</h2>
+							<h3 class="text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+						</div>
+					</div>
+					<div class="space-4"></div>
+					<div class="row text-center">
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x">
+								<i class="fa fa-circle fa-stack-2x text-primary"></i>
+								<i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="text-info">Responsive Design</h4>
+							<p class="text-muted align-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+						</div>
+						
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x">
+								<i class="fa fa-circle fa-stack-2x text-primary"></i>
+								<i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="text-info">Cloud Computing</h4>
+							<p class="text-muted align-justify">Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+						</div>
+						
+						<div class="col-md-4">
+							<span class="fa-stack fa-4x">
+								<i class="fa fa-circle fa-stack-2x text-primary"></i>
+								<i class="fa fa-pie-chart fa-stack-1x fa-inverse"></i>
+							</span>
+							<h4 class="text-info">Data Analysis</h4>
+							<p class="text-muted align-justify">Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			
+			
+			<footer class="section">
+				<div class="container">
+					<div class="text-center">
+						<h5><span class=" text-muted"><span class="blue bolder">lnbei</span> Application &copy; 2013-2040</span></h5>
+					</div>
+					<div class="row">
+						<div class="col-md-3 text-left">
+							
+						</div>
+						<div class="col-md-6 text-center">
+							<div class="row">
+								<div class="col-md-2 text-center">
+									<a href="#">关于我们</a>
+								</div>
+								<div class="col-md-2 text-center">
+									<a target="_blank" href="https://github.com/chenguanyong/phpBCG">GitHub</a>
+								</div>
+								<div class="col-md-2 text-center">
+									<a href="#">留言</a>
+								</div>
+	   							<div class="col-md-2 text-center">
+									<a href="#">捐赠</a>
+								</div>
+	   							<div class="col-md-2 text-center">
+									<a href="#">社区</a>
+								</div>
+								<div class="col-md-2 text-center">
+									<a target="_blank" href="https://shop109175990.taobao.com/">淘宝店铺</a>
+								</div>																
+							</div>
+						</div>
+						
+						<div class="col-md-3 text-right">
+							
+						</div>
+					</div>
+					<div class="text-center">
+							<h5><span class=" text-muted">豫ICP备17022054号-1</span></h5>
+					</div>
+				</div>
+			</footer>
+
+		</div>
+
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+		<script src="{$Think.config.__PUBLIC__}/static/components/jquery/dist/jquery.js"></script>
+		<!-- <![endif]-->
+		<!--[if IE]>
+		<script src="{$Think.config.__PUBLIC__}/static/components/jquery.1x/dist/jquery.min.js"></script>
+		<![endif]-->
+		
+		
+		<script src="{$Think.config.__PUBLIC__}/static/components/bootstrap/dist/js/bootstrap.js"></script>
+		<script src="{$Think.config.__PUBLIC__}/static/components/holderjs/holder.js"></script>
+		
+		<script type="text/javascript">
+		jQuery(function($) {
+			$('#contact textarea').css('min-height', '150px');
+		
+		
+			///make navbar compact when scrolling down
+			var isCompact = false;
+			$(window)
+			.on('scroll.scroll_nav', function() {
+				var scroll = $(window).scrollTop();
+				var h = $(window).height();
+				var body_sH = document.body.scrollHeight;
+				if(scroll > parseInt(h / 4) || (scroll > 0 && body_sH >= h && h + scroll >= body_sH - 1)) {//|| for smaller pages, when reached end of page
+					if(!isCompact) $('.navbar').addClass('navbar-compact');
+					isCompact = true;
+				}
+				else {
+					$('.navbar').removeClass('navbar-compact');
+					isCompact = false;
+				}
+			}).triggerHandler('scroll.scroll_nav');
+			
+			
+			//optinal: when window is too small change background presentation
+			$(window)
+			.on('resize.bg_update', function() {
+				var width = $(window).width();
+				
+				if(width < 992) {
+					$('.img-main-background').addClass('hide');
+					$('.jumbotron').addClass('has-background');
+				}
+				else {
+					$('.img-main-background').removeClass('hide');
+					$('.jumbotron').removeClass('has-background');
+				}
+			}).triggerHandler('resize.bg_update');
+			
+			
+			//animated scroll to a section
+			$(document).on('click', '#navbar a', function() {
+				var href = $(this).attr('href');
+				if(!( /^\#/.test(href) )) return;
+				var target = $(href);
+				if(target.length == 1) {
+					var offset = target.offset();
+					var top = parseInt(Math.max(offset.top - 30, 0));
+					$('html,body').animate({scrollTop: top}, 250);
+				}
+			});
+
+		});
+		</script>
+
+	</body>
+</html>
